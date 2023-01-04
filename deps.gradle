@@ -1,0 +1,93 @@
+ext {
+
+    versions = [
+            'retrofit' : '2.9.0',
+            'okhttp'   : '5.0.0-alpha.11',
+            'coroutine': '1.6.4',
+            'lifecycle': '2.5.1',
+            'room'     : '2.4.3',
+    ]
+
+    deps = [
+
+            'baseAndroid': [
+                    'coreKtx'    : "androidx.core:core-ktx:1.9.0",
+                    'annotations': "androidx.annotation:annotation:1.5.0",
+                    'appCompat'  : "androidx.appcompat:appcompat:1.5.1",
+                    'fragment'   : "androidx.fragment:fragment-ktx:1.5.5",
+                    'activity'   : "androidx.activity:activity-ktx:1.6.1",
+                    'material3'  : "androidx.compose.material3:material3:1.1.0-alpha03"
+            ],
+
+            'compose'    : [
+                    'activityCompose'        : "androidx.activity:activity-compose:1.6.1",
+                    'materialCompose'        : "androidx.compose.material:material:1.3.1",
+                    'materialIconCompose'    : "androidx.compose.material:material-icons-core:1.3.1",
+                    'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:1.3.1",
+                    'materialRippleCompose'  : "androidx.compose.material:material-ripple:1.3.1",
+                    'runtimeCompose'         : "androidx.compose.runtime:runtime:1.3.2",
+                    'composeUi'              : "androidx.compose.ui:ui:1.3.2",
+                    'composeUiTooling'       : "androidx.compose.ui:ui-tooling-preview:1.3.2",
+                    'composeUtil'            : "androidx.compose.ui:ui-util:1.3.2",
+                    'composeGeometry'        : "androidx.compose.ui:ui-geometry:1.3.2",
+                    'composeGraphics'        : "androidx.compose.ui:ui-graphics:1.3.2",
+                    'composeFoundation'      : "androidx.compose.foundation:foundation:1.3.1",
+                    'composeFoundationLayout': "androidx.compose.foundation:foundation-layout:1.3.1",
+                    'composeConstrainLayout' : "androidx.constraintlayout:constraintlayout-compose:1.0.1",
+                    'composeAnimCore'        : "androidx.compose.animation:animation-core:1.3.2",
+                    'composeAnimation'       : "androidx.compose.animation:animation:1.3.2",
+                    'coil'                   : "io.coil-kt:coil-compose:2.2.2",
+            ],
+
+            'coroutines' : [
+                    'coroutines'       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutine}",
+                    'coroutinesAndroid': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutine}"
+            ],
+
+            'di'         : [
+                    'hilt'        : "com.google.dagger:hilt-android:2.44.2",
+                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.44.2",
+                    'hiltNavi'    : 'androidx.hilt:hilt-navigation-compose:1.1.0-alpha01'
+            ],
+
+            'navigation' : [
+                    'navCompose': "androidx.navigation:navigation-compose:2.5.3",
+                    'navCommon' : 'androidx.navigation:navigation-common:2.5.3'
+            ],
+
+            'lifecycle'  : [
+                    'lifecycle'               : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}",
+                    'liveData'                : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+                    'viewModel'               : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+                    'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1',
+                    'lifecycleReactivestreams': "androidx.lifecycle:lifecycle-reactivestreams-ktx:${versions.lifecycle}"
+            ],
+
+            'google'     : [
+                    'firebase': [
+                            'bom'        : "com.google.firebase:firebase-bom:31.1.1",
+                            'push'       : "com.google.firebase:firebase-messaging-ktx:23.1.1",
+                            'crashlytics': "com.google.firebase:firebase-crashlytics-ktx:18.3.2",
+                            'analytics'  : "com.google.firebase:firebase-analytics-ktx:21.2.0",
+                            'config'     : "com.google.firebase:firebase-config-ktx:21.2.0"
+                    ],
+            ],
+
+            'retrofit'   : [
+                    'client'        : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    'moshiConverter': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
+            ],
+
+            'okhttp'     : [
+                    'client' : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                    'logging': "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+            ],
+
+            'room'       : [
+                    'runtime'             : "androidx.room:room-runtime:${versions.room}",
+                    'annotationsProcessor': "androidx.room:room-compiler:${versions.room}",
+                    'ktx'                 : "androidx.room:room-ktx:${versions.room}"
+            ],
+
+    ]
+}

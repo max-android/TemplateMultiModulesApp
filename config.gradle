@@ -1,0 +1,11 @@
+ext {
+    config = [
+            'compileSdkVersion': 33,
+            'applicationId': "",
+            'minSdkVersion': 28,
+            'targetSdkVersion': 33,
+            'versionCode': 1,
+            'versionName': "1.0.0",
+            'packageName': "com.example.template"
+    ]
+}

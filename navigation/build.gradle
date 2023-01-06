@@ -34,31 +34,10 @@ android {
 
 dependencies {
 
-    api deps.baseAndroid.coreKtx
-    api deps.baseAndroid.annotations
-    api deps.baseAndroid.appCompat
-    api deps.baseAndroid.fragment
-    api deps.baseAndroid.activity
-    api deps.baseAndroid.material3
-    api deps.compose.activityCompose
-    api deps.compose.materialCompose
-    api deps.compose.materialIconCompose
-    api deps.compose.materialIconExtCompose
-    api deps.compose.materialRippleCompose
-    api deps.compose.runtimeCompose
-    api deps.compose.composeUi
-    api deps.compose.composeUiTooling
-    api deps.compose.composeUtil
-    api deps.compose.composeGeometry
-    api deps.compose.composeGraphics
-    api deps.compose.composeFoundation
-    api deps.compose.composeFoundationLayout
-    api deps.compose.composeAnimCore
-    api deps.compose.composeAnimation
-    api deps.compose.coil
+    implementation project(path: ':common')
+    implementation project(path: ':domain')
 
     api deps.di.hilt
     kapt deps.di.hiltCompiler
-
-
+    api deps.di.hiltNavi
 }

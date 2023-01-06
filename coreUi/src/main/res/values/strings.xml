@@ -1,3 +1,4 @@
 <resources>
     <string name="ui">ui</string>
+    <string name="title_profile">Профиль</string>
 </resources>

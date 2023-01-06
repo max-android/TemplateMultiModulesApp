@@ -3,6 +3,7 @@ apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -25,13 +26,22 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion '1.3.2'
     }
+//    packagingOptions {
+//        resources.excludes.add("META-INF/*")
+//    }
 
 }
 
 dependencies {
 
     implementation project(path: ':coreUi')
+    implementation project(path: ':navigation')
 
+    api deps.di.hilt
+    kapt deps.di.hiltCompiler
+    api deps.di.hiltNavi
 
+    api deps.navigation.navCompose
+    api deps.navigation.navCommon
 
 }

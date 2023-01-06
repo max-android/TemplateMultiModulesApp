@@ -66,3 +66,12 @@ fun TemplateMultiModulesAppTheme(
         content = content
     )
 }
+
+@Composable
+fun BaseTheme(content: @Composable () -> Unit) {
+    MaterialTheme(
+        colorScheme = LightColorScheme,
+        typography = Typography,
+        content = content
+    )
+}

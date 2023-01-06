@@ -3,6 +3,7 @@ apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -21,9 +22,15 @@ android {
         jvmTarget = '11'
     }
 
+//    packagingOptions {
+//        resources.excludes.add("META-INF/*")
+//    }
+
 }
 
 dependencies {
 
+    api deps.di.hilt
+    kapt deps.di.hiltCompiler
 
 }

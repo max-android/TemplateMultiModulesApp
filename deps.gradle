@@ -6,6 +6,7 @@ ext {
             'coroutine': '1.6.4',
             'lifecycle': '2.5.1',
             'room'     : '2.4.3',
+            'moshi'    : '1.14.0',
     ]
 
     deps = [
@@ -76,6 +77,11 @@ ext {
             'retrofit'   : [
                     'client'        : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
                     'moshiConverter': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
+            ],
+
+            'moshi'   : [
+                    'moshi'        : "com.squareup.moshi:moshi:${versions.moshi}",
+                    'kotlin': "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
             ],
 
             'okhttp'     : [

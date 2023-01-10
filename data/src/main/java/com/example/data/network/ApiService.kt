@@ -1,6 +1,7 @@
-package com.example.data
+package com.example.data.network
 
 import android.content.Context
+import com.example.data.dto.ProfileDto
 
 class ApiService(private val applicationContext: Context) {
 

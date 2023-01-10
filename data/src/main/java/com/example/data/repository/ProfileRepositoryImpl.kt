@@ -1,7 +1,9 @@
-package com.example.data
+package com.example.data.repository
 
-import com.example.domain.ProfileModel
-import com.example.domain.ProfileRepository
+import com.example.data.mapper.toProfileModel
+import com.example.data.network.ApiService
+import com.example.domain.model.ProfileModel
+import com.example.domain.repository.ProfileRepository
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(

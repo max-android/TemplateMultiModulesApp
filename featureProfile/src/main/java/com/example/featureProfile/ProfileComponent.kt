@@ -10,11 +10,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.compose.runtime.*
-import com.example.domain.ProfileModel
+import com.example.domain.model.ProfileModel
 
 @Composable
 fun ProfileComponent(navController: NavController) {

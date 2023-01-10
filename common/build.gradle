@@ -30,5 +30,7 @@ android {
 
 dependencies {
 
+    api deps.coroutines.coroutines
+    api deps.coroutines.coroutinesAndroid
 
 }

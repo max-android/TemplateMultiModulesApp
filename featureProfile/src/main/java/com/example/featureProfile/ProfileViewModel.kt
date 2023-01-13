@@ -1,6 +1,7 @@
 package com.example.featureProfile
 
 import android.util.Log
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import coil.network.HttpException
@@ -19,6 +20,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
     private val profileInteractor: ProfileInteractor,
     private val newsInteractor: NewsInteractor
 ) : ViewModel() {
@@ -30,6 +32,7 @@ class ProfileViewModel @Inject constructor(
 
     init {
         obtainEvent()
+        val i = savedStateHandle.get<Int>("myKey")
     }
 
     fun obtainEvent() {
@@ -44,7 +47,7 @@ class ProfileViewModel @Inject constructor(
 
             try {
                 val news = newsInteractor.loadNews()
-                ProfileViewState.SuccessProfileState(news)
+
            // } catch (e: ServerProblemException) {
               //  Log.i("--STATE", "---------------HttpException: "+e.message)
                 //_state.emit(ProfileViewState.ErrorProfileState(e.response.code, e.response.message))

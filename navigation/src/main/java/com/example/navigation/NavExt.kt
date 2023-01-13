@@ -1,9 +1,8 @@
 package com.example.navigation
 
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import androidx.navigation.NavOptionsBuilder
-import androidx.navigation.Navigator
+import android.os.Bundle
+import androidx.core.net.toUri
+import androidx.navigation.*
 import com.example.common.slashEquality
 
 fun NavController.navigateSafe(
@@ -30,5 +29,32 @@ fun NavController.navigateSafeWithBuilder(
         )
     ) {
         navigate(route, builder)
+    }
+}
+
+fun NavController.navigateWithBundleSafe(
+    route: String,
+    args: Bundle,
+    navOptions: NavOptions? = null,
+    navigatorExtras: Navigator.Extras? = null
+) {
+    if (currentDestination?.route != route && slashEquality(
+            currentDestination?.route.orEmpty(),
+            route
+        )
+    ) {
+        val routeLink = NavDeepLinkRequest
+            .Builder
+            .fromUri(NavDestination.createRoute(route).toUri())
+            .build()
+
+        val deepLinkMatch = graph.matchDeepLink(routeLink)
+        if (deepLinkMatch != null) {
+            val destination = deepLinkMatch.destination
+            val id = destination.id
+            navigate(id, args, navOptions, navigatorExtras)
+        } else {
+            navigate(route, navOptions, navigatorExtras)
+        }
     }
 }

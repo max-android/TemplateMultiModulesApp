@@ -8,7 +8,7 @@ import com.example.domain.repository.NewsRepository
 import javax.inject.Inject
 
 class NewsRepositoryImpl @Inject constructor(
-    private val newsRestService: NewsRestService
+     private val newsRestService: NewsRestService
 ) : NewsRepository {
 
     override suspend fun loadNews(): List<NewsModel> {

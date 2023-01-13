@@ -10,9 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import com.example.navigation.Screen
-import com.example.navigation.navigateSafe
+import com.example.navigation.navigateWithBundleSafe
 
 @Composable
 fun RootComponent(navController: NavController) {
@@ -24,7 +25,10 @@ private fun RootUi(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
         Button(
             onClick = {
-                navController.navigateSafe(Screen.ProfileScreen.route)
+               // navController.navigateSafe(Screen.ProfileScreen.route)
+                navController.navigateWithBundleSafe(
+                    Screen.ProfileScreen.route, bundleOf("myKey" to 100)
+                )
             },
             modifier = Modifier
                 .wrapContentWidth()

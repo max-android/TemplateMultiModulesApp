@@ -2,6 +2,8 @@ package com.example.data.common
 
 import android.util.Log
 import com.example.common.*
+import com.example.data.dto.ErrorResponse
+import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.HttpException
@@ -57,3 +59,11 @@ fun <T> Response<T>.handleBodyDto2(): T {
     }
 }
 
+fun parseError(errorBody: ResponseBody): ErrorResponse? {
+    val jsonAdapter = Moshi.Builder().build().adapter(ErrorResponse::class.java).lenient()
+    return try {
+        jsonAdapter.fromJson(errorBody.string())
+    } catch (e: Throwable) {
+        null
+    }
+}

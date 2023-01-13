@@ -3,8 +3,13 @@ package com.example.featureProfile
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import coil.network.HttpException
+import com.example.common.ServerProblemException
 import com.example.domain.interactor.NewsInteractor
 import com.example.domain.interactor.ProfileInteractor
+import com.example.domain.model.NewsDomainError
+import com.example.domain.model.NewsDomainException
+import com.example.domain.model.NewsDomainSuccess
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -34,11 +39,40 @@ class ProfileViewModel @Inject constructor(
     private fun showContentAction() {
         viewModelScope.launch {
             val profileModel = profileInteractor.loadProfile()
-            val news = newsInteractor.loadNews()
-            news.forEach {
-                Log.i("--DATA", "--------" + it.imageUrl)
+
+
+
+            try {
+                val news = newsInteractor.loadNews()
+                ProfileViewState.SuccessProfileState(news)
+           // } catch (e: ServerProblemException) {
+              //  Log.i("--STATE", "---------------HttpException: "+e.message)
+                //_state.emit(ProfileViewState.ErrorProfileState(e.response.code, e.response.message))
+            } catch (e: Throwable) {
+                Log.i("--STATE", "---------------Throwable: "+e.message)
+
+                _state.emit(ProfileViewState.ExceptionProfileState(e))
             }
-            _state.emit(ProfileViewState.SuccessProfileState(profileModel))
+
+
+//            when (news) {
+//                is NewsDomainSuccess -> {
+//                    _state.emit(ProfileViewState.SuccessProfileState(news.data))
+//                    news.data.forEach {
+//                Log.i("--DATA", "--------" + it.imageUrl)
+//            }
+//                }
+//                is NewsDomainError -> {
+//
+//                }
+//                is NewsDomainException -> {
+//
+//                }
+//            }
+
+
+
+
         }
     }
 

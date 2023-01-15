@@ -5,7 +5,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import coil.network.HttpException
+import com.example.common.BaseViewModel
 import com.example.common.ServerProblemException
+import com.example.domain.common.ResultState
 import com.example.domain.interactor.NewsInteractor
 import com.example.domain.interactor.ProfileInteractor
 import com.example.domain.model.NewsDomainError
@@ -23,12 +25,12 @@ class ProfileViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val profileInteractor: ProfileInteractor,
     private val newsInteractor: NewsInteractor
-) : ViewModel() {
+) : BaseViewModel() {
 
 // Сделать в ViewModelLight внутри 2 вида событий
 
-    private val _state = MutableStateFlow<ProfileViewState?>(null)
-    val state: StateFlow<ProfileViewState?> = _state.asStateFlow()
+//    private val _state2 = MutableStateFlow<ProfileViewState?>(null)
+//    val state2: StateFlow<ProfileViewState?> = _state2.asStateFlow()
 
     init {
         obtainEvent()
@@ -41,20 +43,31 @@ class ProfileViewModel @Inject constructor(
 
     private fun showContentAction() {
         viewModelScope.launch {
+
+            val resultState = newsInteractor.loadNews()
+            when (resultState) {
+                is ResultState.Success -> {
+                    sendState(ProfileViewState.SuccessProfileState(resultState.data))
+                }
+                is ResultState.Error -> {
+                    Log.i("--STATE", "---------------Throwable: " + resultState.exception.message)
+                    sendState(ProfileViewState.ExceptionProfileState(resultState.exception))
+                    sendSideEffect(ProfileSideEffect.ShowToast)
+                }
+            }
+
+
             val profileModel = profileInteractor.loadProfile()
-
-
-
             try {
-                val news = newsInteractor.loadNews()
+                // val news = newsInteractor.loadNews()
 
-           // } catch (e: ServerProblemException) {
-              //  Log.i("--STATE", "---------------HttpException: "+e.message)
+                // } catch (e: ServerProblemException) {
+                //  Log.i("--STATE", "---------------HttpException: "+e.message)
                 //_state.emit(ProfileViewState.ErrorProfileState(e.response.code, e.response.message))
             } catch (e: Throwable) {
-                Log.i("--STATE", "---------------Throwable: "+e.message)
+                Log.i("--STATE", "---------------Throwable: " + e.message)
 
-                _state.emit(ProfileViewState.ExceptionProfileState(e))
+                //_state.emit(ProfileViewState.ExceptionProfileState(e))
             }
 
 
@@ -72,8 +85,6 @@ class ProfileViewModel @Inject constructor(
 //
 //                }
 //            }
-
-
 
 
         }

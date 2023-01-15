@@ -61,7 +61,8 @@ ext {
                     'liveData'                : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
                     'viewModel'               : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
                     'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1',
-                    'lifecycleReactivestreams': "androidx.lifecycle:lifecycle-reactivestreams-ktx:${versions.lifecycle}"
+                    'lifecycleReactivestreams': "androidx.lifecycle:lifecycle-reactivestreams-ktx:${versions.lifecycle}",
+                    'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha04"
             ],
 
             'google'     : [

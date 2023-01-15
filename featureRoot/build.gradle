@@ -36,6 +36,8 @@ dependencies {
 
     implementation project(path: ':coreUi')
     implementation project(path: ':navigation')
+    implementation project(path: ':domain')
+    implementation project(path: ':common')
 
     api deps.di.hilt
     kapt deps.di.hiltCompiler

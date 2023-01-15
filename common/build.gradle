@@ -30,6 +30,12 @@ android {
 
 dependencies {
 
+    api deps.lifecycle.lifecycle
+    api deps.lifecycle.viewModel
+    api deps.lifecycle.viewModelCompose
+    api deps.lifecycle.lifecycleReactivestreams
+    api deps.lifecycle.lifecycleCompose
+
     api deps.coroutines.coroutines
     api deps.coroutines.coroutinesAndroid
 

@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -15,18 +14,32 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.runtime.getValue
+import com.example.common.BaseViewModel
 import com.example.domain.model.NewsModel
 import com.example.domain.model.ProfileModel
 
 @Composable
 fun ProfileComponent(navController: NavController) {
     val viewModel = hiltViewModel<ProfileViewModel>()
-    val state: ProfileViewState? by viewModel.state.collectAsState()
+    //val state: ProfileViewState? by viewModel.state2.collectAsStateWithLifecycle()
+    //https://medium.com/androiddevelopers/consuming-flows-safely-in-jetpack-compose-cde014d0d5a3
+    val state: BaseViewModel.BaseViewState? by viewModel.state.collectAsStateWithLifecycle()
+    val sideEffect: BaseViewModel.BaseSideEffect? by viewModel.sideEffect.collectAsStateWithLifecycle(null)
+//    sideEffect?.let {
+//        when (sideEffect) {
+//            is ProfileSideEffect.ShowToast -> {
+//                Toast.makeText(LocalContext.current, "Exception: ", Toast.LENGTH_LONG).show()
+//            }
+//        }
+ //   }
     ObserveState(navController, state)
 }
 
 @Composable
-private fun ObserveState(navController: NavController, viewState: ProfileViewState?) {
+//private fun ObserveState(navController: NavController, viewState: ProfileViewState?) {
+private fun ObserveState(navController: NavController, viewState: BaseViewModel.BaseViewState?) {
     viewState?.let {
         when (viewState) {
             is ProfileViewState.SuccessProfileState -> {

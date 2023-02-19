@@ -2,8 +2,8 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
+//apply plugin: 'kotlin-kapt'
+//apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -37,7 +37,9 @@ dependencies {
     implementation project(path: ':common')
     implementation project(path: ':domain')
 
-    api deps.di.hilt
-    kapt deps.di.hiltCompiler
+//    api deps.di.hilt
+//    kapt deps.di.hiltCompiler
     api deps.di.hiltNavi
+    api deps.navigation.navCompose
+    api deps.navigation.navCommon
 }

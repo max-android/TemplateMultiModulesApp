@@ -2,8 +2,6 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -56,9 +54,6 @@ dependencies {
     api deps.compose.composeAnimCore
     api deps.compose.composeAnimation
     api deps.compose.coil
-
-    api deps.di.hilt
-    kapt deps.di.hiltCompiler
 
 
 }

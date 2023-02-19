@@ -1,16 +1,16 @@
-package com.example.template.di
+package com.example.data.di
 
 import android.content.Context
 import com.example.common.CONNECT_TIMEOUT
 import com.example.common.NEWS_BASE_URL
 import com.example.common.READ_TIMEOUT
 import com.example.common.WRITE_TIMEOUT
+import com.example.data.BuildConfig
 import com.example.data.common.createRestService
 import com.example.data.network.ApiService
 import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
 import com.example.data.network.NewsRestService
-import com.example.template.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -88,5 +88,4 @@ object NetworkModule {
         NEWS_BASE_URL,
         NewsRestService::class.java
     )
-
 }

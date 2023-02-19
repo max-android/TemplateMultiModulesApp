@@ -1,4 +1,4 @@
-package com.example.template.di
+package com.example.data.di
 
 import com.example.data.network.NewsRestService
 import com.example.data.repository.NewsRepositoryImpl
@@ -9,13 +9,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
-//@InstallIn(SingletonComponent::class)
 @Module
 @InstallIn(ViewModelComponent::class)
-//@InstallIn(SingletonComponent::class)
 object NewsModule {
 
     @Provides
@@ -29,5 +25,4 @@ object NewsModule {
     fun bindNewsInteractor(
         newsRepository: NewsRepository
     ): NewsInteractor = NewsInteractor(newsRepository)
-
 }

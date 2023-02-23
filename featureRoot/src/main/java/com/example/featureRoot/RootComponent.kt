@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
+import com.example.coreUi.components.SampleConstraintLayout
 import com.example.navigation.Screen
 import com.example.navigation.navigateWithBundleSafe
 
@@ -23,6 +24,7 @@ fun RootComponent(navController: NavController) {
 @Composable
 private fun RootUi(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
+        SampleConstraintLayout()
         Button(
             onClick = {
                // navController.navigateSafe(Screen.ProfileScreen.route)

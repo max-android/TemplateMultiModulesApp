@@ -5,7 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,8 +17,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import com.example.common.BaseViewModel
+import com.example.coreUi.Sample
+import com.example.coreUi.components.BottomSheetUi
 import com.example.domain.model.NewsModel
 import com.example.domain.model.ProfileModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileComponent(navController: NavController) {

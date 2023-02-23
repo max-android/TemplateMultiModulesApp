@@ -54,6 +54,8 @@ dependencies {
     api deps.compose.composeAnimCore
     api deps.compose.composeAnimation
     api deps.compose.coil
+    api deps.compose.composeConstrainLayout
+    debugImplementation deps.compose.tooling
 
 
 }

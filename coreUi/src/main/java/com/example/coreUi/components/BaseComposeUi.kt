@@ -47,6 +47,11 @@ fun BaseText() {
 //Column занимает места ровно столько, чтобы вместить два текста.
 // Т.е. по умолчанию работает в режиме wrap_content.
 
+//verticalArrangement = Arrangement.SpaceEvenly - текст располагается равномерно с расстояниями между
+
+//verticalArrangement = Arrangement.SpaceBetween -
+// текст располагается равномерно + с равном отступом вверху и внизу
+
 @Composable
 fun BaseColumn() {
     Column(
@@ -88,6 +93,7 @@ fun BaseColumn() {
         BaseRaw1()
         BaseRaw2()
         BaseRaw3()
+        BaseRaw4()
         BaseBox()
         Combine()
     }
@@ -145,6 +151,30 @@ fun BaseRaw3() {
         )
     }
 
+}
+
+@Composable
+fun BaseRaw4() {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        //horizontalArrangement = Arrangement.SpaceBetween,
+        //horizontalArrangement = Arrangement.SpaceEvenly,
+        horizontalArrangement = Arrangement.SpaceAround,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Text(
+            text = "Name-1", fontSize = 20.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = "Name-2", fontSize = 20.sp,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = "Name-3", fontSize = 20.sp,
+            textAlign = TextAlign.Center
+        )
+    }
 }
 
 @Composable

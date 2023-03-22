@@ -2,6 +2,8 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
+//TODO временно
+apply plugin: 'kotlin-parcelize'
 
 android {
     compileSdkVersion config.compileSdkVersion

@@ -58,3 +58,7 @@ fun NavController.navigateWithBundleSafe(
         }
     }
 }
+
+fun <T> NavBackStackEntry.parcelableData(key: String): T? {
+    return arguments?.getParcelable(key) as? T
+}

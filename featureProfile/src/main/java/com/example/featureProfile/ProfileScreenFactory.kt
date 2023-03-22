@@ -9,8 +9,8 @@ import com.example.navigation.Screen
 class ProfileScreenFactory() : ComposeNavFactory {
 
     override fun create(navGraphBuilder: NavGraphBuilder, navController: NavController) {
-        navGraphBuilder.composable(Screen.ProfileScreen.route) {
-            ProfileComponent(navController)
+        navGraphBuilder.composable(Screen.ProfileScreen.route) { navBackStackEntry ->
+            ProfileComponent(navController, navBackStackEntry)
         }
     }
 

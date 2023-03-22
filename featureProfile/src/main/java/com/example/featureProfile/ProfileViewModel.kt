@@ -35,7 +35,7 @@ class ProfileViewModel @Inject constructor(
 
     init {
         obtainEvent()
-        val i = savedStateHandle.get<Int>("myKey")
+       // val i = savedStateHandle.get<Int>("myKey")
     }
 
     fun obtainEvent() {

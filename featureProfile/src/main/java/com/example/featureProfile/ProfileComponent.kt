@@ -14,11 +14,20 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
+import androidx.navigation.NavBackStackEntry
 import com.example.common.BaseViewModel
+import com.example.coreUi.components.Person
 import com.example.domain.model.NewsModel
+import com.example.navigation.parcelableData
 
 @Composable
-fun ProfileComponent(navController: NavController) {
+fun ProfileComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
+
+    //Log.i("--DATA", "-------------- "+navBackStackEntry.arguments?.getSerializable("myKey") )
+    //TODO пример с передачей объектов по компонентам
+    Log.i("--DATA", "-------------- "+navBackStackEntry.parcelableData<Person>("myKey"))
+
+
     val viewModel = hiltViewModel<ProfileViewModel>()
     //val state: ProfileViewState? by viewModel.state2.collectAsStateWithLifecycle()
     //https://medium.com/androiddevelopers/consuming-flows-safely-in-jetpack-compose-cde014d0d5a3

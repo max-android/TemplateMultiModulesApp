@@ -2,6 +2,7 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-parcelize'
 //apply plugin: 'kotlin-kapt'
 //apply plugin: 'com.google.dagger.hilt.android'
 

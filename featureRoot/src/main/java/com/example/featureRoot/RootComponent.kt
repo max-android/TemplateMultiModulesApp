@@ -17,6 +17,7 @@ import androidx.navigation.NavController
 import com.example.navigation.Screen
 import com.example.navigation.navigateWithBundleSafe
 import androidx.compose.runtime.getValue
+import com.example.coreUi.components.Person
 
 @Composable
 fun RootComponent(navController: NavController) {
@@ -31,7 +32,8 @@ private fun RootUi(navController: NavController) {
             onClick = {
                // navController.navigateSafe(Screen.ProfileScreen.route)
                 navController.navigateWithBundleSafe(
-                    Screen.ProfileScreen.route, bundleOf("myKey" to 100)
+                   // Screen.ProfileScreen.route, bundleOf("myKey" to 100)
+                    Screen.ProfileScreen.route, bundleOf("myKey" to Person("б4324", "234"))
                 )
             },
             modifier = Modifier

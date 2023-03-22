@@ -1,9 +1,11 @@
 package com.example.coreUi.components
 
+import android.os.Parcelable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
+import kotlinx.parcelize.Parcelize
 
 class PersonalViewModel: ViewModel() {
 
@@ -41,10 +43,11 @@ class PersonalViewModel: ViewModel() {
     }
 }
 
+@Parcelize
 data class Person(
     val firstName: String,
     val lastName: String
-) {
+): Parcelable {
     fun doesMatchSearchQuery(query: String): Boolean {
         val matchingCombinations = listOf(
             "$firstName$lastName",

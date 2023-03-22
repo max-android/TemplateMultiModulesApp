@@ -38,6 +38,7 @@ dependencies {
     api deps.baseAndroid.fragment
     api deps.baseAndroid.activity
     api deps.baseAndroid.material3
+    api deps.customUi.datetime
     api deps.compose.activityCompose
     api deps.compose.materialCompose
     api deps.compose.materialIconCompose

@@ -84,8 +84,8 @@ ext {
                     'moshiConverter': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
             ],
 
-            'moshi'   : [
-                    'moshi'        : "com.squareup.moshi:moshi:${versions.moshi}",
+            'moshi'      : [
+                    'moshi' : "com.squareup.moshi:moshi:${versions.moshi}",
                     'kotlin': "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
             ],
 
@@ -100,5 +100,8 @@ ext {
                     'ktx'                 : "androidx.room:room-ktx:${versions.room}"
             ],
 
+            'customUi'   : [
+                    'datetime': "io.github.vanpra.compose-material-dialogs:datetime:0.8.1-rc",
+            ],
     ]
 }

@@ -1,6 +1,6 @@
 package com.example.featureProfile
 
-import android.widget.Toast
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -12,16 +12,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.compose.runtime.*
-import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import com.example.common.BaseViewModel
-import com.example.coreUi.Sample
-import com.example.coreUi.components.BottomSheetUi
 import com.example.domain.model.NewsModel
-import com.example.domain.model.ProfileModel
-import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileComponent(navController: NavController) {
@@ -46,6 +40,7 @@ private fun ObserveState(navController: NavController, viewState: BaseViewModel.
     viewState?.let {
         when (viewState) {
             is ProfileViewState.SuccessProfileState -> {
+                Log.i("--LOG", "---------Profile")
                 ProfileUi(viewState.list) {
                     navController.popBackStack()
                 }

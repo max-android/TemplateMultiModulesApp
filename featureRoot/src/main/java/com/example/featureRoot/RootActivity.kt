@@ -3,21 +3,16 @@ package com.example.featureRoot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
-import com.example.coreUi.BaseTheme
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.coreUi.TemplateMultiModulesAppTheme
-import com.example.navigation.Screen
 import com.example.navigation.ScreenStarter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.common.BaseViewModel
 
 @AndroidEntryPoint
 class RootActivity : ComponentActivity() {
@@ -28,32 +23,41 @@ class RootActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController()
-            BaseTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    NavHost(
-                        navController = navController, startDestination = Screen.RootScreen.route
-                    ) {
-                        screenStarter.startRoot().create(this, navController)
-                        screenStarter.startProfile().create(this, navController)
+            ConfigureRoot()
+        }
+    }
+
+    @Composable
+    private fun ConfigureRoot() {
+        val viewModel = hiltViewModel<RootViewModel>()
+        val state: BaseViewModel.BaseViewState? by viewModel.state.collectAsStateWithLifecycle()
+        ObserveState(state)
+    }
+
+    @Composable
+    private fun ObserveState(viewState: BaseViewModel.BaseViewState?) {
+        viewState?.let {
+            when (viewState) {
+                is RootViewState.SuccessRoot -> {
+                    val isDarkMode = remember { mutableStateOf(viewState.isDarkTheme) }
+                    TemplateMultiModulesAppTheme(isDarkMode.value) {
+                        //val systemUiController = rememberSystemUiController()
+                        // Set status bar color
+//                        SideEffect {
+//                            systemUiController.setSystemBarsColor(
+//                                color = if (isDarkMode.value) darkThemeColors.primary
+//                                else lightThemeColors.primary,
+//                                darkIcons = !isDarkMode.value
+//                            )
+//                        }
+                        BaseRootComponent(screenStarter) {
+
+                        }
                     }
                 }
+                else -> {}
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) = Text(text = "Hello $name!")
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TemplateMultiModulesAppTheme {
-        Greeting("Android")
-    }
 }

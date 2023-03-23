@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import com.example.coreUi.R
+import com.example.common.R
 
 @Composable
 fun SampleConstraintLayout() {

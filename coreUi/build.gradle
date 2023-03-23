@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-
+    implementation project(path: ':common')
     api deps.baseAndroid.coreKtx
     api deps.baseAndroid.annotations
     api deps.baseAndroid.appCompat

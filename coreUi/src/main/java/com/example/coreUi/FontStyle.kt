@@ -2,6 +2,7 @@ package com.example.coreUi
 
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import com.example.common.R
 
 val BOLD = FontFamily(Font(R.font.montserrat_bold))
 val SEMI_BOLD = FontFamily(Font(R.font.montserrat_semi_bold))

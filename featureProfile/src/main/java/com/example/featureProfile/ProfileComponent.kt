@@ -19,6 +19,7 @@ import com.example.common.BaseViewModel
 import com.example.coreUi.components.Person
 import com.example.domain.model.NewsModel
 import com.example.navigation.parcelableData
+import com.example.common.R
 
 @Composable
 fun ProfileComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
@@ -76,7 +77,7 @@ private fun ObserveState(navController: NavController, viewState: BaseViewModel.
 private fun ProfileUi(profileModel: List<NewsModel>, onClickBack: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         Image(
-            painter = painterResource(id = com.example.coreUi.R.drawable.ic_backspace),
+            painter = painterResource(id = R.drawable.ic_backspace),
             modifier = Modifier.clickable {
                 onClickBack.invoke()
             },

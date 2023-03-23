@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.Dimension
-import com.example.coreUi.R
+import com.example.common.R
 
 //Если мы хотим задать атрибут, специфичный для элемента, то он будет в параметрах функции.
 // Примеры: text и fontSize. Такие атрибуты встречаются далеко не у всех элементов.

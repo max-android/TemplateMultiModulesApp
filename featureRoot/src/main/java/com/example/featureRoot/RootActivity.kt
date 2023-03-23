@@ -3,9 +3,7 @@ package com.example.featureRoot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.coreUi.TemplateMultiModulesAppTheme
 import com.example.navigation.ScreenStarter
@@ -13,6 +11,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.common.BaseViewModel
+import com.example.coreUi.components.animated.AnimatedUi
+import com.example.coreUi.components.animated.MotionSampleScreen
 
 @AndroidEntryPoint
 class RootActivity : ComponentActivity() {

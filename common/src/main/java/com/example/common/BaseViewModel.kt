@@ -17,6 +17,7 @@ abstract class BaseViewModel : ViewModel() {
 
     interface BaseViewState
     interface BaseSideEffect
+    interface BaseEvent
 
     suspend fun sendState(viewState: BaseViewState?) {
         stateInternal.emit(viewState)
@@ -25,6 +26,8 @@ abstract class BaseViewModel : ViewModel() {
     suspend fun sendSideEffect(event: BaseSideEffect?) {
         sideEffectInternal.emit(event)
     }
+
+    abstract fun obtainEvent(event: BaseEvent?)
 
 //    @Composable
 //    fun collect(): State<BaseViewState?> {

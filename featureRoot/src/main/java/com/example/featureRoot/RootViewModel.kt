@@ -15,4 +15,8 @@ class RootViewModel @Inject constructor() : BaseViewModel() {
         }
     }
 
+    override fun obtainEvent(event: BaseEvent?) {
+
+    }
+
 }

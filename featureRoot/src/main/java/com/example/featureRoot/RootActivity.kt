@@ -11,8 +11,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.common.BaseViewModel
-import com.example.coreUi.components.animated.AnimatedUi
-import com.example.coreUi.components.animated.MotionSampleScreen
 
 @AndroidEntryPoint
 class RootActivity : ComponentActivity() {
@@ -23,6 +21,7 @@ class RootActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            //SampleState()
             ConfigureRoot()
         }
     }

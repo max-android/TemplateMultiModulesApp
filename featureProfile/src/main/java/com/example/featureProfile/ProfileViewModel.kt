@@ -34,11 +34,11 @@ class ProfileViewModel @Inject constructor(
 //    val state2: StateFlow<ProfileViewState?> = _state2.asStateFlow()
 
     init {
-        obtainEvent()
+        obtainEvent(null)
        // val i = savedStateHandle.get<Int>("myKey")
     }
 
-    fun obtainEvent() {
+    override fun obtainEvent(event: BaseEvent?) {
         showContentAction()
     }
 

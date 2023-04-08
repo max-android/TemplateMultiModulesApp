@@ -103,7 +103,8 @@ fun SampleLazyStaggerGrid() {
         modifier = Modifier.fillMaxSize(),
         //contentPadding = PaddingValues(36.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+        verticalItemSpacing = 16.dp,
+        //verticalArrangement = Arrangement.spacedBy(16.dp),
         content = {
             items(100) {
                 Box(

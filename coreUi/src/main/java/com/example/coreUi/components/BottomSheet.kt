@@ -34,7 +34,7 @@ fun BottomSheetUi() {
                     sheetState.show()
                 }
             }) {
-            Text("Show Sheet: " + sheetState.progress)
+            //Text("Show Sheet: " + sheetState.progress)
         }
     }
 }

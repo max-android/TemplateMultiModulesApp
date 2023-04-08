@@ -27,6 +27,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.1'
     }
+    namespace 'com.example.featureProfile'
 //    packagingOptions {
 //        resources.excludes.add("META-INF/*")
 //    }

@@ -21,6 +21,7 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    namespace 'com.example.domain'
 
 //    packagingOptions {
 //        resources.excludes.add("META-INF/*")

@@ -26,6 +26,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.1'
     }
+    namespace 'com.example.coreUi'
 //    packagingOptions {
 //        resources.excludes.add("META-INF/*")
 //    }

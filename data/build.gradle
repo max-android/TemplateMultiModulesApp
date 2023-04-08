@@ -21,6 +21,7 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    namespace 'com.example.data'
 
 //    packagingOptions {
 //        resources.excludes.add("META-INF/*")

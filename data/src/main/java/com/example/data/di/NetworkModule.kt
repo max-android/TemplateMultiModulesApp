@@ -72,6 +72,8 @@ object NetworkModule {
             .build()
     )
 
+
+
     @Qualifier
     @Retention(AnnotationRetention.RUNTIME)
     annotation class NewsRemoteApi

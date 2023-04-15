@@ -3,6 +3,12 @@ package com.example.navigation
 interface ScreenStarter {
 
     fun startRoot(): ComposeNavFactory
+
+    fun startShows(): ComposeNavFactory
+
+
+
+    //TODO удалить после разработки пары модулей
     fun startProfile(): ComposeNavFactory
 
 }

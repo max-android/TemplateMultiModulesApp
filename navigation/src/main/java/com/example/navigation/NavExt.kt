@@ -65,22 +65,21 @@ fun <T> NavBackStackEntry.parcelableData(key: String): T? {
 
 fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
     val currentDestination = navBackStackEntry?.destination?.route
- //   if (currentDestination != null) {
-//        return currentDestination.contains(Screen.HomeScreen.route) ||
-//                currentDestination.contains(Screen.ShowsScreen.route) ||
-//                currentDestination.contains(Screen.ProfileScreen.route) ||
-//                currentDestination.contains(Screen.ListNewsScreen.route) ||
-//                currentDestination.contains(Screen.MemesScreen.route) ||
-//                currentDestination.contains(Screen.FoodDashboardScreen.route)
-  //  }
-   // return false
-    return true
+    if (currentDestination != null) {
+        return currentDestination.contains(Screen.RootScreen.route) ||
+                currentDestination.contains(Screen.ShowsScreen.route) ||
+                currentDestination.contains(Screen.PeoplesScreen.route) ||
+                currentDestination.contains(Screen.QuoteScreen.route) ||
+                currentDestination.contains(Screen.ArticlesScreen.route)
+    }
+    return false
 }
 
 fun NavDestination.updateSelectedTab(index: Int, tabBarItem: BottomNavItem): Boolean {
-   return route == tabBarItem.screen.route
-//            route == Screen.ListNewsScreen.route && index == 0 ||
-//            route == Screen.MemesScreen.route && index == 0 ||
-//            route == Screen.FoodDashboardScreen.route && index == 0
-
+    return route == tabBarItem.screen.route ||
+            route == Screen.RootScreen.route && index == 0 ||
+            route == Screen.ShowsScreen.route && index == 0 ||
+            route == Screen.PeoplesScreen.route && index == 0 ||
+            route == Screen.QuoteScreen.route && index == 0 ||
+            route == Screen.ArticlesScreen.route && index == 0
 }

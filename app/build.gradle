@@ -65,6 +65,13 @@ dependencies {
     implementation project(path: ':coreUi')
     implementation project(path: ':featureRoot')
     implementation project(path: ':featureProfile')
+    implementation project(path: ':featureShows')
+    implementation project(path: ':featureEpisodes')
+    implementation project(path: ':featureSeasons')
+    implementation project(path: ':featurePeoples')
+    implementation project(path: ':featureQuotes')
+    implementation project(path: ':featureArticles')
+    implementation project(path: ':featureNews')
 
     api deps.di.hilt
     kapt deps.di.hiltCompiler

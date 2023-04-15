@@ -9,6 +9,7 @@ sealed class Screen(val route: String) {
     object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
     object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
 
+    //TODO удалить после разработки пары модулей
     object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 
 }

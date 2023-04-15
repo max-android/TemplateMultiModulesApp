@@ -2,7 +2,7 @@ package com.example.data.repository
 
 import com.example.data.common.*
 import com.example.data.mapper.toListNewsModel
-import com.example.data.network.NewsRestService
+import com.example.data.network.old.NewsRestService
 import com.example.domain.model.*
 import com.example.domain.repository.NewsRepository
 import javax.inject.Inject

@@ -20,4 +20,24 @@ fun Float.toDp(): Dp {
     return (this / Resources.getSystem().displayMetrics.density).dp
 }
 
+fun Double?.double(): Double {
+    return this ?: 0.0
+}
+
+fun Float?.float(): Float {
+    return this ?: 0.0f
+}
+
+fun Int?.int(): Int {
+    return this ?: 0
+}
+
+fun Boolean?.boolean(): Boolean {
+    return this ?: false
+}
+
+fun Long?.long(): Long {
+    return this ?: 0L
+}
+
 

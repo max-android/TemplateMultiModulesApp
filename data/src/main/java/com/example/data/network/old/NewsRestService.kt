@@ -1,4 +1,4 @@
-package com.example.data.network
+package com.example.data.network.old
 
 import com.example.data.dto.NewsDto
 import retrofit2.Response

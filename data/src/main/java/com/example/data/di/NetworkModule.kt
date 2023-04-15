@@ -1,16 +1,14 @@
 package com.example.data.di
 
 import android.content.Context
-import com.example.common.CONNECT_TIMEOUT
-import com.example.common.NEWS_BASE_URL
-import com.example.common.READ_TIMEOUT
-import com.example.common.WRITE_TIMEOUT
+import com.example.common.*
 import com.example.data.BuildConfig
 import com.example.data.common.createRestService
-import com.example.data.network.ApiService
+import com.example.data.network.old.ApiService
 import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
-import com.example.data.network.NewsRestService
+import com.example.data.network.ShowsRestService
+import com.example.data.network.old.NewsRestService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -90,4 +88,23 @@ object NetworkModule {
         NEWS_BASE_URL,
         NewsRestService::class.java
     )
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class ShowsRemoteApi
+
+    @ShowsRemoteApi
+    @Provides
+    @Singleton
+    fun provideShowsRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): ShowsRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        SHOWS_BASE_URL,
+        ShowsRestService::class.java
+    )
+
+
 }

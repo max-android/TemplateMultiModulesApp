@@ -1,4 +1,4 @@
-package com.example.data.network
+package com.example.data.network.old
 
 import android.content.Context
 import com.example.data.dto.ProfileDto

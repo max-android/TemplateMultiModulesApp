@@ -2,10 +2,14 @@ package com.example.navigation
 
 sealed class Screen(val route: String) {
     object RootScreen: Screen(NavRoute.ROOT_ROUTE)
-    object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 
-    //TODO заменить или реализовать
-    object GalleryScreen: Screen(NavRoute.GALLERY_ROUTE)
+    object ShowsScreen: Screen(NavRoute.SHOWS_ROUTE)
+
+    object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
+    object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
+    object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
+
+    object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 
 }
 

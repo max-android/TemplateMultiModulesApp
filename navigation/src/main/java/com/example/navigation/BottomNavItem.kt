@@ -19,13 +19,23 @@ val bottomNavItems = listOf(
         badgeCount = 20
     ),
     BottomNavItem(
-        screen = Screen.GalleryScreen,
-        titleResId = R.string.gallery,
-        drawableResId = R.drawable.ic_gallery
+        screen = Screen.ShowsScreen,
+        titleResId = R.string.shows,
+        drawableResId = R.drawable.ic_shows
     ),
     BottomNavItem(
-        screen = Screen.ProfileScreen,
-        titleResId = R.string.profile,
-        drawableResId = R.drawable.ic_profile
+        screen = Screen.PeoplesScreen,
+        titleResId = R.string.peoples,
+        drawableResId = R.drawable.ic_peoples
+    ),
+    BottomNavItem(
+        screen = Screen.QuoteScreen,
+        titleResId = R.string.quotes,
+        drawableResId = R.drawable.ic_quote
+    ),
+    BottomNavItem(
+        screen = Screen.ArticlesScreen,
+        titleResId = R.string.articles,
+        drawableResId = R.drawable.ic_article
     )
 )

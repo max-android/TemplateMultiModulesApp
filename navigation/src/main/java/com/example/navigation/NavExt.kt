@@ -67,7 +67,7 @@ fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
     val currentDestination = navBackStackEntry?.destination?.route
  //   if (currentDestination != null) {
 //        return currentDestination.contains(Screen.HomeScreen.route) ||
-//                currentDestination.contains(Screen.GalleryScreen.route) ||
+//                currentDestination.contains(Screen.ShowsScreen.route) ||
 //                currentDestination.contains(Screen.ProfileScreen.route) ||
 //                currentDestination.contains(Screen.ListNewsScreen.route) ||
 //                currentDestination.contains(Screen.MemesScreen.route) ||

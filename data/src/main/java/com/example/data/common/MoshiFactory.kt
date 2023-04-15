@@ -39,3 +39,15 @@ package com.example.data.common
 
 //********************************************************************
 //рекомендуется оборачивать операции Moshi в блок try-catch.
+
+//парсинг ошибок от апи
+//val jsonAdapter: JsonAdapter<NewsError> = moshi.adapter(
+//                        NewsError::class.java
+//                    )
+//                    withContext(defaultDispatcher) {
+//                        val newsError = jsonAdapter.fromJson(response.errorBody()?.string()!!)
+//                        Result.Error(
+//                            newsError!!.message,
+//                            showRetry(newsError.code)
+//                        )
+//                    }

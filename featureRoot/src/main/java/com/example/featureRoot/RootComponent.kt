@@ -17,9 +17,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavOptions
+import androidx.navigation.compose.*
+import androidx.navigation.navigation
 import com.example.coreUi.components.Person
 import com.example.navigation.*
 
@@ -116,6 +116,10 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
             ) {
                 screenStarter.startRoot().create(this, navController)
                 screenStarter.startProfile().create(this, navController)
+                //dialog()
+//                navigation(route = "someRoute", startDestination = "first") {
+//                    composable()
+//                }
             }
         }
     )
@@ -132,6 +136,7 @@ private fun RootUi(navController: NavController) {
         Button(
             onClick = {
                // navController.navigateSafe(Screen.ProfileScreen.route)
+                //val nav = NavOptions.Builder().setPopUpTo()
                 navController.navigateWithBundleSafe(
                    // Screen.ProfileScreen.route, bundleOf("myKey" to 100)
                     Screen.ProfileScreen.route, bundleOf("myKey" to Person("б4324", "234"))

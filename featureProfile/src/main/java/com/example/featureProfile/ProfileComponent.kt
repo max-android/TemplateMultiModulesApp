@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavBackStackEntry
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.common.BaseViewModel
 import com.example.coreUi.components.Person
 import com.example.domain.model.NewsModel

@@ -1,0 +1,51 @@
+apply from: "$rootDir/deps.gradle"
+apply from: "$rootDir/config.gradle"
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdkVersion config.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.1'
+    }
+    namespace 'com.example.featureEpisodes'
+//    packagingOptions {
+//        resources.excludes.add("META-INF/*")
+//    }
+
+}
+
+dependencies {
+
+    implementation project(path: ':coreUi')
+    implementation project(path: ':navigation')
+    implementation project(path: ':domain')
+    implementation project(path: ':common')
+
+    api deps.di.hilt
+    kapt deps.di.hiltCompiler
+    api deps.di.hiltNavi
+
+    api deps.navigation.navCompose
+    api deps.navigation.navCommon
+
+}

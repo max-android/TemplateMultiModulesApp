@@ -1,6 +1,6 @@
 package com.example.data.repository
 
-import com.example.data.common.handleBodyDto2
+import com.example.data.common.handleBodyDto
 import com.example.data.mapper.toListShowModel
 import com.example.data.mapper.toShowModel
 import com.example.data.network.ShowsRestService
@@ -14,10 +14,10 @@ class ShowsRepositoryImpl @Inject constructor(
 ) : ShowsRepository {
 
     override suspend fun allShows(): List<ListShowsModel> {
-       return showsRestService.allShows().handleBodyDto2().toListShowModel()
+       return showsRestService.allShows().handleBodyDto().toListShowModel()
     }
 
     override suspend fun detailShow(idShow: String): ShowModel {
-        return showsRestService.detailShow(idShow).handleBodyDto2().toShowModel()
+        return showsRestService.detailShow(idShow).handleBodyDto().toShowModel()
     }
 }

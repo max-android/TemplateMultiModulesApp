@@ -1,9 +1,16 @@
 <resources>
     <string name="ui">ui</string>
+    <string name="title_empty_state">Nothing found</string>
+    <string name="not_network">You are not connected to the Internet</string>
+    <string name="unknown_error">Unknown error</string>
     <string name="title_profile">Профиль</string>
     <string name="home">Home</string>
     <string name="shows">Shows</string>
     <string name="peoples">Peoples</string>
     <string name="quotes">Quotes</string>
     <string name="articles">Articles</string>
+    <string name="shows_episodes">EPISODES</string>
+    <string name="shows_seasons">SEASONS</string>
+    <string name="shows_actors">ACTORS</string>
+    <string name="shows_crew">CREW</string>
 </resources>

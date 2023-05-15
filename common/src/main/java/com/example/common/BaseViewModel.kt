@@ -23,8 +23,8 @@ abstract class BaseViewModel : ViewModel() {
         stateInternal.emit(viewState)
     }
 
-    suspend fun sendSideEffect(event: BaseSideEffect?) {
-        sideEffectInternal.emit(event)
+    suspend fun sendSideEffect(sideEffect: BaseSideEffect?) {
+        sideEffectInternal.emit(sideEffect)
     }
 
     abstract fun obtainEvent(event: BaseEvent?)

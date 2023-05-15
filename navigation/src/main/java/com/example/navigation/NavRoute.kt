@@ -7,4 +7,6 @@ object NavRoute {
     const val QUOTE_ROUTE = "quote"
     const val ARTICLES_ROUTE = "articles"
     const val PROFILE_ROUTE = "profile"
+    const val SHOWS_DETAIL = "shows_detail"
+
 }

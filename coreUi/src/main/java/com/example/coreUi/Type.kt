@@ -1,103 +1,65 @@
 package com.example.coreUi
 
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Typography
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.coreUi.R
 
-// Set of Material typography styles to start with
 val Typography = Typography(
+    titleLarge = TextStyle(
+        fontFamily = BOLD,
+        fontWeight = FontWeight.Normal,
+        fontSize = 28.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+        color = Black
+    ),
+    titleMedium = TextStyle(
+        fontFamily = SEMI_BOLD,
+        fontWeight = FontWeight.Normal,
+        fontSize = 24.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+        color = Black
+    ),
     bodyLarge = TextStyle(
-        fontFamily = MEDIUM,
+        fontFamily = REGULAR,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+        letterSpacing = 0.5.sp,
+        color = Black
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = REGULAR,
         fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        fontSize = 14.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
+        color = Black
+    ),
+    bodySmall = TextStyle(
+        fontFamily = REGULAR,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
+        color = Black
+    ),
+    labelLarge = TextStyle(
+        fontFamily = MEDIUM,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+        color = Black
     ),
     labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = MEDIUM,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
+        fontSize = 12.sp,
         lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
+        color = Black
     )
-    */
 )
-
-//@Composable
-//fun typography() = androidx.compose.material.Typography(
-//    h1 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_bold).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 36.sp
-//    ),
-//    h2 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_bold).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 28.sp
-//    ),
-//    subtitle1 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_semi_bold).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 21.sp
-//    ),
-//    subtitle2 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_semi_bold).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 16.sp
-//    ),
-//    body1 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_medium).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 21.sp
-//    ),
-//    body2 = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_medium).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 16.sp
-//    ),
-//    button = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_bold).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 16.sp
-//    ),
-//    caption = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_regular).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 14.sp
-//    ),
-//    overline = TextStyle(
-//        color = MaterialTheme.colors.onSecondary,
-//        fontFamily = Font(R.font.montserrat_regular).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 12.sp
-//    ),
-//    h6 = TextStyle(
-//        color = MaterialTheme.colors.error,
-//        fontFamily = Font(R.font.montserrat_regular).toFontFamily(),
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 12.sp
-//    )
-//
-//)

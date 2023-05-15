@@ -6,6 +6,8 @@ interface ScreenStarter {
 
     fun startShows(): ComposeNavFactory
 
+    fun startShowsDetail(): ComposeNavFactory
+
 
 
     //TODO удалить после разработки пары модулей

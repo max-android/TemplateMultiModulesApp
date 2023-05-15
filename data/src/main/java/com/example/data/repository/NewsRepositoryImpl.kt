@@ -12,8 +12,9 @@ class NewsRepositoryImpl @Inject constructor(
 ) : NewsRepository {
 
     override suspend fun loadNews(): List<NewsModel> {
-        return newsRestService.news().handleBodyDto2().toListNewsModel()
+        return newsRestService.news().handleBodyDto().toListNewsModel()
 
+        //TODO удалить
 //        try {
 //            val newsResponse = newsRestService.news().handleBodyDto()
 //        } catch (throwable: Throwable) {

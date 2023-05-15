@@ -1,4 +1,4 @@
-package com.example.featureShows
+package com.example.featureShows.shows
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

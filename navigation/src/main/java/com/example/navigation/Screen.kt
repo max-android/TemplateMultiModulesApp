@@ -11,6 +11,7 @@ sealed class Screen(val route: String) {
 
     //TODO удалить после разработки пары модулей
     object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
+    object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL)
 
 }
 

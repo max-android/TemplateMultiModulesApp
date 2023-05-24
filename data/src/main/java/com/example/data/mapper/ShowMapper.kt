@@ -35,7 +35,7 @@ fun ShowDto?.toShowModel(): ShowModel {
         premiered = this?.premiered.orEmpty(),
         ended = this?.ended.orEmpty(),
         schedule = this?.showScheduleDto.toShowScheduleModel(),
-        rating = this?.showRatingDto?.average.double(),
+        rating = this?.showRatingDto?.average.double().toString(),
         officialSite = this?.officialSite.orEmpty(),
         url = this?.url.orEmpty(),
     )

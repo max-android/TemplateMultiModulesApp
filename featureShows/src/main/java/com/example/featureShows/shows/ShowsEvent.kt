@@ -4,6 +4,6 @@ import com.example.common.BaseViewModel
 
 sealed interface ShowsEvent: BaseViewModel.BaseEvent
 @JvmInline
-value class ShowsDetailEvent(val showsId: String): ShowsEvent
+value class ShowShowsDetailEvent(val showsId: String): ShowsEvent
 
 

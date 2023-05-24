@@ -60,6 +60,58 @@ fun ListShimmerComponent() {
     }
 }
 
+@Composable
+fun DetailShimmerComponent() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(500.dp)
+                .shimmerEffect()
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .height(20.dp)
+                .shimmerEffect()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .height(20.dp)
+                .shimmerEffect()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .height(20.dp)
+                .shimmerEffect()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .height(20.dp)
+                .shimmerEffect()
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .height(20.dp)
+                .shimmerEffect()
+        )
+    }
+}
+
 @Preview
 @Composable
 fun ShimmerPreview() {

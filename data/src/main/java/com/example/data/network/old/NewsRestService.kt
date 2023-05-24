@@ -7,7 +7,6 @@ import retrofit2.http.GET
 interface NewsRestService {
 
     @GET("ARTICLES")
-    //@GET("A4234/354/456/dfgdfg")
     suspend fun news(): Response<List<NewsDto>>
 
 }

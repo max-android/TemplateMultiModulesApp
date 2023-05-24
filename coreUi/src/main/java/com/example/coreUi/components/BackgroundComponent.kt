@@ -113,6 +113,6 @@ fun doBackground2() {
 @Preview
 @Composable
 fun BackgroundPreview() {
-   // doBackground()
-    doBackground2()
+    doBackground()
+   // doBackground2()
 }

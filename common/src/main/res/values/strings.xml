@@ -13,4 +13,8 @@
     <string name="shows_seasons">SEASONS</string>
     <string name="shows_actors">ACTORS</string>
     <string name="shows_crew">CREW</string>
+    <string name="shows_start">Start:</string>
+    <string name="shows_end">End:</string>
+    <string name="shows_site">Web site:</string>
+    <string name="shows_rating">Rating:</string>
 </resources>

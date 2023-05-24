@@ -13,7 +13,7 @@ class ShowModel(
     val premiered: String,
     val ended: String,
     val schedule: ShowScheduleModel,
-    val rating: Double,
+    val rating: String,
     val officialSite: String,
     val url: String,
 )

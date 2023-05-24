@@ -18,15 +18,23 @@ val Typography = Typography(
         fontFamily = SEMI_BOLD,
         fontWeight = FontWeight.Normal,
         fontSize = 24.sp,
-        lineHeight = 28.sp,
+        lineHeight = 24.sp,
         letterSpacing = 0.sp,
+        color = Black
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = MEDIUM,
+        fontWeight = FontWeight.Normal,
+        fontSize = 20.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.5.sp,
         color = Black
     ),
     bodyLarge = TextStyle(
         fontFamily = REGULAR,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
+        lineHeight = 16.sp,
         letterSpacing = 0.5.sp,
         color = Black
     ),
@@ -34,7 +42,7 @@ val Typography = Typography(
         fontFamily = REGULAR,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        lineHeight = 24.sp,
+        lineHeight = 14.sp,
         letterSpacing = 0.5.sp,
         color = Black
     ),
@@ -42,7 +50,7 @@ val Typography = Typography(
         fontFamily = REGULAR,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
-        lineHeight = 24.sp,
+        lineHeight = 12.sp,
         letterSpacing = 0.5.sp,
         color = Black
     ),
@@ -58,7 +66,7 @@ val Typography = Typography(
         fontFamily = MEDIUM,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
-        lineHeight = 16.sp,
+        lineHeight = 12.sp,
         letterSpacing = 0.5.sp,
         color = Black
     )

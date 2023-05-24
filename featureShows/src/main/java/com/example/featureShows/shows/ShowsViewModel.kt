@@ -14,15 +14,13 @@ class ShowsViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     init {
-        load()
+        loadData()
     }
 
-    private fun load() {
+    private fun loadData() {
         viewModelScope.launch {
             sendState(ShowsListLoading)
-            val state = showsInteractor.allShows()
-            // val state = showsInteractor.detailShow("1")
-            when (state) {
+            when (val state = showsInteractor.allShows()) {
                 is ResultState.Success -> {
                     if (state.data.isEmpty()) {
                         sendState(ShowsListEmpty)
@@ -30,6 +28,7 @@ class ShowsViewModel @Inject constructor(
                         sendState(ShowsListSuccess(state.data))
                     }
                 }
+
                 is ResultState.Error -> {
                     sendState(ShowsListError(state.exception))
                 }
@@ -39,16 +38,17 @@ class ShowsViewModel @Inject constructor(
 
     override fun obtainEvent(event: BaseEvent?) {
         when (event) {
-            is ShowsDetailEvent -> {
+            is ShowShowsDetailEvent -> {
                 showDetailEvent(event.showsId)
             }
+
             else -> {}
         }
     }
 
     private fun showDetailEvent(showId: String) {
         viewModelScope.launch {
-            sendSideEffect(ShowsDetailEffect(showId))
+            sendSideEffect(ShowShowsDetailEffect(showId))
         }
     }
 

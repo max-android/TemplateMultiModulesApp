@@ -1,5 +1,6 @@
 package com.example.featureShows.shows
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,13 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -30,6 +29,7 @@ import com.example.coreUi.Green
 import com.example.coreUi.Purple700
 import com.example.coreUi.workComponents.ListShimmerComponent
 import com.example.coreUi.workComponents.LoadError
+import com.example.coreUi.workComponents.ShowsEmptyListUi
 import com.example.domain.model.shows.ListShowsModel
 import com.example.navigation.Screen
 import com.example.navigation.KEY_SHOWS_ID
@@ -43,7 +43,7 @@ fun ShowsComponent(navController: NavController, navBackStackEntry: NavBackStack
     val context = LocalContext.current
     ObserveState(
         state,
-        onClickItem = { showId -> viewModel.obtainEvent(ShowsDetailEvent(showId)) },
+        onClickItem = { showId -> viewModel.obtainEvent(ShowShowsDetailEvent(showId)) },
         onClickEpisodes = { showId ->
             Toast.makeText(context, "Episodes", Toast.LENGTH_SHORT).show()
         },
@@ -84,6 +84,9 @@ private fun ObserveState(
                 ListShimmerComponent()
             }
             is ShowsListError -> {
+                Log.i("--ERROR", "-----------1:"+showsState.exception)
+                Log.i("--ERROR", "-----------2:"+showsState.exception.message)
+                Log.i("--ERROR", "-----------3:"+showsState.exception.cause)
                 LoadError(showsState.exception)
             }
             else -> {
@@ -195,25 +198,13 @@ private fun ShowsListItem(
 }
 
 @Composable
-private fun ShowsEmptyListUi() {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Text(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            text = stringResource(id = R.string.title_empty_state),
-            color = Color.Black,
-            fontSize = 36.sp
-        )
-    }
-}
-
-@Composable
 private fun ObserveSideEffect(
     sideEffect: BaseViewModel.BaseSideEffect?,
     navController: NavController
 ) {
     sideEffect?.let { showsSideEffect ->
         when (showsSideEffect) {
-            is ShowsDetailEffect -> {
+            is ShowShowsDetailEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsDetailScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)

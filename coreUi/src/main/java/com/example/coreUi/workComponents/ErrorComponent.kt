@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.common.NoInternetException
 import com.example.common.R
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -23,6 +24,7 @@ fun LoadError(throwable: Throwable) {
         is UnknownHostException,
         is ConnectException,
         is SocketTimeoutException,
+        is NoInternetException
         -> {
             stringResource(id = R.string.not_network)
         }
@@ -45,6 +47,10 @@ fun LoadError(throwable: Throwable) {
                 .size(125.dp)
                 .align(Alignment.CenterHorizontally)
         )
-        Text(text = errorMessage, style = MaterialTheme.typography.bodyLarge)
+        Text(
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+            text = errorMessage,
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }

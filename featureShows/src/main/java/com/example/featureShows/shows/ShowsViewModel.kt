@@ -1,5 +1,6 @@
 package com.example.featureShows.shows
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.common.BaseViewModel
 import com.example.domain.common.ResultState
@@ -14,10 +15,12 @@ class ShowsViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     init {
+        Log.i("--STATE", "-------------ShowsViewModel INIT")
         loadData()
     }
 
     private fun loadData() {
+        Log.i("--STATE", "-------------ShowsComponent loadData()")
         viewModelScope.launch {
             sendState(ShowsListLoading)
             when (val state = showsInteractor.allShows()) {

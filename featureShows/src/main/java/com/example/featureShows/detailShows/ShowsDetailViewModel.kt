@@ -1,5 +1,6 @@
 package com.example.featureShows.detailShows
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.example.common.BaseViewModel
@@ -18,6 +19,7 @@ class ShowsDetailViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     init {
+        Log.i("--STATE", "-------------ShowsDetailViewModel INIT")
         loadData()
     }
 

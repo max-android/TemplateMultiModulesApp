@@ -1,5 +1,6 @@
 package com.example.domain.interactor
 
+import android.util.Log
 import com.example.domain.common.ResultState
 import com.example.domain.model.shows.ListShowsModel
 import com.example.domain.model.shows.ShowModel
@@ -12,6 +13,7 @@ class ShowsInteractor @Inject constructor(
 
     suspend fun allShows(): ResultState<List<ListShowsModel>> {
         return try {
+            Log.i("--STATE", "-------------ShowsComponent request()")
             val shows = showsRepository.allShows()
             ResultState.Success(shows)
         } catch (throwable: Throwable) {

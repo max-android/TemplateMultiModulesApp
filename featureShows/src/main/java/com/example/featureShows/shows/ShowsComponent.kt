@@ -37,6 +37,7 @@ import com.example.navigation.navigateWithBundleSafe
 
 @Composable
 fun ShowsComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
+    Log.i("--STATE", "-------------ShowsComponent")
     val viewModel = hiltViewModel<ShowsViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val sideEffect by viewModel.sideEffect.collectAsStateWithLifecycle(null)
@@ -68,6 +69,7 @@ private fun ObserveState(
     state?.let { showsState ->
         when (showsState) {
             is ShowsListSuccess -> {
+                Log.i("--STATE", "-------------ShowsComponent ShowsListSuccess")
                 ShowsListUi(
                     showsState.listShows,
                     onClickItem,
@@ -81,16 +83,15 @@ private fun ObserveState(
                 ShowsEmptyListUi()
             }
             is ShowsListLoading -> {
+                Log.i("--STATE", "-------------ShowsComponent ShowsListLoading")
                 ListShimmerComponent()
             }
             is ShowsListError -> {
-                Log.i("--ERROR", "-----------1:"+showsState.exception)
-                Log.i("--ERROR", "-----------2:"+showsState.exception.message)
-                Log.i("--ERROR", "-----------3:"+showsState.exception.cause)
+                Log.i("--STATE", "-------------ShowsComponent ShowsListError")
                 LoadError(showsState.exception)
             }
             else -> {
-
+                Log.i("--STATE", "-------------ShowsComponent ELSE")
             }
         }
     }
@@ -205,6 +206,7 @@ private fun ObserveSideEffect(
     sideEffect?.let { showsSideEffect ->
         when (showsSideEffect) {
             is ShowShowsDetailEffect -> {
+                Log.i("--STATE", "------------ShowShowsDetailEffect")
                 navController.navigateWithBundleSafe(
                     Screen.ShowsDetailScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)

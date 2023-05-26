@@ -1,5 +1,6 @@
 package com.example.featureRoot
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -25,6 +26,7 @@ import com.example.navigation.*
 
 @Composable
 fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean) -> Unit) {
+    Log.i("--STATE", "------------BaseRootComponent")
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -87,6 +89,7 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
                             unselectedContentColor = MaterialTheme.colors.primaryVariant,
                             onClick = {
                                 navController.navigateSafeWithBuilder(tabBarItem.screen.route) {
+                                    Log.i("--STATE", "------------ROOT---")
 //                                        // Pop up to the start destination of the graph to
 //                                        // avoid building up a large stack of destinations
 //                                        // on the back stack as users select items
@@ -99,7 +102,9 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
 //                                        // Avoid multiple copies of the same destination when
 //                                        // reselecting the same item
                                     launchSingleTop = true
+
                                     // Restore state when reselecting a previously selected item
+                                    // не чистим стек при повторном нажатии таба
                                     restoreState = true
                                 }
                             }

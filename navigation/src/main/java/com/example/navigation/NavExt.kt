@@ -76,10 +76,11 @@ fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
 }
 
 fun NavDestination.updateSelectedTab(index: Int, tabBarItem: BottomNavItem): Boolean {
-    return route == tabBarItem.screen.route ||
-            route == Screen.RootScreen.route && index == 0 ||
-            route == Screen.ShowsScreen.route && index == 0 ||
-            route == Screen.PeoplesScreen.route && index == 0 ||
-            route == Screen.QuoteScreen.route && index == 0 ||
-            route == Screen.ArticlesScreen.route && index == 0
+    return route == tabBarItem.screen.route
+            || route == Screen.ShowsDetailScreen.route && index == 1
+//            route == Screen.RootScreen.route && index == 0 ||
+//            route == Screen.ShowsScreen.route && index == 1 ||
+//            route == Screen.PeoplesScreen.route && index == 2 ||
+//            route == Screen.QuoteScreen.route && index == 3 ||
+//            route == Screen.ArticlesScreen.route && index == 4
 }

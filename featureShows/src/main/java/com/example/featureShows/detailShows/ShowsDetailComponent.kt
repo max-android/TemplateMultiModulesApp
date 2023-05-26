@@ -1,5 +1,6 @@
 package com.example.featureShows.detailShows
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -31,6 +32,7 @@ import com.example.domain.model.shows.ShowModel
 
 @Composable
 fun ShowsDetailComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
+    Log.i("--STATE", "-------------DetailComponent ")
     val viewModel = hiltViewModel<ShowsDetailViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val sideEffect by viewModel.sideEffect.collectAsStateWithLifecycle(null)
@@ -49,19 +51,22 @@ private fun ObserveState(
     state?.let { showsState ->
         when (showsState) {
             is ShowsDetailSuccess -> {
+                Log.i("--STATE", "------------DetailComponent-ShowsDetailUi ")
                 ShowsDetailUi(showsState.showModel, onClickSiteItem)
             }
 
             is ShowsDetailLoading -> {
+                Log.i("--STATE", "------------DetailComponent-ShowsDetailLoading ")
                 DetailShimmerComponent()
             }
 
             is ShowsDetailError -> {
+                Log.i("--STATE", "------------DetailComponent-ShowsDetailError ")
                 LoadError(showsState.exception)
             }
 
             else -> {
-
+                Log.i("--STATE", "------------DetailComponent-ELSE")
             }
         }
     }

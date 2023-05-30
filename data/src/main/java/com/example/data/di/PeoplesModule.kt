@@ -1,8 +1,11 @@
 package com.example.data.di
 
 import com.example.data.network.TvShowsRestService
+import com.example.data.repository.PeoplesRepositoryImpl
 import com.example.data.repository.ShowsRepositoryImpl
+import com.example.domain.interactor.PeoplesInteractor
 import com.example.domain.interactor.ShowsInteractor
+import com.example.domain.repository.PeoplesRepository
 import com.example.domain.repository.ShowsRepository
 import dagger.Module
 import dagger.Provides
@@ -12,18 +15,18 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-object ShowsModule {
+object PeoplesModule {
 
     @Provides
     @ViewModelScoped
-    fun bindShowsRepo(
+    fun bindPeoplesRepo(
         @NetworkModule.ShowsRemoteApi tvShowsRestService: TvShowsRestService
-    ): ShowsRepository = ShowsRepositoryImpl(tvShowsRestService)
+    ): PeoplesRepository = PeoplesRepositoryImpl(tvShowsRestService)
 
     @Provides
     @ViewModelScoped
-    fun bindShowsInteractor(
-        showsRepository: ShowsRepository
-    ): ShowsInteractor = ShowsInteractor(showsRepository)
+    fun bindPeoplesInteractor(
+        peoplesRepository: PeoplesRepository
+    ): PeoplesInteractor = PeoplesInteractor(peoplesRepository)
 
 }

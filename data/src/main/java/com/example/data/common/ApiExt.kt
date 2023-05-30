@@ -43,13 +43,13 @@ fun <T : Any> Response<T>.oldHandleBodyDto(): ApiResult<T> {
 fun <T> Response<T>.handleBodyDto(): T {
     val body = this.body()
     return if (this.isSuccessful) {
-        body ?: throw InvalidResponseException("Response body is null")
+        body ?: throw InvalidResponseException("Dto body is null")
     } else {
         val errorBody: ResponseBody? = errorBody()
         errorBody?.let {
             val errorResponse: ErrorResponse? = parseError(errorBody)
             throw throwException(code(), errorResponse?.message.orEmpty())
-        } ?: throw RuntimeException("Response body and error body is null")
+        } ?: throw RuntimeException("Dto body and error body is null")
     }
 }
 

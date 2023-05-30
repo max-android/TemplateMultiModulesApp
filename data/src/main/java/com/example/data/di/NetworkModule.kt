@@ -7,7 +7,7 @@ import com.example.data.common.createRestService
 import com.example.data.network.old.ApiService
 import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
-import com.example.data.network.ShowsRestService
+import com.example.data.network.TvShowsRestService
 import com.example.data.network.old.NewsRestService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -99,11 +99,11 @@ object NetworkModule {
     fun provideShowsRestService(
         moshiConverterFactory: MoshiConverterFactory,
         okHttpClient: OkHttpClient
-    ): ShowsRestService = createRestService(
+    ): TvShowsRestService = createRestService(
         moshiConverterFactory,
         okHttpClient,
         SHOWS_BASE_URL,
-        ShowsRestService::class.java
+        TvShowsRestService::class.java
     )
 
 

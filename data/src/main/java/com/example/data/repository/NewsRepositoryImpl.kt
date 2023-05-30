@@ -7,6 +7,7 @@ import com.example.domain.model.*
 import com.example.domain.repository.NewsRepository
 import javax.inject.Inject
 
+//TODO удалить
 class NewsRepositoryImpl @Inject constructor(
      private val newsRestService: NewsRestService
 ) : NewsRepository {

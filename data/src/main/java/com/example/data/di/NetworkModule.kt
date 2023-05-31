@@ -10,6 +10,8 @@ import com.example.data.network.InternetInterceptor
 import com.example.data.network.QuoteRestService
 import com.example.data.network.TvShowsRestService
 import com.example.data.network.NewsRestService
+import com.example.data.network.OpenCollectiveRestService
+import com.example.data.network.SpaceflightNewsRestService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -121,6 +123,40 @@ object NetworkModule {
         okHttpClient,
         QUOTE_BASE_URL,
         QuoteRestService::class.java
+    )
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class SpaceflightNewsRemoteApi
+
+    @SpaceflightNewsRemoteApi
+    @Provides
+    @Singleton
+    fun provideSpaceflightNewsRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): SpaceflightNewsRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        SPACE_FLIGHT_NEWS_BASE_URL,
+        SpaceflightNewsRestService::class.java
+    )
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class OpenCollectiveRemoteApi
+
+    @OpenCollectiveRemoteApi
+    @Provides
+    @Singleton
+    fun provideOpenCollectiveRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): OpenCollectiveRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        OPEN_COLLECTIVE_BASE_URL,
+        OpenCollectiveRestService::class.java
     )
 
 }

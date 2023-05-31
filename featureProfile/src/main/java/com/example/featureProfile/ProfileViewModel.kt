@@ -45,49 +45,8 @@ class ProfileViewModel @Inject constructor(
     private fun showContentAction() {
         viewModelScope.launch {
 
-            val resultState = newsInteractor.loadNews()
-            when (resultState) {
-                is ResultState.Success -> {
-                    sendState(ProfileViewState.SuccessProfileState(resultState.data))
-                }
-                is ResultState.Error -> {
-                    Log.i("--STATE", "---------------Throwable: " + resultState.exception.message)
-                    sendState(ProfileViewState.ExceptionProfileState(resultState.exception))
-                    sendSideEffect(ProfileSideEffect.ShowToast)
-                }
-            }
 
-
-            val profileModel = profileInteractor.loadProfile()
-            try {
-                // val news = newsInteractor.loadNews()
-
-                // } catch (e: ServerProblemException) {
-                //  Log.i("--STATE", "---------------HttpException: "+e.message)
-                //_state.emit(ProfileViewState.ErrorProfileState(e.response.code, e.response.message))
-            } catch (e: Throwable) {
-                Log.i("--STATE", "---------------Throwable: " + e.message)
-
-                //_state.emit(ProfileViewState.ExceptionProfileState(e))
-            }
-
-
-//            when (news) {
-//                is NewsDomainSuccess -> {
-//                    _state.emit(ProfileViewState.SuccessProfileState(news.data))
-//                    news.data.forEach {
-//                Log.i("--DATA", "--------" + it.imageUrl)
-//            }
-//                }
-//                is NewsDomainError -> {
-//
-//                }
-//                is NewsDomainException -> {
-//
-//                }
-//            }
-
-
+            
         }
     }
 

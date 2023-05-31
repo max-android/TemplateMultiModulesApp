@@ -9,10 +9,14 @@ class NewsInteractor @Inject constructor(
     private val newsRepository: NewsRepository
 ) {
 
-    suspend fun loadNews(): ResultState<List<NewsModel>> {
+    suspend fun categories(): ResultState<List<String>> {
+        return ResultState.Success(newsRepository.categories())
+    }
+
+    suspend fun news(category: String): ResultState<List<NewsModel>> {
         return try {
-            val mews = newsRepository.loadNews()
-            ResultState.Success(mews)
+            val news = newsRepository.news(category)
+            ResultState.Success(news)
         } catch (throwable: Throwable) {
             ResultState.Error(throwable)
         }

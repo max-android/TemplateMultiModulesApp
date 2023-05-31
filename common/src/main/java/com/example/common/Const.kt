@@ -8,6 +8,6 @@ const val WRITE_TIMEOUT = 10000L
 const val TOTAL_ITEM = 10
 const val DEFAULT_POSITION = 0
 const val AGENT = "Android"
-const val NEWS_BASE_URL = "https://api.spaceflightnewsapi.net/v3/"
+const val NEWS_BASE_URL = "https://inshorts.deta.dev/"
 const val SHOWS_BASE_URL = "https://api.tvmaze.com/"
 const val QUOTE_BASE_URL = "https://web-series-quotes-api.deta.dev/"

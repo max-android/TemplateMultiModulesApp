@@ -9,7 +9,7 @@ import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
 import com.example.data.network.QuoteRestService
 import com.example.data.network.TvShowsRestService
-import com.example.data.network.old.NewsRestService
+import com.example.data.network.NewsRestService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module

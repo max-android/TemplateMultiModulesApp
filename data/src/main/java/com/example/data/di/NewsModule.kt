@@ -1,6 +1,6 @@
 package com.example.data.di
 
-import com.example.data.network.old.NewsRestService
+import com.example.data.network.NewsRestService
 import com.example.data.repository.NewsRepositoryImpl
 import com.example.domain.interactor.NewsInteractor
 import com.example.domain.repository.NewsRepository

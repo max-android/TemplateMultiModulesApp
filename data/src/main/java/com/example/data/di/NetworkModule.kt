@@ -7,6 +7,7 @@ import com.example.data.common.createRestService
 import com.example.data.network.old.ApiService
 import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
+import com.example.data.network.QuoteRestService
 import com.example.data.network.TvShowsRestService
 import com.example.data.network.old.NewsRestService
 import com.squareup.moshi.Moshi
@@ -71,7 +72,6 @@ object NetworkModule {
     )
 
 
-
     @Qualifier
     @Retention(AnnotationRetention.RUNTIME)
     annotation class NewsRemoteApi
@@ -106,5 +106,21 @@ object NetworkModule {
         TvShowsRestService::class.java
     )
 
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class QuoteRemoteApi
+
+    @QuoteRemoteApi
+    @Provides
+    @Singleton
+    fun provideQuoteRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): QuoteRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        QUOTE_BASE_URL,
+        QuoteRestService::class.java
+    )
 
 }

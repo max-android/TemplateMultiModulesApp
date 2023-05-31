@@ -10,8 +10,9 @@ import com.example.data.network.TvShowsRestService
 import com.example.domain.model.peoples.CharacterModel
 import com.example.domain.model.peoples.PeopleModel
 import com.example.domain.repository.PeoplesRepository
+import javax.inject.Inject
 
-class PeoplesRepositoryImpl(
+class PeoplesRepositoryImpl @Inject constructor(
     private val tvShowsRestService: TvShowsRestService
 ) : PeoplesRepository {
 

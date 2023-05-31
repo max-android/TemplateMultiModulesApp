@@ -1,39 +1,41 @@
 package com.example.data.dto.shows.seasons
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
- class SeasonsDto(
+@JsonClass(generateAdapter = true)
+class SeasonsDto(
 
-     @Json(name="summary")
+    @Json(name = "summary")
     val summary: String? = null,
 
-     @Json(name="number")
+    @Json(name = "number")
     val number: Int? = null,
 
-     @Json(name="image")
+    @Json(name = "image")
     val image: SeasonsImageDto? = null,
 
-     @Json(name="premiereDate")
+    @Json(name = "premiereDate")
     val premiereDate: String? = null,
 
-     @Json(name="endDate")
+    @Json(name = "endDate")
     val endDate: String? = null,
 
-     @Json(name="webChannel")
+    @Json(name = "webChannel")
     val webChannel: String? = null,
 
-     @Json(name="name")
+    @Json(name = "name")
     val name: String? = null,
 
-     @Json(name="episodeOrder")
+    @Json(name = "episodeOrder")
     val episodeOrder: Int? = null,
 
-     @Json(name="id")
+    @Json(name = "id")
     val id: Int? = null,
 
-     @Json(name="url")
+    @Json(name = "url")
     val url: String? = null,
 
-     @Json(name="network")
+    @Json(name = "network")
     val network: SeasonsNetworkDto? = null
 )

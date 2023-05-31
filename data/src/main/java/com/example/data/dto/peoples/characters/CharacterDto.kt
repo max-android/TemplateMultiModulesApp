@@ -2,7 +2,9 @@ package com.example.data.dto.peoples.characters
 
 import com.example.data.dto.peoples.person.ImagePeopleDto
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 class CharacterDto(
     @Json(name="id")
     val id: Int? = null,

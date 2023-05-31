@@ -1,9 +1,11 @@
 package com.example.data.dto.peoples.cast
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
- class ShowPersonCastCreditsDto(
+@JsonClass(generateAdapter = true)
+class ShowPersonCastCreditsDto(
 
-	@Json(name="href")
-	val href: String? = null
+    @Json(name = "href")
+    val href: String? = null
 )

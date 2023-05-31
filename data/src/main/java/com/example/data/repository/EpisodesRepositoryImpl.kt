@@ -10,8 +10,9 @@ import com.example.domain.model.episodes.EpisodesModel
 import com.example.domain.model.episodes.GuestCastEpisodesModel
 import com.example.domain.model.episodes.GuestCrewEpisodesModel
 import com.example.domain.repository.EpisodesRepository
+import javax.inject.Inject
 
-class EpisodesRepositoryImpl(
+class EpisodesRepositoryImpl @Inject constructor(
     private val tvShowsRestService: TvShowsRestService
 ) : EpisodesRepository {
 

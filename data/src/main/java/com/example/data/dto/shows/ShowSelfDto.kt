@@ -4,8 +4,8 @@ import com.squareup.moshi.JsonClass
 import com.squareup.moshi.Json
 
 @JsonClass(generateAdapter = true)
- class ShowSelfDto(
+class ShowSelfDto(
 
-	@Json(name="href")
-	val href: String? = null
+    @Json(name = "href")
+    val href: String? = null
 )

@@ -47,8 +47,8 @@ ext {
             ],
 
             'di'         : [
-                    'hilt'        : "com.google.dagger:hilt-android:2.45",
-                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.45",
+                    'hilt'        : "com.google.dagger:hilt-android:2.46.1",
+                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.46.1",
                     'hiltNavi'    : 'androidx.hilt:hilt-navigation-compose:1.1.0-alpha01'
             ],
 

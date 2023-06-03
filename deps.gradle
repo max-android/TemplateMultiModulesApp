@@ -3,42 +3,42 @@ ext {
     versions = [
             'retrofit' : '2.9.0',
             'okhttp'   : '5.0.0-alpha.11',
-            'coroutine': '1.6.4',
+            'coroutine': '1.7.1',
             'lifecycle': '2.6.1',
-            'room'     : '2.5.0',
-            'moshi'    : '1.14.0',
+            'room'     : '2.5.1',
+            'moshi'    : '1.15.0',
     ]
 
     deps = [
 
             'baseAndroid': [
-                    'coreKtx'    : "androidx.core:core-ktx:1.9.0",
+                    'coreKtx'    : "androidx.core:core-ktx:1.10.1",
                     'annotations': "androidx.annotation:annotation:1.6.0",
                     'appCompat'  : "androidx.appcompat:appcompat:1.6.1",
-                    'fragment'   : "androidx.fragment:fragment-ktx:1.5.6",
-                    'activity'   : "androidx.activity:activity-ktx:1.7.0",
-                    'material3'  : "androidx.compose.material3:material3:1.1.0-beta02"
+                    'fragment'   : "androidx.fragment:fragment-ktx:1.5.7",
+                    'activity'   : "androidx.activity:activity-ktx:1.7.2",
+                    'material3'  : "androidx.compose.material3:material3:1.1.0"
             ],
 
             'compose'    : [
-                    'activityCompose'        : "androidx.activity:activity-compose:1.7.0",
-                    'materialCompose'        : "androidx.compose.material:material:1.4.1",
-                    'materialIconCompose'    : "androidx.compose.material:material-icons-core:1.4.1",
-                    'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:1.4.1",
-                    'materialRippleCompose'  : "androidx.compose.material:material-ripple:1.4.1",
-                    'runtimeCompose'         : "androidx.compose.runtime:runtime:1.4.1",
-                    'composeUi'              : "androidx.compose.ui:ui:1.4.1",
-                    'composeUiTooling'       : "androidx.compose.ui:ui-tooling-preview:1.4.1",
-                    'composeUtil'            : "androidx.compose.ui:ui-util:1.4.1",
-                    'composeGeometry'        : "androidx.compose.ui:ui-geometry:1.4.1",
-                    'composeGraphics'        : "androidx.compose.ui:ui-graphics:1.4.1",
-                    'composeFoundation'      : "androidx.compose.foundation:foundation:1.4.1",
-                    'composeFoundationLayout': "androidx.compose.foundation:foundation-layout:1.4.1",
-                    'composeConstrainLayout' : "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha09",
-                    'composeAnimCore'        : "androidx.compose.animation:animation-core:1.4.1",
-                    'composeAnimation'       : "androidx.compose.animation:animation:1.4.1",
-                    'coil'                   : "io.coil-kt:coil-compose:2.3.0",
-                    'tooling'                : "androidx.compose.ui:ui-tooling:1.4.1"
+                    'activityCompose'        : "androidx.activity:activity-compose:1.7.2",
+                    'materialCompose'        : "androidx.compose.material:material:1.4.3",
+                    'materialIconCompose'    : "androidx.compose.material:material-icons-core:1.4.3",
+                    'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:1.4.3",
+                    'materialRippleCompose'  : "androidx.compose.material:material-ripple:1.4.3",
+                    'runtimeCompose'         : "androidx.compose.runtime:runtime:1.4.3",
+                    'composeUi'              : "androidx.compose.ui:ui:1.4.3",
+                    'composeUiTooling'       : "androidx.compose.ui:ui-tooling-preview:1.4.3",
+                    'composeUtil'            : "androidx.compose.ui:ui-util:1.4.3",
+                    'composeGeometry'        : "androidx.compose.ui:ui-geometry:1.4.3",
+                    'composeGraphics'        : "androidx.compose.ui:ui-graphics:1.4.3",
+                    'composeFoundation'      : "androidx.compose.foundation:foundation:1.4.3",
+                    'composeFoundationLayout': "androidx.compose.foundation:foundation-layout:1.4.3",
+                    'composeConstrainLayout' : "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha10",
+                    'composeAnimCore'        : "androidx.compose.animation:animation-core:1.4.3",
+                    'composeAnimation'       : "androidx.compose.animation:animation:1.4.3",
+                    'coil'                   : "io.coil-kt:coil-compose:2.4.0",
+                    'tooling'                : "androidx.compose.ui:ui-tooling:1.4.3"
             ],
 
             'coroutines' : [
@@ -56,26 +56,26 @@ ext {
 
 
             'navigation' : [
-                    'navCompose': "androidx.navigation:navigation-compose:2.6.0-alpha09",
-                    'navCommon' : 'androidx.navigation:navigation-common:2.6.0-alpha09'
+                    'navCompose': "androidx.navigation:navigation-compose:2.6.0-rc02",
+                    'navCommon' : 'androidx.navigation:navigation-common:2.6.0-rc02'
             ],
 
             'lifecycle'  : [
                     'lifecycle'               : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}",
                     'liveData'                : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
                     'viewModel'               : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
-                    'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1',
+                    'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1',
                     'lifecycleReactivestreams': "androidx.lifecycle:lifecycle-reactivestreams-ktx:${versions.lifecycle}",
-                    'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha04"
+                    'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.6.1"
             ],
 
             'google'     : [
                     'firebase': [
                             'bom'        : "com.google.firebase:firebase-bom:31.2.1",
-                            'push'       : "com.google.firebase:firebase-messaging-ktx:23.1.1",
-                            'crashlytics': "com.google.firebase:firebase-crashlytics-ktx:18.3.4",
-                            'analytics'  : "com.google.firebase:firebase-analytics-ktx:21.2.0",
-                            'config'     : "com.google.firebase:firebase-config-ktx:21.2.1"
+                            'push'       : "com.google.firebase:firebase-messaging-ktx:23.1.2",
+                            'crashlytics': "com.google.firebase:firebase-crashlytics-ktx:18.3.7",
+                            'analytics'  : "com.google.firebase:firebase-analytics-ktx:21.3.0",
+                            'config'     : "com.google.firebase:firebase-config-ktx:21.4.0"
                     ],
             ],
 

@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
@@ -49,9 +51,26 @@ fun ShimmerListItem(
     }
 }
 
+@Composable
+fun LoadingView(
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        modifier = modifier,
+    ) {
+        CircularProgressIndicator(
+            modifier = Modifier
+                .height(34.dp)
+                .width(34.dp)
+                .align(Alignment.Center)
+        )
+    }
+}
+
 @Preview
 @Composable
 fun ShimmerPreview() {
+    LoadingView(modifier = Modifier.fillMaxSize())
     ShimmerListItem(true, {
 
     })

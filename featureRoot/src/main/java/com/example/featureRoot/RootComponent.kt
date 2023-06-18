@@ -123,6 +123,10 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
                 screenStarter.startProfile().create(this, navController)
                 screenStarter.startShows().create(this, navController)
                 screenStarter.startShowsDetail().create(this, navController)
+                screenStarter.startPeoples().create(this, navController)
+                screenStarter.startPeopleDetail().create(this, navController)
+                screenStarter.startPeopleCharacters().create(this, navController)
+
                 //dialog()
 //                navigation(route = "someRoute", startDestination = "first") {
 //                    composable()

@@ -29,8 +29,7 @@ class PeoplesRepositoryImpl @Inject constructor(
     }
 
     override suspend fun charactersPeople(idCharacter: String): List<CharacterModel> {
-        return tvShowsRestService.charactersPeople(idCharacter).handleBodyDto()
-            .toListCharacterModel()
+        return tvShowsRestService.charactersPeople(idCharacter).handleBodyDto().toListCharacterModel()
     }
 
     override suspend fun searchPeoples(people: String): List<PeopleModel> {

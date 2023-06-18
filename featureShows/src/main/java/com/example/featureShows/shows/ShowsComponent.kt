@@ -29,7 +29,7 @@ import com.example.coreUi.Green
 import com.example.coreUi.Purple700
 import com.example.coreUi.workComponents.ListShimmerComponent
 import com.example.coreUi.workComponents.LoadError
-import com.example.coreUi.workComponents.ShowsEmptyListUi
+import com.example.coreUi.workComponents.EmptyListUi
 import com.example.domain.model.shows.ListShowsModel
 import com.example.navigation.Screen
 import com.example.navigation.KEY_SHOWS_ID
@@ -80,7 +80,7 @@ private fun ObserveState(
                 )
             }
             is ShowsListEmpty -> {
-                ShowsEmptyListUi()
+                EmptyListUi()
             }
             is ShowsListLoading -> {
                 Log.i("--STATE", "-------------ShowsComponent ShowsListLoading")

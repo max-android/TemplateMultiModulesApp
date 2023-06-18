@@ -17,4 +17,8 @@
     <string name="shows_end">End:</string>
     <string name="shows_site">Web site:</string>
     <string name="shows_rating">Rating:</string>
+    <string name="gender">Gender:</string>
+    <string name="birthday">Birthday:</string>
+    <string name="country">Country:</string>
+    <string name="characters">CHARACTERS</string>
 </resources>

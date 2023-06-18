@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.example.navigation.KEY_SHOWS_ID
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 
 @HiltViewModel
 class ShowsDetailViewModel @Inject constructor(

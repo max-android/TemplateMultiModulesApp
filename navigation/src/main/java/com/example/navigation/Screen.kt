@@ -4,15 +4,20 @@ sealed class Screen(val route: String) {
     object RootScreen: Screen(NavRoute.ROOT_ROUTE)
 
     object ShowsScreen: Screen(NavRoute.SHOWS_ROUTE)
+    object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL_ROUTE)
 
     object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
+    object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)
+    object PeopleCharactersScreen: Screen(NavRoute.PEOPLE_CHARACTERS_ROUTE)
+
     object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
     object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
 
+
+
+
     //TODO удалить после разработки пары модулей
     object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
-    object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL)
-
 }
 
 //// Pop everything up to the "home" destination off the back stack before

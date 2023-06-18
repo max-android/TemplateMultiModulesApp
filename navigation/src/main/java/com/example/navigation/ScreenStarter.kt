@@ -8,6 +8,11 @@ interface ScreenStarter {
 
     fun startShowsDetail(): ComposeNavFactory
 
+    fun startPeoples(): ComposeNavFactory
+
+    fun startPeopleDetail(): ComposeNavFactory
+
+    fun startPeopleCharacters(): ComposeNavFactory
 
 
     //TODO удалить после разработки пары модулей

@@ -70,17 +70,17 @@ fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
                 currentDestination.contains(Screen.ShowsScreen.route) ||
                 currentDestination.contains(Screen.PeoplesScreen.route) ||
                 currentDestination.contains(Screen.QuoteScreen.route) ||
-                currentDestination.contains(Screen.ArticlesScreen.route)
+                currentDestination.contains(Screen.ArticlesScreen.route) ||
+                currentDestination.contains(Screen.ShowsDetailScreen.route) ||
+                currentDestination.contains(Screen.PeopleDetailScreen.route) ||
+                currentDestination.contains(Screen.PeopleCharactersScreen.route)
     }
     return false
 }
 
 fun NavDestination.updateSelectedTab(index: Int, tabBarItem: BottomNavItem): Boolean {
-    return route == tabBarItem.screen.route
-            || route == Screen.ShowsDetailScreen.route && index == 1
-//            route == Screen.RootScreen.route && index == 0 ||
-//            route == Screen.ShowsScreen.route && index == 1 ||
-//            route == Screen.PeoplesScreen.route && index == 2 ||
-//            route == Screen.QuoteScreen.route && index == 3 ||
-//            route == Screen.ArticlesScreen.route && index == 4
+    return route == tabBarItem.screen.route ||
+            (route == Screen.ShowsDetailScreen.route && index == 1) ||
+            (route == Screen.PeopleDetailScreen.route && index == 2) ||
+            (route == Screen.PeopleCharactersScreen.route && index == 2)
 }

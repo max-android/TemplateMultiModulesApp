@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 import com.example.common.R
 
 @Composable
-fun ShowsEmptyListUi() {
+fun EmptyListUi() {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
             modifier = Modifier.align(Alignment.CenterHorizontally),

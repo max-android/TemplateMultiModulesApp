@@ -1,12 +1,12 @@
 package com.example.domain.model.peoples
 
 class PeopleModel(
-    id: String,
-    name: String,
-    url: String,
-    gender: String,
-    birthday: String,
-    country: String,
-    originalImage: String,
-    mediumImage: String,
+    val id: String,
+    val name: String,
+    val url: String,
+    val gender: String,
+    val birthday: String,
+    val country: String,
+    val originalImage: String,
+    val mediumImage: String,
 )

@@ -1,9 +1,13 @@
 package com.example.domain.interactor
 
+import android.util.Log
 import com.example.domain.common.ResultState
 import com.example.domain.model.peoples.CharacterModel
 import com.example.domain.model.peoples.PeopleModel
 import com.example.domain.repository.PeoplesRepository
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import javax.inject.Inject
 
 class PeoplesInteractor @Inject constructor(
@@ -28,18 +32,12 @@ class PeoplesInteractor @Inject constructor(
         }
     }
 
-    suspend fun castCreditsPeople(idPeople: String): ResultState<List<String>> {
+    suspend fun castCreditsPeople(idPeople: String): ResultState<CharacterModel> {
         return try {
-            val charactersIds = peoplesRepository.castCreditsPeople(idPeople)
-            ResultState.Success(charactersIds)
-        } catch (throwable: Throwable) {
-            ResultState.Error(throwable)
-        }
-    }
-
-    suspend fun charactersPeople(idCharacter: String): ResultState<List<CharacterModel>> {
-        return try {
-            val characters = peoplesRepository.charactersPeople(idCharacter)
+            val charactersIds: List<String> = peoplesRepository.castCreditsPeople(idPeople)
+            val characters: CharacterModel = charactersIds.firstNotNullOf { ids ->
+                peoplesRepository.charactersPeople(ids)
+            }
             ResultState.Success(characters)
         } catch (throwable: Throwable) {
             ResultState.Error(throwable)

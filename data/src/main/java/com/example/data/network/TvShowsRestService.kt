@@ -91,7 +91,7 @@ interface TvShowsRestService {
     suspend fun castCreditsPeople(@Path("id") id: String): Response<List<PeopleCastCreditsDto>>
 
     @GET("characters/{id}")
-    suspend fun charactersPeople(@Path("id") id: String): Response<List<CharacterDto>>
+    suspend fun charactersPeople(@Path("id") id: String): Response<CharacterDto>
 
     //https://api.tvmaze.com/search/people?q=lauren
     @GET("search/people")

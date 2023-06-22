@@ -11,7 +11,7 @@ interface PeoplesRepository {
 
     suspend fun castCreditsPeople(idPeople: String): List<String>
 
-    suspend fun charactersPeople(idCharacter: String): List<CharacterModel>
+    suspend fun charactersPeople(idCharacter: String): CharacterModel
 
     suspend fun searchPeoples(people: String): List<PeopleModel>
 

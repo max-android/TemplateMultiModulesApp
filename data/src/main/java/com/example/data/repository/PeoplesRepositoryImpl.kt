@@ -1,6 +1,7 @@
 package com.example.data.repository
 
 import com.example.data.common.handleBodyDto
+import com.example.data.mapper.toCharacterModel
 import com.example.data.mapper.toListCharacterIds
 import com.example.data.mapper.toListCharacterModel
 import com.example.data.mapper.toListPeopleModel
@@ -28,8 +29,8 @@ class PeoplesRepositoryImpl @Inject constructor(
         return tvShowsRestService.castCreditsPeople(idPeople).handleBodyDto().toListCharacterIds()
     }
 
-    override suspend fun charactersPeople(idCharacter: String): List<CharacterModel> {
-        return tvShowsRestService.charactersPeople(idCharacter).handleBodyDto().toListCharacterModel()
+    override suspend fun charactersPeople(idCharacter: String): CharacterModel {
+        return tvShowsRestService.charactersPeople(idCharacter).handleBodyDto().toCharacterModel()
     }
 
     override suspend fun searchPeoples(people: String): List<PeopleModel> {

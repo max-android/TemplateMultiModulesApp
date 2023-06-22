@@ -20,6 +20,8 @@ class RootActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // TODO Window Inset
+        //https://habr.com/ru/companies/kts/articles/687310/
         setContent {
             ConfigureRoot()
         }

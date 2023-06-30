@@ -20,6 +20,6 @@ interface ShowsRepository {
 
     suspend fun imagesShows(idShow: String): List<ShowsImageModel>
 
-    suspend fun searchShows(shows: String): List<ShowModel>
+    suspend fun searchShows(shows: String): List<ListShowsModel>
 
 }

@@ -6,8 +6,10 @@ import com.example.common.BaseViewModel
 import com.example.domain.common.ResultState
 import com.example.domain.interactor.ShowsInteractor
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.example.common.BASE_DELAY
 
 @HiltViewModel
 class ShowsViewModel @Inject constructor(
@@ -45,6 +47,10 @@ class ShowsViewModel @Inject constructor(
                 showDetailEvent(event.showsId)
             }
 
+            is ShowSearchEvent -> {
+                showSearchEvent(event.search)
+            }
+
             else -> {}
         }
     }
@@ -53,6 +59,27 @@ class ShowsViewModel @Inject constructor(
         viewModelScope.launch {
             sendSideEffect(ShowShowsDetailEffect(showId))
         }
+    }
+
+    private fun showSearchEvent(search: String) {
+        viewModelScope.launch {
+            if (search.length < SEARCH_BORDER) return@launch
+            delay(BASE_DELAY)
+            when (val state = showsInteractor.searchShows(search)) {
+                is ResultState.Success -> {
+                    Log.i("--STATE", "-------------searchShows")
+                    sendState(ShowsListSuccess(state.data, search = search))
+                }
+
+                is ResultState.Error -> {
+                    sendState(ShowsListError(state.exception))
+                }
+            }
+        }
+    }
+
+    companion object  {
+        private const val SEARCH_BORDER = 3
     }
 
 }

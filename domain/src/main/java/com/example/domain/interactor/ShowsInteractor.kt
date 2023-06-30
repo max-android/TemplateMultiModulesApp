@@ -70,4 +70,13 @@ class ShowsInteractor @Inject constructor(
         }
     }
 
+    suspend fun searchShows(search: String): ResultState<List<ListShowsModel>> {
+        return try {
+            val shows = showsRepository.searchShows(search)
+            ResultState.Success(shows)
+        } catch (throwable: Throwable) {
+            ResultState.Error(throwable)
+        }
+    }
+
 }

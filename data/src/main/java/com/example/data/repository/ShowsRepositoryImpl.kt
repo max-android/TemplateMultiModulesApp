@@ -46,7 +46,7 @@ class ShowsRepositoryImpl @Inject constructor(
         return tvShowsRestService.imagesShows(idShow).handleBodyDto().toListShowsImageModel()
     }
 
-    override suspend fun searchShows(shows: String): List<ShowModel> {
+    override suspend fun searchShows(shows: String): List<ListShowsModel> {
         return tvShowsRestService.searchShows(shows).handleBodyDto().toListSearchShowsModel()
     }
 

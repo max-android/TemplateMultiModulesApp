@@ -50,6 +50,15 @@ fun ShowDto?.toShowModel(): ShowModel {
     )
 }
 
+fun ShowDto?.toListShowModel(): ListShowsModel {
+    return ListShowsModel(
+        id = this?.id.int(),
+        mediumImage = this?.showImageDto?.medium.orEmpty(),
+        name = this?.name.orEmpty(),
+        genres = this?.genres?.map { genre -> genre.orEmpty() } ?: emptyList()
+    )
+}
+
 fun ShowScheduleDto?.toShowScheduleModel(): ShowScheduleModel {
     return ShowScheduleModel(
         time = this?.time.orEmpty(),
@@ -92,6 +101,6 @@ private fun toShowsImageModel(showsImageDto: ShowsImageDto): ShowsImageModel {
     )
 }
 
-fun List<SearchShowsDto>?.toListSearchShowsModel(): List<ShowModel> {
-    return this?.map { searchItem -> searchItem.show.toShowModel() } ?: emptyList()
+fun List<SearchShowsDto>?.toListSearchShowsModel(): List<ListShowsModel> {
+    return this?.map { searchItem -> searchItem.show.toListShowModel() } ?: emptyList()
 }

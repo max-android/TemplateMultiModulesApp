@@ -22,4 +22,8 @@
     <string name="country">Country:</string>
     <string name="characters">CHARACTERS</string>
     <string name="search">Search</string>
+    <string name="date">Date:</string>
+    <string name="duration">Duration:</string>
+    <string name="guest_cast">GuestCast</string>
+    <string name="guest_crew">GuestCrew</string>
 </resources>

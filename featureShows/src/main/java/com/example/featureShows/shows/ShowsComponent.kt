@@ -65,14 +65,10 @@ fun ShowsComponent(navController: NavController, navBackStackEntry: NavBackStack
     ObserveState(
         state,
         onClickItem = { showId -> viewModel.obtainEvent(ShowShowsDetailEvent(showId)) },
-        onClickEpisodes = { showId ->
-            Toast.makeText(context, "Episodes", Toast.LENGTH_SHORT).show()
-        },
-        onClickSeasons = { showId ->
-            Toast.makeText(context, "Seasons", Toast.LENGTH_SHORT).show()
-        },
-        onClickActors = { showId -> Toast.makeText(context, "Actors", Toast.LENGTH_SHORT).show() },
-        onClickCrew = { showId -> Toast.makeText(context, "Crew", Toast.LENGTH_SHORT).show() },
+        onClickEpisodes = { showId -> Toast.makeText(context, "Episodes", Toast.LENGTH_SHORT).show() },
+        onClickSeasons = { showId -> viewModel.obtainEvent(ShowShowsSeasonsEvent(showId)) },
+        onClickActors = { showId -> viewModel.obtainEvent(ShowShowsCastEvent(showId)) },
+        onClickCrew = { showId -> viewModel.obtainEvent(ShowShowsCrewEvent(showId)) },
         onUpdateSearch = { search -> viewModel.obtainEvent(ShowSearchEvent(search)) }
     )
     ObserveSideEffect(sideEffect, navController)
@@ -277,6 +273,24 @@ private fun ObserveSideEffect(
                 Log.i("--STATE", "------------ShowShowsDetailEffect")
                 navController.navigateWithBundleSafe(
                     Screen.ShowsDetailScreen.route,
+                    bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
+                )
+            }
+            is ShowShowsSeasonsEffect -> {
+                navController.navigateWithBundleSafe(
+                    Screen.ShowsSeasonsScreen.route,
+                    bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
+                )
+            }
+            is ShowShowsCastEffect -> {
+                navController.navigateWithBundleSafe(
+                    Screen.ShowsCastScreen.route,
+                    bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
+                )
+            }
+            is ShowShowsCrewEffect -> {
+                navController.navigateWithBundleSafe(
+                    Screen.ShowsCrewScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }

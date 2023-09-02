@@ -5,6 +5,10 @@ sealed class Screen(val route: String) {
 
     object ShowsScreen: Screen(NavRoute.SHOWS_ROUTE)
     object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL_ROUTE)
+    object ShowsSeasonsScreen: Screen(NavRoute.SHOWS_SEASONS_DETAIL_ROUTE)
+    object ShowsCrewScreen: Screen(NavRoute.SHOWS_CREW_DETAIL_ROUTE)
+    object ShowsCastScreen: Screen(NavRoute.SHOWS_CAST_DETAIL_ROUTE)
+
 
     object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
     object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)

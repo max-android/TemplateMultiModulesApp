@@ -8,6 +8,12 @@ interface ScreenStarter {
 
     fun startShowsDetail(): ComposeNavFactory
 
+    fun startShowsSeasons(): ComposeNavFactory
+
+    fun startShowsCrew(): ComposeNavFactory
+
+    fun startShowsCast(): ComposeNavFactory
+
     fun startPeoples(): ComposeNavFactory
 
     fun startPeopleDetail(): ComposeNavFactory

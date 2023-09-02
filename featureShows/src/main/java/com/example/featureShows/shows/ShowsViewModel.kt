@@ -47,6 +47,18 @@ class ShowsViewModel @Inject constructor(
                 showDetailEvent(event.showsId)
             }
 
+            is ShowShowsSeasonsEvent -> {
+                showSeasonsEvent(event.showsId)
+            }
+
+            is ShowShowsCastEvent -> {
+                showCastEvent(event.showsId)
+            }
+
+            is ShowShowsCrewEvent -> {
+                showCrewEvent(event.showsId)
+            }
+
             is ShowSearchEvent -> {
                 showSearchEvent(event.search)
             }
@@ -58,6 +70,24 @@ class ShowsViewModel @Inject constructor(
     private fun showDetailEvent(showId: String) {
         viewModelScope.launch {
             sendSideEffect(ShowShowsDetailEffect(showId))
+        }
+    }
+
+    private fun showSeasonsEvent(showId: String) {
+        viewModelScope.launch {
+            sendSideEffect(ShowShowsSeasonsEffect(showId))
+        }
+    }
+
+    private fun showCastEvent(showId: String) {
+        viewModelScope.launch {
+            sendSideEffect(ShowShowsCastEffect(showId))
+        }
+    }
+
+    private fun showCrewEvent(showId: String) {
+        viewModelScope.launch {
+            sendSideEffect(ShowShowsCrewEffect(showId))
         }
     }
 

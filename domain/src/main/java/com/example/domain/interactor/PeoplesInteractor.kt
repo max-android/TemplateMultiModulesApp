@@ -1,13 +1,9 @@
 package com.example.domain.interactor
 
-import android.util.Log
 import com.example.domain.common.ResultState
 import com.example.domain.model.peoples.CharacterModel
 import com.example.domain.model.peoples.PeopleModel
 import com.example.domain.repository.PeoplesRepository
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
 import javax.inject.Inject
 
 class PeoplesInteractor @Inject constructor(

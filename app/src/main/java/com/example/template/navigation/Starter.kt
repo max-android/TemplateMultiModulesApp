@@ -6,6 +6,9 @@ import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
 import com.example.featureProfile.ProfileScreenFactory
 import com.example.featureRoot.RootScreenFactory
+import com.example.featureSeasons.ShowsSeasonsScreenFactory
+import com.example.featureShows.castShows.ShowsCastScreenFactory
+import com.example.featureShows.crewShows.ShowsCrewScreenFactory
 import com.example.featureShows.shows.ShowsScreenFactory
 import com.example.featureShows.detailShows.ShowsDetailScreenFactory
 import com.example.navigation.ComposeNavFactory
@@ -24,6 +27,18 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
 
     override fun startShowsDetail(): ComposeNavFactory {
         return ShowsDetailScreenFactory()
+    }
+
+    override fun startShowsSeasons(): ComposeNavFactory {
+        return ShowsSeasonsScreenFactory()
+    }
+
+    override fun startShowsCrew(): ComposeNavFactory {
+        return ShowsCrewScreenFactory()
+    }
+
+    override fun startShowsCast(): ComposeNavFactory {
+        return ShowsCastScreenFactory()
     }
 
     override fun startPeoples(): ComposeNavFactory {

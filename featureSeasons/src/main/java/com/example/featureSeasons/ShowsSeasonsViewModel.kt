@@ -23,21 +23,33 @@ class ShowsSeasonsViewModel @Inject constructor(
     private fun loadData() {
         val showsId = savedStateHandle.get<String>(KEY_SHOWS_ID).orEmpty()
         viewModelScope.launch {
-            //sendState(ShowsDetailLoading)
+            sendState(ShowsSeasonsLoading)
             when (val state = showsInteractor.seasonsShows(showsId)) {
                 is ResultState.Success -> {
-                    //sendState(ShowsDetailSuccess(state.data))
+                    sendState(ShowsSeasonsSuccess(state.data))
                 }
 
                 is ResultState.Error -> {
-                    //sendState(ShowsDetailError(state.exception))
+                    sendState(ShowsSeasonsError(state.exception))
                 }
             }
         }
     }
 
     override fun obtainEvent(event: BaseEvent?) {
+        when (event) {
+            is ShowSiteSeasonsEvent -> {
+                showSiteSeasons(event.url)
+            }
 
+            else -> {}
+        }
+    }
+
+    private fun showSiteSeasons(url: String) {
+        viewModelScope.launch {
+            sendSideEffect(ShowSiteSeasonsEffect(url))
+        }
     }
 
 }

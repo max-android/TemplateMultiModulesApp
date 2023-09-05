@@ -26,4 +26,9 @@
     <string name="duration">Duration:</string>
     <string name="guest_cast">GuestCast</string>
     <string name="guest_crew">GuestCrew</string>
+    <string name="premiere_date">Premiere date:</string>
+    <string name="end_date">End date:</string>
+    <string name="summary">Summary:</string>
+    <string name="empty_name">Empty name</string>
+
 </resources>

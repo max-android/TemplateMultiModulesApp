@@ -23,14 +23,14 @@ class ShowsCrewViewModel @Inject constructor(
     private fun loadData() {
         val showsId = savedStateHandle.get<String>(KEY_SHOWS_ID).orEmpty()
         viewModelScope.launch {
-            //sendState(ShowsDetailLoading)
+            sendState(ShowsCrewLoading)
             when (val state = showsInteractor.crewShows(showsId)) {
                 is ResultState.Success -> {
-                    //sendState(ShowsDetailSuccess(state.data))
+                    sendState(ShowsCrewSuccess(state.data))
                 }
 
                 is ResultState.Error -> {
-                    //sendState(ShowsDetailError(state.exception))
+                    sendState(ShowsCrewError(state.exception))
                 }
             }
         }

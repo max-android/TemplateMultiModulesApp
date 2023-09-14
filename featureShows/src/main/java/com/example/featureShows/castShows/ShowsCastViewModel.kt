@@ -23,14 +23,14 @@ class ShowsCastViewModel @Inject constructor(
     private fun loadData() {
         val showsId = savedStateHandle.get<String>(KEY_SHOWS_ID).orEmpty()
         viewModelScope.launch {
-            //sendState(ShowsDetailLoading)
+            sendState(ShowsCastLoading)
             when (val state = showsInteractor.castShows(showsId)) {
                 is ResultState.Success -> {
-                    //sendState(ShowsDetailSuccess(state.data))
+                    sendState(ShowsCastSuccess(state.data))
                 }
 
                 is ResultState.Error -> {
-                    //sendState(ShowsDetailError(state.exception))
+                    sendState(ShowsCastError(state.exception))
                 }
             }
         }

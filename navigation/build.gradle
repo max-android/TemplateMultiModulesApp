@@ -26,7 +26,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.4.7'
+        kotlinCompilerExtensionVersion '1.5.1'
     }
     namespace 'com.example.navigation'
 //    packagingOptions {
@@ -41,7 +41,7 @@ dependencies {
     implementation project(path: ':domain')
 
 //    api deps.di.hilt
-//    kapt deps.di.hiltCompiler
+//    ksp deps.di.hiltCompiler
     api deps.di.hiltNavi
     api deps.navigation.navCompose
     api deps.navigation.navCommon

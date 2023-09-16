@@ -2,9 +2,10 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.example.template'
@@ -39,7 +40,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.4.7'
+        kotlinCompilerExtensionVersion '1.5.1'
     }
 
     android.packagingOptions.resources.excludes += "**/*.exclude"
@@ -75,7 +76,7 @@ dependencies {
     implementation project(path: ':featureNews')
 
     api deps.di.hilt
-    kapt deps.di.hiltCompiler
+    ksp deps.di.hiltCompiler
     api deps.di.hiltNavi
 
     api deps.navigation.navCompose

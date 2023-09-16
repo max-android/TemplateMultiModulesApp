@@ -25,7 +25,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.4.7'
+        kotlinCompilerExtensionVersion '1.5.1'
     }
     namespace 'com.example.coreUi'
 //    packagingOptions {
@@ -36,6 +36,7 @@ android {
 
 dependencies {
     api project(path: ':common')
+
     api deps.baseAndroid.coreKtx
     api deps.baseAndroid.annotations
     api deps.baseAndroid.appCompat
@@ -43,12 +44,12 @@ dependencies {
     api deps.baseAndroid.activity
     api deps.baseAndroid.material3
     api deps.customUi.datetime
+    api deps.compose.runtimeCompose
     api deps.compose.activityCompose
     api deps.compose.materialCompose
     api deps.compose.materialIconCompose
     api deps.compose.materialIconExtCompose
     api deps.compose.materialRippleCompose
-    api deps.compose.runtimeCompose
     api deps.compose.composeUi
     api deps.compose.composeUiTooling
     api deps.compose.composeUtil

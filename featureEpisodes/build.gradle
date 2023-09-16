@@ -2,7 +2,8 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
 apply plugin: 'kotlin-parcelize'
 
@@ -26,7 +27,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.4.7'
+        kotlinCompilerExtensionVersion '1.5.1'
     }
     namespace 'com.example.featureEpisodes'
 //    packagingOptions {
@@ -42,7 +43,7 @@ dependencies {
     implementation project(path: ':domain')
 
     api deps.di.hilt
-    kapt deps.di.hiltCompiler
+    ksp deps.di.hiltCompiler
     api deps.di.hiltNavi
 
     api deps.navigation.navCompose

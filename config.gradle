@@ -1,9 +1,9 @@
 ext {
     config = [
-            'compileSdkVersion': 33,
+            'compileSdkVersion': 34,
             'applicationId': "",
             'minSdkVersion': 28,
-            'targetSdkVersion': 33,
+            'targetSdkVersion': 34,
             'versionCode': 2,
             'versionName': "2.0.0",
             'packageName': "com.example.template"

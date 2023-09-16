@@ -2,7 +2,8 @@ apply from: "$rootDir/deps.gradle"
 apply from: "$rootDir/config.gradle"
 apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
 
 android {
@@ -42,6 +43,6 @@ dependencies {
     api deps.okhttp.logging
 
     api deps.di.hilt
-    kapt deps.di.hiltCompiler
+    ksp deps.di.hiltCompiler
 
 }

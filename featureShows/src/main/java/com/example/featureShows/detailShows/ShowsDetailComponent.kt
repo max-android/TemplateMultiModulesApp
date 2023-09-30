@@ -26,7 +26,6 @@ import com.example.common.BaseViewModel
 import com.example.common.R
 import com.example.coreUi.components.OpenWeb
 import com.example.coreUi.workComponents.DetailShimmerComponent
-import com.example.coreUi.workComponents.ListShimmerComponent
 import com.example.coreUi.workComponents.LoadError
 import com.example.domain.model.shows.ShowModel
 

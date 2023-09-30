@@ -13,5 +13,7 @@ value class ShowShowsCastEvent(val showsId: String): ShowsEvent
 value class ShowShowsCrewEvent(val showsId: String): ShowsEvent
 @JvmInline
 value class ShowSearchEvent(val search: String): ShowsEvent
+@JvmInline
+value class ShowEpisodesEvent(val showsId: String): ShowsEvent
 
 

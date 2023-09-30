@@ -65,7 +65,7 @@ fun ShowsComponent(navController: NavController, navBackStackEntry: NavBackStack
     ObserveState(
         state,
         onClickItem = { showId -> viewModel.obtainEvent(ShowShowsDetailEvent(showId)) },
-        onClickEpisodes = { showId -> Toast.makeText(context, "Episodes", Toast.LENGTH_SHORT).show() },
+        onClickEpisodes = { showId -> viewModel.obtainEvent(ShowEpisodesEvent(showId)) },
         onClickSeasons = { showId -> viewModel.obtainEvent(ShowShowsSeasonsEvent(showId)) },
         onClickActors = { showId -> viewModel.obtainEvent(ShowShowsCastEvent(showId)) },
         onClickCrew = { showId -> viewModel.obtainEvent(ShowShowsCrewEvent(showId)) },
@@ -291,6 +291,12 @@ private fun ObserveSideEffect(
             is ShowShowsCrewEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsCrewScreen.route,
+                    bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
+                )
+            }
+            is ShowShowsEpisodesEffect -> {
+                navController.navigateWithBundleSafe(
+                    Screen.ShowsEpisodesScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }

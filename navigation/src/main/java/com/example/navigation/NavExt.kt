@@ -74,6 +74,7 @@ fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
                 currentDestination.contains(Screen.ShowsDetailScreen.route) ||
                 currentDestination.contains(Screen.ShowsSeasonsScreen.route) ||
                 currentDestination.contains(Screen.ShowsCrewScreen.route) ||
+                currentDestination.contains(Screen.ShowsEpisodesScreen.route) ||
                 currentDestination.contains(Screen.ShowsCastScreen.route) ||
                 currentDestination.contains(Screen.PeopleDetailScreen.route) ||
                 currentDestination.contains(Screen.PeopleCharactersScreen.route)
@@ -87,6 +88,7 @@ fun NavDestination.updateSelectedTab(index: Int, tabBarItem: BottomNavItem): Boo
             (route == Screen.ShowsSeasonsScreen.route && index == 1) ||
             (route == Screen.ShowsCrewScreen.route && index == 1) ||
             (route == Screen.ShowsCastScreen.route && index == 1) ||
+            (route == Screen.ShowsEpisodesScreen.route && index == 1) ||
             (route == Screen.PeopleDetailScreen.route && index == 2) ||
             (route == Screen.PeopleCharactersScreen.route && index == 2)
 }

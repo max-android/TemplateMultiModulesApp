@@ -1,6 +1,11 @@
 package com.example.template.navigation
 
 import android.content.Context
+import com.example.featureEpisodes.castEpisode.EpisodeCastScreenFactory
+import com.example.featureEpisodes.crewEpisode.EpisodeCrewScreenFactory
+import com.example.featureEpisodes.detailEpisodes.EpisodeDetailScreenFactory
+import com.example.featureEpisodes.episodes.EpisodesComponent
+import com.example.featureEpisodes.episodes.EpisodesScreenFactory
 import com.example.featurePeoples.characters.PeopleCharactersScreenFactory
 import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
@@ -39,6 +44,22 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
 
     override fun startShowsCast(): ComposeNavFactory {
         return ShowsCastScreenFactory()
+    }
+
+    override fun startEpisodes(): ComposeNavFactory {
+        return EpisodesScreenFactory()
+    }
+
+    override fun startEpisodeDetail(): ComposeNavFactory {
+        return EpisodeDetailScreenFactory()
+    }
+
+    override fun startEpisodeCrew(): ComposeNavFactory {
+        return EpisodeCrewScreenFactory()
+    }
+
+    override fun startEpisodeCast(): ComposeNavFactory {
+        return EpisodeCastScreenFactory()
     }
 
     override fun startPeoples(): ComposeNavFactory {

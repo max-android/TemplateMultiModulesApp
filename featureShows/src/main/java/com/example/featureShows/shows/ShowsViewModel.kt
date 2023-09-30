@@ -63,6 +63,10 @@ class ShowsViewModel @Inject constructor(
                 showSearchEvent(event.search)
             }
 
+            is ShowEpisodesEvent -> {
+                showEpisodesEvent(event.showsId)
+            }
+
             else -> {}
         }
     }
@@ -88,6 +92,12 @@ class ShowsViewModel @Inject constructor(
     private fun showCrewEvent(showId: String) {
         viewModelScope.launch {
             sendSideEffect(ShowShowsCrewEffect(showId))
+        }
+    }
+
+    private fun showEpisodesEvent(showId: String) {
+        viewModelScope.launch {
+            sendSideEffect(ShowShowsEpisodesEffect(showId))
         }
     }
 

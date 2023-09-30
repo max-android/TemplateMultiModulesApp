@@ -8,6 +8,10 @@ sealed class Screen(val route: String) {
     object ShowsSeasonsScreen: Screen(NavRoute.SHOWS_SEASONS_DETAIL_ROUTE)
     object ShowsCrewScreen: Screen(NavRoute.SHOWS_CREW_DETAIL_ROUTE)
     object ShowsCastScreen: Screen(NavRoute.SHOWS_CAST_DETAIL_ROUTE)
+    object ShowsEpisodesScreen: Screen(NavRoute.SHOWS_EPISODES_ROUTE)
+    object EpisodesDetailScreen: Screen(NavRoute.EPISODES_DETAIL_ROUTE)
+    object EpisodeCrewScreen: Screen(NavRoute.EPISODE_CREW_DETAIL_ROUTE)
+    object EpisodeCastScreen: Screen(NavRoute.EPISODE_CAST_DETAIL_ROUTE)
 
 
     object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)

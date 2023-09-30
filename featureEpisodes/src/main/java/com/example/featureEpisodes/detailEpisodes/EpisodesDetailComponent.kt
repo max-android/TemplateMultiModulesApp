@@ -1,48 +1,78 @@
-package com.example.featureEpisodes
+package com.example.featureEpisodes.detailEpisodes
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.common.BaseViewModel
 import com.example.common.R
-import com.example.coreUi.Green
 import com.example.coreUi.Purple700
+import com.example.coreUi.workComponents.DetailShimmerComponent
+import com.example.coreUi.workComponents.LoadError
 import com.example.domain.model.episodes.EpisodesModel
 
 @Composable
-fun EpisodesDetailUi(
-    item: EpisodesModel,
-    onClickItem: (String) -> Unit,
-    onClickGuestCast: (String) -> Unit,
-    onClickGuestCrew: (String) -> Unit,
+fun EpisodeDetailComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
+    val viewModel = hiltViewModel<EpisodeDetailViewModel>()
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    ObserveState(state)
+}
+
+@Composable
+private fun ObserveState(
+    state: BaseViewModel.BaseViewState?
 ) {
+    state?.let { episodeState ->
+        when (episodeState) {
+            is EpisodeDetailSuccess -> {
+                EpisodesDetailUi(episodeState.episodesModel)
+            }
+
+            is EpisodeDetailLoading -> {
+                DetailShimmerComponent()
+            }
+
+            is EpisodeDetailError -> {
+                LoadError(episodeState.exception)
+            }
+
+            else -> {
+            }
+        }
+    }
+}
+
+
+@Composable
+fun EpisodesDetailUi(item: EpisodesModel) {
     Column(
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()
             .wrapContentHeight()
             .clickable {
-                onClickItem.invoke(item.id)
+               // onClickItem.invoke(item.id)
             }
     ) {
         AsyncImage(
@@ -131,7 +161,9 @@ fun EpisodesDetailUi(
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             modifier = Modifier
-                .clickable { onClickGuestCast.invoke(item.id) }
+                .clickable {
+                   // onClickGuestCast.invoke(item.id)
+                }
                 .padding(start = 8.dp, end = 8.dp, top = 4.dp, bottom = 4.dp),
             text = stringResource(id = R.string.guest_cast),
             style = MaterialTheme.typography.labelMedium,
@@ -140,7 +172,9 @@ fun EpisodesDetailUi(
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             modifier = Modifier
-                .clickable { onClickGuestCrew.invoke(item.id) }
+                .clickable {
+                 //   onClickGuestCrew.invoke(item.id)
+                }
                 .padding(start = 8.dp, end = 8.dp, top = 4.dp, bottom = 4.dp),
             text = stringResource(id = R.string.guest_crew),
             style = MaterialTheme.typography.labelMedium,
@@ -153,19 +187,5 @@ fun EpisodesDetailUi(
 @Preview
 @Composable
 fun EpisodesDetailPreview() {
-    val model = EpisodesModel(
-        "",
-        "Episodes Name",
-        "https://static.tvmaze.com/uploads/images/medium_portrait/82/206879.jpg",
-        "When the residents of Chester's Mill find themselves trapped under a massive transparent dome with no way out, they struggle to survive as resources rapidly dwindle and panic quickly escalates.",
-        "https://img.test.1er.app/static/articleVitaminC.png",
-        "https://img.test.1er.app/static/articleVitaminC.png",
-        "2021-09-21",
-        "6.8",
-        "Duration",
-        "AirTime",
-        "1",
-        "2",
-    )
-    EpisodesDetailUi(model, {}, {}, {})
+
 }

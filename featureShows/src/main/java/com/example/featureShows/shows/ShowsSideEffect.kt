@@ -11,3 +11,6 @@ value class ShowShowsSeasonsEffect(val showId: String): ShowsSideEffect
 value class ShowShowsCastEffect(val showId: String): ShowsSideEffect
 @JvmInline
 value class ShowShowsCrewEffect(val showId: String): ShowsSideEffect
+@JvmInline
+value class ShowShowsEpisodesEffect(val showId: String): ShowsSideEffect
+

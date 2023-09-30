@@ -31,5 +31,8 @@
     <string name="summary">Summary:</string>
     <string name="empty_name">Empty name</string>
     <string name="remove">remove</string>
+    <string name="episode_show_detail">Show detail</string>
+    <string name="episode_show_crew">Show crew</string>
+    <string name="episode_show_cast">Show cast</string>
 
 </resources>

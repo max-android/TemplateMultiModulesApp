@@ -133,6 +133,10 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
                 screenStarter.startPeoples().create(this, navController)
                 screenStarter.startPeopleDetail().create(this, navController)
                 screenStarter.startPeopleCharacters().create(this, navController)
+                screenStarter.startQuotes().create(this, navController)
+                screenStarter.startArticles().create(this, navController)
+                screenStarter.startNews().create(this, navController)
+                screenStarter.startNewsCategory().create(this, navController)
 
                 //dialog()
 //                navigation(route = "someRoute", startDestination = "first") {

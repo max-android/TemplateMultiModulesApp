@@ -35,4 +35,6 @@
     <string name="episode_show_crew">Show crew</string>
     <string name="episode_show_cast">Show cast</string>
 
+    <string name="article_show_news">Show news</string>
+
 </resources>

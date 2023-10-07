@@ -28,6 +28,14 @@ interface ScreenStarter {
 
     fun startPeopleCharacters(): ComposeNavFactory
 
+    fun startQuotes(): ComposeNavFactory
+
+    fun startArticles(): ComposeNavFactory
+
+    fun startNews(): ComposeNavFactory
+
+    fun startNewsCategory(): ComposeNavFactory
+
 
     //TODO удалить после разработки пары модулей
     fun startProfile(): ComposeNavFactory

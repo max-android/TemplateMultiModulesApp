@@ -1,31 +1,33 @@
 package com.example.navigation
 
 sealed class Screen(val route: String) {
-    object RootScreen: Screen(NavRoute.ROOT_ROUTE)
+    data object RootScreen: Screen(NavRoute.ROOT_ROUTE)
 
-    object ShowsScreen: Screen(NavRoute.SHOWS_ROUTE)
-    object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL_ROUTE)
-    object ShowsSeasonsScreen: Screen(NavRoute.SHOWS_SEASONS_DETAIL_ROUTE)
-    object ShowsCrewScreen: Screen(NavRoute.SHOWS_CREW_DETAIL_ROUTE)
-    object ShowsCastScreen: Screen(NavRoute.SHOWS_CAST_DETAIL_ROUTE)
-    object ShowsEpisodesScreen: Screen(NavRoute.SHOWS_EPISODES_ROUTE)
-    object EpisodesDetailScreen: Screen(NavRoute.EPISODES_DETAIL_ROUTE)
-    object EpisodeCrewScreen: Screen(NavRoute.EPISODE_CREW_DETAIL_ROUTE)
-    object EpisodeCastScreen: Screen(NavRoute.EPISODE_CAST_DETAIL_ROUTE)
+    data object ShowsScreen: Screen(NavRoute.SHOWS_ROUTE)
+    data object ShowsDetailScreen: Screen(NavRoute.SHOWS_DETAIL_ROUTE)
+    data object ShowsSeasonsScreen: Screen(NavRoute.SHOWS_SEASONS_DETAIL_ROUTE)
+    data object ShowsCrewScreen: Screen(NavRoute.SHOWS_CREW_DETAIL_ROUTE)
+    data object ShowsCastScreen: Screen(NavRoute.SHOWS_CAST_DETAIL_ROUTE)
+    data object ShowsEpisodesScreen: Screen(NavRoute.SHOWS_EPISODES_ROUTE)
+    data object EpisodesDetailScreen: Screen(NavRoute.EPISODES_DETAIL_ROUTE)
+    data object EpisodeCrewScreen: Screen(NavRoute.EPISODE_CREW_DETAIL_ROUTE)
+    data object EpisodeCastScreen: Screen(NavRoute.EPISODE_CAST_DETAIL_ROUTE)
 
 
-    object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
-    object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)
-    object PeopleCharactersScreen: Screen(NavRoute.PEOPLE_CHARACTERS_ROUTE)
+    data object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
+    data object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)
+    data object PeopleCharactersScreen: Screen(NavRoute.PEOPLE_CHARACTERS_ROUTE)
 
-    object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
-    object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
+    data object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
+    data object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
+    data object NewsScreen: Screen(NavRoute.NEWS_ROUTE)
+    data object NewsCategoryScreen: Screen(NavRoute.NEWS_CATEGORY_ROUTE)
 
 
 
 
     //TODO удалить после разработки пары модулей
-    object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
+    data object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 }
 
 //// Pop everything up to the "home" destination off the back stack before

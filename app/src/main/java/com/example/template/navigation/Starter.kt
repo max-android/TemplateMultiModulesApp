@@ -1,15 +1,18 @@
 package com.example.template.navigation
 
 import android.content.Context
+import com.example.featureArticles.ArticlesScreenFactory
 import com.example.featureEpisodes.castEpisode.EpisodeCastScreenFactory
 import com.example.featureEpisodes.crewEpisode.EpisodeCrewScreenFactory
 import com.example.featureEpisodes.detailEpisodes.EpisodeDetailScreenFactory
-import com.example.featureEpisodes.episodes.EpisodesComponent
 import com.example.featureEpisodes.episodes.EpisodesScreenFactory
+import com.example.featureNews.news.NewsScreenFactory
+import com.example.featureNews.categoryNews.NewsCategoryScreenFactory
 import com.example.featurePeoples.characters.PeopleCharactersScreenFactory
 import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
 import com.example.featureProfile.ProfileScreenFactory
+import com.example.featureQuotes.QuotesScreenFactory
 import com.example.featureRoot.RootScreenFactory
 import com.example.featureSeasons.ShowsSeasonsScreenFactory
 import com.example.featureShows.castShows.ShowsCastScreenFactory
@@ -72,6 +75,22 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
 
     override fun startPeopleCharacters(): ComposeNavFactory {
         return PeopleCharactersScreenFactory()
+    }
+
+    override fun startQuotes(): ComposeNavFactory {
+        return QuotesScreenFactory()
+    }
+
+    override fun startArticles(): ComposeNavFactory {
+        return ArticlesScreenFactory()
+    }
+
+    override fun startNews(): ComposeNavFactory {
+        return NewsScreenFactory()
+    }
+
+    override fun startNewsCategory(): ComposeNavFactory {
+        return NewsCategoryScreenFactory()
     }
 
     //TODO удалить после разработки пары модулей

@@ -16,7 +16,10 @@ class NewsRepositoryImpl @Inject constructor(
     }
 
     override suspend fun categories(): List<String> {
-        return newsRestService.categories()
+        return listOf(
+            "all", "national", "business", "sports", "world", "politics", "technology", "startup",
+            "entertainment", "miscellaneous", "hatke", "science", "automobile"
+        )
     }
 
 }

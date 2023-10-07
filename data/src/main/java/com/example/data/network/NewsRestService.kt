@@ -11,9 +11,4 @@ interface NewsRestService {
     @GET("news")
     suspend fun news(@Query("category")category: String): Response<AllNewsDto>
 
-    suspend fun categories(): List<String> = listOf(
-        "all", "national", "business", "sports", "world", "politics", "technology", "startup",
-        "entertainment", "miscellaneous", "hatke", "science", "automobile"
-    )
-
 }

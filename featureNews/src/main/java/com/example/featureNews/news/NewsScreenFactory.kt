@@ -3,7 +3,6 @@ package com.example.featureNews.news
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.featureNews.news.NewsComponent
 import com.example.navigation.ComposeNavFactory
 import com.example.navigation.Screen
 

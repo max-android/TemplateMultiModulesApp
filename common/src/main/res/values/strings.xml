@@ -36,5 +36,7 @@
     <string name="episode_show_cast">Show cast</string>
 
     <string name="article_show_news">Show news</string>
+    <string name="article_author_news">Author:</string>
+    <string name="article_read_more_news">ReadMore:</string>
 
 </resources>

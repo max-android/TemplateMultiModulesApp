@@ -23,6 +23,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import com.example.common.BaseViewModel
+import com.example.coreUi.components.doBackground
 import com.example.coreUi.workComponents.DetailShimmerComponent
 import com.example.coreUi.workComponents.EmptyListUi
 import com.example.navigation.KEY_CATEGORY_ID

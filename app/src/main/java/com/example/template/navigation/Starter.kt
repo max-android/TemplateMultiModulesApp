@@ -93,7 +93,6 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
         return NewsCategoryScreenFactory()
     }
 
-    //TODO удалить после разработки пары модулей
     override fun startProfile(): ComposeNavFactory {
         return ProfileScreenFactory()
     }

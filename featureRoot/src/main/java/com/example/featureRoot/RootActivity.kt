@@ -60,4 +60,5 @@ class RootActivity : ComponentActivity() {
         }
     }
 
+    //Log.i("--DATA", "-------------- "+navBackStackEntry.parcelableData<Person>("myKey"))
 }

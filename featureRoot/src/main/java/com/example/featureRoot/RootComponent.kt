@@ -17,6 +17,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.*
@@ -152,23 +154,4 @@ fun RootComponent(navController: NavController) {
     RootUi(navController)
 }
 
-@Composable
-private fun RootUi(navController: NavController) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Button(
-            onClick = {
-               // navController.navigateSafe(Screen.ProfileScreen.route)
-                //val nav = NavOptions.Builder().setPopUpTo()
-                navController.navigateWithBundleSafe(
-                   // Screen.ProfileScreen.route, bundleOf("myKey" to 100)
-                    Screen.ProfileScreen.route, bundleOf("myKey" to Person("б4324", "234"))
-                )
-            },
-            modifier = Modifier
-                .wrapContentWidth()
-                .height(56.dp)
-        ) {
-            Text(text = "to profile", color = Color.Black)
-        }
-    }
-}
+

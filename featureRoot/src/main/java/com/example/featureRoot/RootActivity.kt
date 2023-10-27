@@ -29,7 +29,7 @@ class RootActivity : ComponentActivity() {
 
     @Composable
     private fun ConfigureRoot() {
-        val viewModel = hiltViewModel<RootViewModel>()
+        val viewModel = hiltViewModel<BaseRootViewModel>()
         val state: BaseViewModel.BaseViewState? by viewModel.state.collectAsStateWithLifecycle()
         ObserveState(state)
     }

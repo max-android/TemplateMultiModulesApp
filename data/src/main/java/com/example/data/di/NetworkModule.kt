@@ -11,6 +11,7 @@ import com.example.data.network.QuoteRestService
 import com.example.data.network.TvShowsRestService
 import com.example.data.network.NewsRestService
 import com.example.data.network.OpenCollectiveRestService
+import com.example.data.network.PunkapiRestService
 import com.example.data.network.SpaceflightNewsRestService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -159,4 +160,20 @@ object NetworkModule {
         OpenCollectiveRestService::class.java
     )
 
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class PunkapiRemoteApi
+
+    @PunkapiRemoteApi
+    @Provides
+    @Singleton
+    fun providePunkapiRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): PunkapiRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        PUNKAPI_BASE_URL,
+        PunkapiRestService::class.java
+    )
 }

@@ -11,6 +11,7 @@ import com.example.data.network.QuoteRestService
 import com.example.data.network.TvShowsRestService
 import com.example.data.network.NewsRestService
 import com.example.data.network.OpenCollectiveRestService
+import com.example.data.network.OpenBreweryRestService
 import com.example.data.network.PunkapiRestService
 import com.example.data.network.SpaceflightNewsRestService
 import com.squareup.moshi.Moshi
@@ -176,4 +177,22 @@ object NetworkModule {
         PUNKAPI_BASE_URL,
         PunkapiRestService::class.java
     )
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class OpenBreweryRemoteApi
+
+    @OpenBreweryRemoteApi
+    @Provides
+    @Singleton
+    fun provideOpenBreweryRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): OpenBreweryRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        BREWERY_BASE_URL,
+        OpenBreweryRestService::class.java
+    )
+
 }

@@ -1,4 +1,4 @@
-package com.example.featureRoot
+package com.example.featureRoot.root
 
 import com.example.common.BaseViewModel
 

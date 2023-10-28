@@ -1,4 +1,4 @@
-package com.example.featureRoot
+package com.example.featureRoot.base
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.common.BaseViewModel
+import com.example.featureRoot.root.SuccessRoot
 
 @AndroidEntryPoint
 class RootActivity : ComponentActivity() {
@@ -38,7 +39,7 @@ class RootActivity : ComponentActivity() {
     private fun ObserveState(viewState: BaseViewModel.BaseViewState?) {
         viewState?.let {
             when (viewState) {
-                is RootViewState.SuccessRoot -> {
+                is SuccessRoot -> {
                     val isDarkMode = remember { mutableStateOf(viewState.isDarkTheme) }
                     TemplateMultiModulesAppTheme(isDarkMode.value) {
                         //val systemUiController = rememberSystemUiController()
@@ -55,10 +56,9 @@ class RootActivity : ComponentActivity() {
                         }
                     }
                 }
+
                 else -> {}
             }
         }
     }
-
-    //Log.i("--DATA", "-------------- "+navBackStackEntry.parcelableData<Person>("myKey"))
 }

@@ -23,7 +23,7 @@
         android:theme="@style/Theme.TemplateMultiModulesApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.featureRoot.RootActivity"
+            android:name="com.example.featureRoot.base.RootActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true"
             android:theme="@style/Theme.TemplateMultiModulesApp">

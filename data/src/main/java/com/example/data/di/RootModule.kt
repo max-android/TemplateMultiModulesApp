@@ -30,7 +30,6 @@ object RootModule {
         beerRepository: BeerRepository
     ): BeerInteractor = BeerInteractor(beerRepository)
 
-
     @Provides
     @ViewModelScoped
     fun bindBreweryRepo(

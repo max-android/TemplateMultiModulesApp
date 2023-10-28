@@ -13,7 +13,7 @@ import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
 import com.example.featureProfile.ProfileScreenFactory
 import com.example.featureQuotes.QuotesScreenFactory
-import com.example.featureRoot.RootScreenFactory
+import com.example.featureRoot.root.RootScreenFactory
 import com.example.featureSeasons.ShowsSeasonsScreenFactory
 import com.example.featureShows.castShows.ShowsCastScreenFactory
 import com.example.featureShows.crewShows.ShowsCrewScreenFactory

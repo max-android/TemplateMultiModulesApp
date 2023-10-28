@@ -1,6 +1,5 @@
-package com.example.featureRoot
+package com.example.featureRoot.base
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -9,26 +8,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.core.os.bundleOf
-import androidx.navigation.NavController
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavOptions
 import androidx.navigation.compose.*
-import androidx.navigation.navigation
-import com.example.coreUi.components.Person
 import com.example.navigation.*
 
 @Composable
 fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean) -> Unit) {
-    Log.i("--STATE", "------------BaseRootComponent")
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -51,11 +41,16 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
                                     if (tabBarItem.badgeCount > 0) {
                                         BadgedBox(
                                             badge = {
-                                                    Text(
-                                                        modifier = Modifier.background(Color.Red, shape = CircleShape).padding(2.dp),
-                                                        text = tabBarItem.badgeCount.toString(),
-                                                        fontSize = 8.sp,
-                                                    )
+                                                Text(
+                                                    modifier = Modifier
+                                                        .background(
+                                                            Color.Red,
+                                                            shape = CircleShape
+                                                        )
+                                                        .padding(2.dp),
+                                                    text = tabBarItem.badgeCount.toString(),
+                                                    fontSize = 8.sp,
+                                                )
                                             }
                                         ) {
                                             Icon(
@@ -91,7 +86,6 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
                             unselectedContentColor = MaterialTheme.colors.primaryVariant,
                             onClick = {
                                 navController.navigateSafeWithBuilder(tabBarItem.screen.route) {
-                                    Log.i("--STATE", "------------ROOT---")
 //                                        // Pop up to the start destination of the graph to
 //                                        // avoid building up a large stack of destinations
 //                                        // on the back stack as users select items
@@ -148,10 +142,3 @@ fun BaseRootComponent(screenStarter: ScreenStarter, onDarkModeChanged: (Boolean)
         }
     )
 }
-
-@Composable
-fun RootComponent(navController: NavController) {
-    RootUi(navController)
-}
-
-

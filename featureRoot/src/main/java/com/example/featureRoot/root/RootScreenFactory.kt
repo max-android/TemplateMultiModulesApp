@@ -1,4 +1,4 @@
-package com.example.featureRoot
+package com.example.featureRoot.root
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

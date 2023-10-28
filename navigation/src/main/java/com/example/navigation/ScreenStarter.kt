@@ -36,8 +36,6 @@ interface ScreenStarter {
 
     fun startNewsCategory(): ComposeNavFactory
 
-
-    //TODO удалить после разработки пары модулей
     fun startProfile(): ComposeNavFactory
 
 }

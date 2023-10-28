@@ -4,7 +4,6 @@ import android.content.Context
 import com.example.common.*
 import com.example.data.BuildConfig
 import com.example.data.common.createRestService
-import com.example.data.network.old.ApiService
 import com.example.data.network.InternetConnectionService
 import com.example.data.network.InternetInterceptor
 import com.example.data.network.QuoteRestService
@@ -31,12 +30,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
-    @Provides
-    @Singleton
-    fun provideApiService(@ApplicationContext applicationContext: Context): ApiService {
-        return ApiService(applicationContext)
-    }
 
     @Provides
     @Singleton

@@ -21,8 +21,6 @@ class RootActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO Window Inset
-        //https://habr.com/ru/companies/kts/articles/687310/
         setContent {
             ConfigureRoot()
         }
@@ -42,17 +40,17 @@ class RootActivity : ComponentActivity() {
                 is SuccessRoot -> {
                     val isDarkMode = remember { mutableStateOf(viewState.isDarkTheme) }
                     TemplateMultiModulesAppTheme(isDarkMode.value) {
-                        //val systemUiController = rememberSystemUiController()
-                        // Set status bar color
-//                        SideEffect {
-//                            systemUiController.setSystemBarsColor(
-//                                color = if (isDarkMode.value) darkThemeColors.primary
-//                                else lightThemeColors.primary,
-//                                darkIcons = !isDarkMode.value
-//                            )
-//                        }
+                        /**
+                         * val systemUiController = rememberSystemUiController()
+                         * SideEffect {
+                         * systemUiController.setSystemBarsColor(
+                         * color = if (isDarkMode.value) darkThemeColors.primary
+                         *  else lightThemeColors.primary,
+                         *  darkIcons = !isDarkMode.value
+                         *  )
+                         *  }
+                         */
                         BaseRootComponent(screenStarter) {
-
                         }
                     }
                 }

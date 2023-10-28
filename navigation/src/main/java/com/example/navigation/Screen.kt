@@ -13,7 +13,6 @@ sealed class Screen(val route: String) {
     data object EpisodeCrewScreen: Screen(NavRoute.EPISODE_CREW_DETAIL_ROUTE)
     data object EpisodeCastScreen: Screen(NavRoute.EPISODE_CAST_DETAIL_ROUTE)
 
-
     data object PeoplesScreen: Screen(NavRoute.PEOPLES_ROUTE)
     data object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)
     data object PeopleCharactersScreen: Screen(NavRoute.PEOPLE_CHARACTERS_ROUTE)
@@ -23,10 +22,6 @@ sealed class Screen(val route: String) {
     data object NewsScreen: Screen(NavRoute.NEWS_ROUTE)
     data object NewsCategoryScreen: Screen(NavRoute.NEWS_CATEGORY_ROUTE)
 
-
-
-
-    //TODO удалить после разработки пары модулей
     data object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 }
 

@@ -11,9 +11,6 @@ object NavRoute {
     const val EPISODES_DETAIL_ROUTE = "episodes_detail"
     const val EPISODE_CREW_DETAIL_ROUTE = "episode_crew_detail"
     const val EPISODE_CAST_DETAIL_ROUTE = "episode_cast_detail"
-
-
-
     const val PEOPLES_ROUTE = "peoples"
     const val PEOPLE_DETAIL_ROUTE = "people_detail"
     const val PEOPLE_CHARACTERS_ROUTE = "people_characters"

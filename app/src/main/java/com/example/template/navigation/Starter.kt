@@ -12,7 +12,7 @@ import com.example.featurePeoples.characters.PeopleCharactersScreenFactory
 import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
 import com.example.featureProfile.ProfileScreenFactory
-import com.example.featureQuotes.QuotesScreenFactory
+import com.example.featureOpen.OpenScreenFactory
 import com.example.featureRoot.root.RootScreenFactory
 import com.example.featureSeasons.ShowsSeasonsScreenFactory
 import com.example.featureShows.castShows.ShowsCastScreenFactory
@@ -77,8 +77,8 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
         return PeopleCharactersScreenFactory()
     }
 
-    override fun startQuotes(): ComposeNavFactory {
-        return QuotesScreenFactory()
+    override fun startOpen(): ComposeNavFactory {
+        return OpenScreenFactory()
     }
 
     override fun startArticles(): ComposeNavFactory {

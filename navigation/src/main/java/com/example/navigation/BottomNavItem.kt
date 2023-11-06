@@ -29,7 +29,7 @@ val bottomNavItems = listOf(
         drawableResId = R.drawable.ic_peoples
     ),
     BottomNavItem(
-        screen = Screen.QuoteScreen,
+        screen = Screen.OpenScreen,
         titleResId = R.string.quotes,
         drawableResId = R.drawable.ic_quote
     ),

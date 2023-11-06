@@ -69,7 +69,7 @@ fun isNeedShowBottomBar(navBackStackEntry: NavBackStackEntry?): Boolean {
         return currentDestination.contains(Screen.RootScreen.route) ||
                 currentDestination.contains(Screen.ShowsScreen.route) ||
                 currentDestination.contains(Screen.PeoplesScreen.route) ||
-                currentDestination.contains(Screen.QuoteScreen.route) ||
+                currentDestination.contains(Screen.OpenScreen.route) ||
                 currentDestination.contains(Screen.ArticlesScreen.route) ||
                 currentDestination.contains(Screen.ShowsDetailScreen.route) ||
                 currentDestination.contains(Screen.ShowsSeasonsScreen.route) ||

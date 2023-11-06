@@ -1,6 +1,5 @@
 package com.example.data.mapper
 
-import com.example.common.boolean
 import com.example.common.double
 import com.example.common.int
 import com.example.data.dto.openCollective.EventDto
@@ -19,20 +18,13 @@ private fun toMemberModel(memberDto: MemberDto): MemberModel {
         image = memberDto.image.orEmpty(),
         website = memberDto.website.orEmpty(),
         role = memberDto.role.orEmpty(),
-        lastTransactionAmount = memberDto.lastTransactionAmount.int().toString(),
-        profile = memberDto.profile.orEmpty(),
         description = memberDto.description.orEmpty(),
         type = memberDto.type.orEmpty(),
-        isActive = memberDto.isActive.boolean(),
         lastTransactionAt = memberDto.lastTransactionAt.orEmpty(),
-        memberId = memberDto.memberId.int().toString(),
+        memberId = memberDto.memberId.int(),
         createdAt = memberDto.createdAt.orEmpty(),
-        tier = memberDto.tier.orEmpty(),
-        totalAmountDonated = memberDto.totalAmountDonated.int().toString(),
         name = memberDto.name.orEmpty(),
-        currency = memberDto.currency.orEmpty(),
         company = memberDto.company.orEmpty(),
-        email = memberDto.email.orEmpty(),
     )
 }
 

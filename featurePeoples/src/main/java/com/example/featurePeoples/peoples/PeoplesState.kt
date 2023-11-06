@@ -9,6 +9,6 @@ sealed class PeoplesState : BaseViewModel.BaseViewState
 data class PeoplesListSuccess(val peoples: List<PeopleModel>) : PeoplesState()
 @Immutable
 data class SearchPeoplesListSuccess(val peoples: List<PeopleModel>) : PeoplesState()
-object PeoplesListEmpty : PeoplesState()
-object PeoplesListLoading : PeoplesState()
+data object PeoplesListEmpty : PeoplesState()
+data object PeoplesListLoading : PeoplesState()
 data class PeoplesListError(val exception: Throwable) : PeoplesState()

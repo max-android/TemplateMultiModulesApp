@@ -15,3 +15,6 @@ const val SPACE_FLIGHT_NEWS_BASE_URL = "https://ll.thespacedevs.com/"
 const val OPEN_COLLECTIVE_BASE_URL = "https://opencollective.com/"
 const val PUNKAPI_BASE_URL = "https://api.punkapi.com/v2/"
 const val BREWERY_BASE_URL = "https://api.openbrewerydb.org/v1/"
+
+const val LOAD_COUNT = 10
+const val MAX_PRODUCTS_LOAD_COUNT = 3

@@ -17,7 +17,7 @@ sealed class Screen(val route: String) {
     data object PeopleDetailScreen: Screen(NavRoute.PEOPLE_DETAIL_ROUTE)
     data object PeopleCharactersScreen: Screen(NavRoute.PEOPLE_CHARACTERS_ROUTE)
 
-    data object QuoteScreen: Screen(NavRoute.QUOTE_ROUTE)
+    data object OpenScreen: Screen(NavRoute.OPEN_ROUTE)
     data object ArticlesScreen: Screen(NavRoute.ARTICLES_ROUTE)
     data object NewsScreen: Screen(NavRoute.NEWS_ROUTE)
     data object NewsCategoryScreen: Screen(NavRoute.NEWS_CATEGORY_ROUTE)

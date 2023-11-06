@@ -28,7 +28,7 @@ interface ScreenStarter {
 
     fun startPeopleCharacters(): ComposeNavFactory
 
-    fun startQuotes(): ComposeNavFactory
+    fun startOpen(): ComposeNavFactory
 
     fun startArticles(): ComposeNavFactory
 

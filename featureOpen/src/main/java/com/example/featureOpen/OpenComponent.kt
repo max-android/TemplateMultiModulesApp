@@ -47,22 +47,11 @@ fun OpenComponent(navController: NavController, navBackStackEntry: NavBackStackE
     val lazyColumnListState = rememberLazyListState()
     val shouldStartPaginate = remember {
         derivedStateOf {
-            lazyColumnListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
-            lazyColumnListState.layoutInfo.totalItemsCount
-//            Log.i("--PAGIN", "----------------isLoading: " + viewModel.isLoading)
-//            Log.i("--PAGIN", "----------------lastPage: " + viewModel.lastPage)
-//            Log.i(
-//                "--PAGIN",
-//                "--------visibleItemsInfo: " + lazyColumnListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index
-//            )
-//            Log.i(
-//                "--PAGIN",
-//                "---------totalItemsCount: " + lazyColumnListState.layoutInfo.totalItemsCount
-//            )
+            val indexVisibleItems = lazyColumnListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1
+            val totalItemsCount = lazyColumnListState.layoutInfo.totalItemsCount
             !viewModel.lastPage &&
                     !viewModel.isLoading &&
-                    (lazyColumnListState.layoutInfo.visibleItemsInfo.lastOrNull()?.index
-                        ?: -1) >= (lazyColumnListState.layoutInfo.totalItemsCount - MAX_PRODUCTS_LOAD_COUNT)
+                    (indexVisibleItems >= (totalItemsCount - MAX_PRODUCTS_LOAD_COUNT))
         }
     }
 

@@ -5,6 +5,7 @@ import com.example.common.BaseViewModel
 import com.example.domain.common.ResultState
 import com.example.domain.interactor.BeerInteractor
 import com.example.domain.interactor.BreweryInteractor
+import com.example.domain.interactor.PlayersInteractor
 import com.example.domain.model.beer.BeerModel
 import com.example.domain.model.brewery.BreweryModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RootViewModel @Inject constructor(
     private val beerInteractor: BeerInteractor,
-    private val breweryInteractor: BreweryInteractor
+    private val breweryInteractor: BreweryInteractor,
 ) : BaseViewModel() {
 
     init {

@@ -11,6 +11,7 @@ import com.example.data.network.TvShowsRestService
 import com.example.data.network.NewsRestService
 import com.example.data.network.OpenCollectiveRestService
 import com.example.data.network.OpenBreweryRestService
+import com.example.data.network.PlayersRestService
 import com.example.data.network.PunkapiRestService
 import com.example.data.network.SpaceflightNewsRestService
 import com.squareup.moshi.Moshi
@@ -186,6 +187,23 @@ object NetworkModule {
         okHttpClient,
         BREWERY_BASE_URL,
         OpenBreweryRestService::class.java
+    )
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class PlayersRemoteApi
+
+    @PlayersRemoteApi
+    @Provides
+    @Singleton
+    fun providePlayersRestService(
+        moshiConverterFactory: MoshiConverterFactory,
+        okHttpClient: OkHttpClient
+    ): PlayersRestService = createRestService(
+        moshiConverterFactory,
+        okHttpClient,
+        PLAYERS_BASE_URL,
+        PlayersRestService::class.java
     )
 
 }

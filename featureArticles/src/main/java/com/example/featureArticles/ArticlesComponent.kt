@@ -27,7 +27,8 @@ fun ArticlesComponent(navController: NavController, navBackStackEntry: NavBackSt
     val sideEffect by viewModel.sideEffect.collectAsStateWithLifecycle(null)
     ObserveState(
         state,
-        onClickNewsItem = { viewModel.obtainEvent(ShowNewsEvent) }
+        onClickNewsItem = { viewModel.obtainEvent(ShowNewsEvent) },
+        onClickPlayersItem = { viewModel.obtainEvent(ShowPlayersEvent) }
     )
     ObserveSideEffect(sideEffect, navController)
 }
@@ -36,11 +37,12 @@ fun ArticlesComponent(navController: NavController, navBackStackEntry: NavBackSt
 private fun ObserveState(
     state: BaseViewModel.BaseViewState?,
     onClickNewsItem: () -> Unit,
+    onClickPlayersItem: () -> Unit
 ) {
     state?.let { articlesState ->
         when (articlesState) {
             is InitArticles -> {
-                InitArticlesUi(onClickNewsItem)
+                InitArticlesUi(onClickNewsItem, onClickPlayersItem)
             }
         }
 
@@ -48,7 +50,10 @@ private fun ObserveState(
 }
 
 @Composable
-private fun InitArticlesUi(onClickNewsItem: () -> Unit) {
+private fun InitArticlesUi(
+    onClickNewsItem: () -> Unit,
+    onClickPlayersItem: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -58,6 +63,13 @@ private fun InitArticlesUi(onClickNewsItem: () -> Unit) {
             icon = ImageVector.vectorResource(id = com.example.common.R.drawable.ic_article),
             text = stringResource(id = com.example.common.R.string.article_show_news),
             onClick = onClickNewsItem,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        FilledTonalButtonWithIcon(
+            icon = ImageVector.vectorResource(id = com.example.common.R.drawable.ic_article),
+            text = stringResource(id = com.example.common.R.string.article_show_players),
+            onClick = onClickPlayersItem,
             modifier = Modifier.fillMaxWidth()
         )
     }
@@ -72,6 +84,9 @@ private fun ObserveSideEffect(
         when (articlesSideEffect) {
             is NewsEffect -> {
                 navController.navigateSafe(Screen.NewsCategoryScreen.route)
+            }
+            is PlayersEffect -> {
+                navController.navigateSafe(Screen.PlayersScreen.route)
             }
             else -> {}
         }

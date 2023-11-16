@@ -74,6 +74,7 @@ dependencies {
     implementation project(path: ':featureOpen')
     implementation project(path: ':featureArticles')
     implementation project(path: ':featureNews')
+    implementation project(path: ':featurePlayer')
 
     api deps.di.hilt
     ksp deps.di.hiltCompiler

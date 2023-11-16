@@ -23,6 +23,9 @@ class ArticlesViewModel @Inject constructor() : BaseViewModel() {
                 showNewsEvent()
             }
 
+            is ShowPlayersEvent -> {
+                showPlayersEvent()
+            }
             else -> {}
         }
     }
@@ -30,6 +33,12 @@ class ArticlesViewModel @Inject constructor() : BaseViewModel() {
     private fun showNewsEvent() {
         viewModelScope.launch {
             sendSideEffect(NewsEffect)
+        }
+    }
+
+    private fun showPlayersEvent() {
+        viewModelScope.launch {
+            sendSideEffect(PlayersEffect)
         }
     }
 

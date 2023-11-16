@@ -23,6 +23,8 @@ sealed class Screen(val route: String) {
     data object NewsCategoryScreen: Screen(NavRoute.NEWS_CATEGORY_ROUTE)
 
     data object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
+
+    data object PlayersScreen: Screen(NavRoute.PLAYERS_ROUTE)
 }
 
 //// Pop everything up to the "home" destination off the back stack before

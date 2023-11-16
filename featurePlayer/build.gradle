@@ -1,0 +1,52 @@
+apply from: "$rootDir/deps.gradle"
+apply from: "$rootDir/config.gradle"
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'com.google.devtools.ksp'
+//apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdk config.compileSdkVersion
+
+    defaultConfig {
+        minSdk config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.3'
+    }
+    namespace 'com.example.featurePlayer'
+//    packagingOptions {
+//        resources.excludes.add("META-INF/*")
+//    }
+
+}
+
+dependencies {
+
+    implementation project(path: ':coreUi')
+    implementation project(path: ':navigation')
+    implementation project(path: ':domain')
+
+    api deps.di.hilt
+    ksp deps.di.hiltCompiler
+    api deps.di.hiltNavi
+
+    api deps.navigation.navCompose
+    api deps.navigation.navCommon
+
+}

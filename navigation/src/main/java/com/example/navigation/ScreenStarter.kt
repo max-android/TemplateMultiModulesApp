@@ -38,6 +38,8 @@ interface ScreenStarter {
 
     fun startProfile(): ComposeNavFactory
 
+    fun startPlayers(): ComposeNavFactory
+
 }
  //Правила:
 //1:

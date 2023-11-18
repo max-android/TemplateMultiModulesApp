@@ -22,7 +22,21 @@ class PlayersViewModel @Inject constructor(
     }
 
     override fun obtainEvent(event: BaseEvent?) {
+        when (event) {
+            is ShowPlayerDetailEvent -> {
+                showPlayerDetailEvent(event.playerId)
+            }
 
+            is ShowTeamDetailEvent -> {
+                showTeamDetailEvent(event.teamId)
+            }
+
+            is ShowGameDetailEvent -> {
+                showGameDetailEvent(event.gameId)
+            }
+
+            else -> {}
+        }
     }
 
     private fun loadData() {
@@ -41,5 +55,22 @@ class PlayersViewModel @Inject constructor(
         }
     }
 
+    private fun showPlayerDetailEvent(playerId: String) {
+        viewModelScope.launch {
+            sendSideEffect(PlayerDetailEffect(playerId))
+        }
+    }
+
+    private fun showTeamDetailEvent(teamId: String) {
+        viewModelScope.launch {
+            sendSideEffect(TeamDetailEffect(teamId))
+        }
+    }
+
+    private fun showGameDetailEvent(gameId: String) {
+        viewModelScope.launch {
+            sendSideEffect(GameDetailEffect(gameId))
+        }
+    }
 
 }

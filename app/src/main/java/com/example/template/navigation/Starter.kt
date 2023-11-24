@@ -2,6 +2,7 @@ package com.example.template.navigation
 
 import android.content.Context
 import com.example.featureArticles.ArticlesScreenFactory
+import com.example.featureArticles.test.TestScreenFactory
 import com.example.featureEpisodes.castEpisode.EpisodeCastScreenFactory
 import com.example.featureEpisodes.crewEpisode.EpisodeCrewScreenFactory
 import com.example.featureEpisodes.detailEpisodes.EpisodeDetailScreenFactory
@@ -100,5 +101,9 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
 
     override fun startPlayers(): ComposeNavFactory {
         return PlayersScreenFactory()
+    }
+
+    override fun startTest(): ComposeNavFactory {
+        return TestScreenFactory()
     }
 }

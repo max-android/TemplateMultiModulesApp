@@ -25,6 +25,8 @@ sealed class Screen(val route: String) {
     data object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
 
     data object PlayersScreen: Screen(NavRoute.PLAYERS_ROUTE)
+
+    data object TestScreen: Screen(NavRoute.TEST_ROUTE)
 }
 
 //// Pop everything up to the "home" destination off the back stack before

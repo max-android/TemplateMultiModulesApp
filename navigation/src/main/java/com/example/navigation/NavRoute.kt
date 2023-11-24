@@ -18,6 +18,7 @@ object NavRoute {
     const val ARTICLES_ROUTE = "articles"
     const val PROFILE_ROUTE = "profile"
     const val PLAYERS_ROUTE = "players"
+    const val TEST_ROUTE = "test"
     const val NEWS_ROUTE = "news"
     const val NEWS_CATEGORY_ROUTE = "news_category"
 }

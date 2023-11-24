@@ -28,7 +28,10 @@ fun ArticlesComponent(navController: NavController, navBackStackEntry: NavBackSt
     ObserveState(
         state,
         onClickNewsItem = { viewModel.obtainEvent(ShowNewsEvent) },
-        onClickPlayersItem = { viewModel.obtainEvent(ShowPlayersEvent) }
+        onClickPlayersItem = { viewModel.obtainEvent(ShowPlayersEvent) },
+        onClickTestItem = {
+            navController.navigateSafe(Screen.TestScreen.route)
+        }
     )
     ObserveSideEffect(sideEffect, navController)
 }
@@ -37,12 +40,13 @@ fun ArticlesComponent(navController: NavController, navBackStackEntry: NavBackSt
 private fun ObserveState(
     state: BaseViewModel.BaseViewState?,
     onClickNewsItem: () -> Unit,
-    onClickPlayersItem: () -> Unit
+    onClickPlayersItem: () -> Unit,
+    onClickTestItem: () -> Unit
 ) {
     state?.let { articlesState ->
         when (articlesState) {
             is InitArticles -> {
-                InitArticlesUi(onClickNewsItem, onClickPlayersItem)
+                InitArticlesUi(onClickNewsItem, onClickPlayersItem, onClickTestItem)
             }
         }
 
@@ -52,7 +56,8 @@ private fun ObserveState(
 @Composable
 private fun InitArticlesUi(
     onClickNewsItem: () -> Unit,
-    onClickPlayersItem: () -> Unit
+    onClickPlayersItem: () -> Unit,
+    onClickTestItem: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -70,6 +75,13 @@ private fun InitArticlesUi(
             icon = ImageVector.vectorResource(id = com.example.common.R.drawable.ic_article),
             text = stringResource(id = com.example.common.R.string.article_show_players),
             onClick = onClickPlayersItem,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        FilledTonalButtonWithIcon(
+            icon = ImageVector.vectorResource(id = com.example.common.R.drawable.ic_article),
+            text = stringResource(id = com.example.common.R.string.test_text_field),
+            onClick = onClickTestItem,
             modifier = Modifier.fillMaxWidth()
         )
     }

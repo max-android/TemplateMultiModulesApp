@@ -39,6 +39,7 @@
     <string name="article_show_players">Show players</string>
     <string name="article_author_news">Author:</string>
     <string name="article_read_more_news">ReadMore:</string>
+    <string name="test_text_field">test TextField</string>
 
     <string name="players_tab_players">Players</string>
     <string name="players_tab_teams">Teams</string>

@@ -31,6 +31,9 @@ fun ArticlesComponent(navController: NavController, navBackStackEntry: NavBackSt
         onClickPlayersItem = { viewModel.obtainEvent(ShowPlayersEvent) },
         onClickTestItem = {
             navController.navigateSafe(Screen.TestScreen.route)
+        },
+        onClickProfileItem = {
+            viewModel.obtainEvent(ShowProfileEvent)
         }
     )
     ObserveSideEffect(sideEffect, navController)
@@ -41,12 +44,13 @@ private fun ObserveState(
     state: BaseViewModel.BaseViewState?,
     onClickNewsItem: () -> Unit,
     onClickPlayersItem: () -> Unit,
-    onClickTestItem: () -> Unit
+    onClickTestItem: () -> Unit,
+    onClickProfileItem: () -> Unit,
 ) {
     state?.let { articlesState ->
         when (articlesState) {
             is InitArticles -> {
-                InitArticlesUi(onClickNewsItem, onClickPlayersItem, onClickTestItem)
+                InitArticlesUi(onClickNewsItem, onClickPlayersItem, onClickTestItem, onClickProfileItem)
             }
         }
 
@@ -58,6 +62,7 @@ private fun InitArticlesUi(
     onClickNewsItem: () -> Unit,
     onClickPlayersItem: () -> Unit,
     onClickTestItem: () -> Unit,
+    onClickProfileItem: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -84,6 +89,13 @@ private fun InitArticlesUi(
             onClick = onClickTestItem,
             modifier = Modifier.fillMaxWidth()
         )
+
+        FilledTonalButtonWithIcon(
+            icon = ImageVector.vectorResource(id = com.example.common.R.drawable.ic_article),
+            text = stringResource(id = com.example.common.R.string.show_profile),
+            onClick = onClickProfileItem,
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
@@ -100,7 +112,9 @@ private fun ObserveSideEffect(
             is PlayersEffect -> {
                 navController.navigateSafe(Screen.PlayersScreen.route)
             }
-            else -> {}
+            is ProfileEffect -> {
+                navController.navigateSafe(Screen.ProfileScreen.route)
+            }
         }
     }
 }

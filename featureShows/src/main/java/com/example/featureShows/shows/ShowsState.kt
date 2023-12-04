@@ -12,6 +12,6 @@ data class ShowsListSuccess(
     val search: String = EMPTY_VALUE
 ) : ShowsState()
 
-object ShowsListEmpty : ShowsState()
-object ShowsListLoading : ShowsState()
+data object ShowsListEmpty : ShowsState()
+data object ShowsListLoading : ShowsState()
 data class ShowsListError(val exception: Throwable) : ShowsState()

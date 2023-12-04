@@ -17,12 +17,10 @@ class ShowsViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     init {
-        Log.i("--STATE", "-------------ShowsViewModel INIT")
         loadData()
     }
 
     private fun loadData() {
-        Log.i("--STATE", "-------------ShowsComponent loadData()")
         viewModelScope.launch {
             sendState(ShowsListLoading)
             when (val state = showsInteractor.allShows()) {

@@ -1,4 +1,4 @@
-package com.example.featureProfile
+package com.example.featureProfile.editProfile
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry

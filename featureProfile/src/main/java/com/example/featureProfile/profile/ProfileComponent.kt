@@ -1,22 +1,15 @@
-package com.example.featureProfile
+package com.example.featureProfile.profile
 
 import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -33,12 +26,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavBackStackEntry
 import com.example.common.BaseViewModel
 import com.example.common.R
-import com.example.coreUi.Black
 import com.example.coreUi.components.Person
 import com.example.coreUi.components.readyUi.TextButtonWithIcon
 import com.example.coreUi.workComponents.Line
 import com.example.coreUi.workComponents.LoadError
-import com.example.domain.model.players.PlayerModel
 import com.example.featureProfile.uiComponents.EditProfileItem
 import com.example.featureProfile.uiComponents.HeaderItem
 import com.example.featureProfile.uiComponents.HistoryList

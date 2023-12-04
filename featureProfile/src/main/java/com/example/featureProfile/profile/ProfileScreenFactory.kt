@@ -1,8 +1,9 @@
-package com.example.featureProfile
+package com.example.featureProfile.profile
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import com.example.featureProfile.profile.ProfileComponent
 import com.example.navigation.ComposeNavFactory
 import com.example.navigation.Screen
 

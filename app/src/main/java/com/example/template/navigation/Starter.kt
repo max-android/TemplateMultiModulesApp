@@ -12,7 +12,7 @@ import com.example.featureNews.categoryNews.NewsCategoryScreenFactory
 import com.example.featurePeoples.characters.PeopleCharactersScreenFactory
 import com.example.featurePeoples.detailPeoples.PeopleDetailScreenFactory
 import com.example.featurePeoples.peoples.PeoplesScreenFactory
-import com.example.featureProfile.ProfileScreenFactory
+import com.example.featureProfile.profile.ProfileScreenFactory
 import com.example.featureOpen.OpenScreenFactory
 import com.example.featurePlayer.PlayersScreenFactory
 import com.example.featureRoot.root.RootScreenFactory

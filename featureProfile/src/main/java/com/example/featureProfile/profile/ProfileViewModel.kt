@@ -1,4 +1,4 @@
-package com.example.featureProfile
+package com.example.featureProfile.profile
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope

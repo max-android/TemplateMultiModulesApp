@@ -1,4 +1,4 @@
-package com.example.featureProfile
+package com.example.featureProfile.profile
 
 import com.example.common.BaseViewModel
 

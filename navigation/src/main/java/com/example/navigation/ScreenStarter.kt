@@ -38,6 +38,8 @@ interface ScreenStarter {
 
     fun startProfile(): ComposeNavFactory
 
+    fun startEditProfile(): ComposeNavFactory
+
     fun startPlayers(): ComposeNavFactory
 
     fun startTest(): ComposeNavFactory

@@ -28,7 +28,7 @@ import com.example.coreUi.Black
 import com.example.coreUi.Purple700
 
 @Composable
-fun ProfileHeader() {
+fun ProfileHeader(onClickEditProfileItem: () -> Unit) {
     Column {
         Text(
             modifier = Modifier.fillMaxWidth(),
@@ -51,7 +51,10 @@ fun ProfileHeader() {
                 painter = painterResource(id = R.drawable.ic_profile),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.wrapContentSize().align(Alignment.Center),
+                modifier = Modifier
+                    .wrapContentSize()
+                    .align(Alignment.Center)
+                    .clickable { onClickEditProfileItem.invoke() },
             )
         }
         Spacer(modifier = Modifier.height(16.dp))

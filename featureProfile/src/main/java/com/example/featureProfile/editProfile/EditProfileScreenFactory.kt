@@ -1,4 +1,4 @@
-package com.example.featureProfile.profile
+package com.example.featureProfile.editProfile
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -6,11 +6,11 @@ import androidx.navigation.compose.composable
 import com.example.navigation.ComposeNavFactory
 import com.example.navigation.Screen
 
-class ProfileScreenFactory() : ComposeNavFactory {
+class EditProfileScreenFactory() : ComposeNavFactory {
 
     override fun create(navGraphBuilder: NavGraphBuilder, navController: NavController) {
-        navGraphBuilder.composable(Screen.ProfileScreen.route) { navBackStackEntry ->
-            ProfileComponent(navController, navBackStackEntry)
+        navGraphBuilder.composable(Screen.EditProfileScreen.route) { navBackStackEntry ->
+            EditProfileComponent(navController, navBackStackEntry)
         }
     }
 

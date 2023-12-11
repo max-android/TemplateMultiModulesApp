@@ -16,12 +16,22 @@ class ProfileViewModel @Inject constructor(savedStateHandle: SavedStateHandle) :
     }
 
     override fun obtainEvent(event: BaseEvent?) {
-
+        when (event) {
+            is ProfileEditEvent -> {
+                showProfileEdit()
+            }
+        }
     }
 
     private fun loadData() {
         viewModelScope.launch {
             sendState(SuccessProfileState)
+        }
+    }
+
+    private fun showProfileEdit() {
+        viewModelScope.launch {
+            sendSideEffect(UpdateProfileEffect)
         }
     }
 

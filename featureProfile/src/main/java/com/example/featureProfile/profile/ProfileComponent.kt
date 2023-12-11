@@ -37,6 +37,8 @@ import com.example.featureProfile.uiComponents.ProfileHeader
 import com.example.featureProfile.uiComponents.Setting3Item
 import com.example.featureProfile.uiComponents.Settings1Item
 import com.example.featureProfile.uiComponents.Settings2Item
+import com.example.navigation.Screen
+import com.example.navigation.navigateSafe
 import com.example.navigation.parcelableData
 
 @Composable
@@ -48,16 +50,21 @@ fun ProfileComponent(navController: NavController, navBackStackEntry: NavBackSta
     val viewModel = hiltViewModel<ProfileViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val sideEffect by viewModel.sideEffect.collectAsStateWithLifecycle(null)
-    ObserveState(state)
+    ObserveState(
+        state,
+        onClickEditProfileItem = {
+            viewModel.obtainEvent(ProfileEditEvent)
+        }
+    )
     ObserveSideEffect(sideEffect, navController)
 }
 
 @Composable
-private fun ObserveState(state: BaseViewModel.BaseViewState?) {
+private fun ObserveState(state: BaseViewModel.BaseViewState?, onClickEditProfileItem: () -> Unit) {
     state?.let { profileState ->
         when (profileState) {
             is SuccessProfileState -> {
-                ConfigureProfileUi()
+                ConfigureProfileUi(onClickEditProfileItem)
             }
 
             is ErrorProfileState -> {
@@ -68,7 +75,7 @@ private fun ObserveState(state: BaseViewModel.BaseViewState?) {
 }
 
 @Composable
-private fun ConfigureProfileUi() {
+private fun ConfigureProfileUi(onClickEditProfileItem: () -> Unit) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -77,7 +84,7 @@ private fun ConfigureProfileUi() {
             .verticalScroll(scrollState)
     ) {
         Spacer(modifier = Modifier.height(16.dp))
-        ProfileHeader()
+        ProfileHeader(onClickEditProfileItem)
         Spacer(modifier = Modifier.height(36.dp))
         Column(
             modifier = Modifier
@@ -125,7 +132,7 @@ private fun ObserveSideEffect(
     sideEffect?.let { profileSideEffect ->
         when (profileSideEffect) {
             is UpdateProfileEffect -> {
-
+                navController.navigateSafe(Screen.EditProfileScreen.route)
             }
         }
     }
@@ -134,5 +141,5 @@ private fun ObserveSideEffect(
 @Preview
 @Composable
 fun SamplesProfilePreview() {
-    ConfigureProfileUi()
+    ConfigureProfileUi({})
 }

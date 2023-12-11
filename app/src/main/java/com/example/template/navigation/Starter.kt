@@ -15,6 +15,7 @@ import com.example.featurePeoples.peoples.PeoplesScreenFactory
 import com.example.featureProfile.profile.ProfileScreenFactory
 import com.example.featureOpen.OpenScreenFactory
 import com.example.featurePlayer.PlayersScreenFactory
+import com.example.featureProfile.editProfile.EditProfileScreenFactory
 import com.example.featureRoot.root.RootScreenFactory
 import com.example.featureSeasons.ShowsSeasonsScreenFactory
 import com.example.featureShows.castShows.ShowsCastScreenFactory
@@ -97,6 +98,10 @@ class Starter @Inject constructor(private val context: Context) : ScreenStarter 
 
     override fun startProfile(): ComposeNavFactory {
         return ProfileScreenFactory()
+    }
+
+    override fun startEditProfile(): ComposeNavFactory {
+        return EditProfileScreenFactory()
     }
 
     override fun startPlayers(): ComposeNavFactory {

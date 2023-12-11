@@ -1,7 +1,7 @@
 package com.example.common
 
 import android.content.res.Resources
-import androidx.compose.ui.platform.LocalUriHandler
+import android.util.Patterns
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kotlin.system.measureTimeMillis
@@ -38,6 +38,10 @@ fun Boolean?.boolean(): Boolean {
 
 fun Long?.long(): Long {
     return this ?: 0L
+}
+
+fun isValidMobile(phone: String): Boolean {
+    return Patterns.PHONE.matcher(phone).matches()
 }
 
 

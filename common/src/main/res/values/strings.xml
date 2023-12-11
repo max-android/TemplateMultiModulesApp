@@ -8,6 +8,7 @@
     <string name="title_profile_setting_1">Setting-1</string>
     <string name="title_profile_setting_2">Setting-2</string>
     <string name="title_profile_setting_3">Setting-3</string>
+    <string name="title_profile_update">Profile Update</string>
     <string name="title_history">History</string>
     <string name="title_name">Name</string>
     <string name="phone_sample">8–911–123–45–67</string>
@@ -55,5 +56,7 @@
 
     <string name="setting_text">setting</string>
     <string name="setting_description">description</string>
+    <string name="confirm">confirm</string>
+    <string name="confirm_disabled">confirm disable</string>
 
 </resources>

@@ -23,6 +23,7 @@ sealed class Screen(val route: String) {
     data object NewsCategoryScreen: Screen(NavRoute.NEWS_CATEGORY_ROUTE)
 
     data object ProfileScreen: Screen(NavRoute.PROFILE_ROUTE)
+    data object EditProfileScreen: Screen(NavRoute.EDIT_PROFILE_ROUTE)
 
     data object PlayersScreen: Screen(NavRoute.PLAYERS_ROUTE)
 

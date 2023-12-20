@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -57,7 +56,6 @@ import com.example.navigation.navigateWithBundleSafe
 
 @Composable
 fun ShowsComponent(navController: NavController, navBackStackEntry: NavBackStackEntry) {
-    Log.i("--STATE", "-------------ShowsComponent")
     val viewModel = hiltViewModel<ShowsViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
     val sideEffect by viewModel.sideEffect.collectAsStateWithLifecycle(null)
@@ -140,10 +138,9 @@ private fun ShowsListUi(
             .wrapContentSize()
             .padding(16.dp)
     ) {
-        Log.i("--STATE", "-------------ShowsListUi "+searchText)
         var text by remember { mutableStateOf(EMPTY_VALUE) }
         OutlinedTextField(
-            value = text.ifEmpty { searchText } ,
+            value = text.ifEmpty { searchText },
             onValueChange = { newText: String ->
                 text = newText
                 onSearchTextChange.invoke(newText)
@@ -276,24 +273,28 @@ private fun ObserveSideEffect(
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }
+
             is ShowShowsSeasonsEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsSeasonsScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }
+
             is ShowShowsCastEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsCastScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }
+
             is ShowShowsCrewEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsCrewScreen.route,
                     bundleOf(KEY_SHOWS_ID to showsSideEffect.showId)
                 )
             }
+
             is ShowShowsEpisodesEffect -> {
                 navController.navigateWithBundleSafe(
                     Screen.ShowsEpisodesScreen.route,

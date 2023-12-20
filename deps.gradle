@@ -7,6 +7,8 @@ ext {
             'lifecycle': '2.6.2',
             'room'     : '2.5.1',
             'moshi'    : '1.15.0',
+            'verCompose' : '1.5.6',
+            'prevVerCompose' : '1.5.4',
     ]
 
     deps = [
@@ -22,23 +24,23 @@ ext {
 
             'compose'    : [
                     'activityCompose'        : "androidx.activity:activity-compose:1.8.1",
-                    'materialCompose'        : "androidx.compose.material:material:1.5.4",
-                    'materialIconCompose'    : "androidx.compose.material:material-icons-core:1.5.4",
-                    'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:1.5.4",
-                    'materialRippleCompose'  : "androidx.compose.material:material-ripple:1.5.4",
-                    'runtimeCompose'         : "androidx.compose.runtime:runtime:1.5.4",
-                    'composeUi'              : "androidx.compose.ui:ui:1.5.4",
-                    'composeUiTooling'       : "androidx.compose.ui:ui-tooling-preview:1.5.4",
-                    'composeUtil'            : "androidx.compose.ui:ui-util:1.5.4",
-                    'composeGeometry'        : "androidx.compose.ui:ui-geometry:1.5.4",
-                    'composeGraphics'        : "androidx.compose.ui:ui-graphics:1.5.4",
-                    'composeFoundation'      : "androidx.compose.foundation:foundation:1.5.4",
-                    'composeFoundationLayout': "androidx.compose.foundation:foundation-layout:1.5.4",
+                    'materialCompose'        : "androidx.compose.material:material:${versions.prevVerCompose}",
+                    'materialIconCompose'    : "androidx.compose.material:material-icons-core:${versions.prevVerCompose}",
+                    'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:${versions.prevVerCompose}",
+                    'materialRippleCompose'  : "androidx.compose.material:material-ripple:${versions.prevVerCompose}",
+                    'runtimeCompose'         : "androidx.compose.runtime:runtime:${versions.prevVerCompose}",
+                    'composeUi'              : "androidx.compose.ui:ui:${versions.prevVerCompose}",
+                    'composeUiTooling'       : "androidx.compose.ui:ui-tooling-preview:${versions.prevVerCompose}",
+                    'composeUtil'            : "androidx.compose.ui:ui-util:${versions.prevVerCompose}",
+                    'composeGeometry'        : "androidx.compose.ui:ui-geometry:${versions.prevVerCompose}",
+                    'composeGraphics'        : "androidx.compose.ui:ui-graphics:${versions.prevVerCompose}",
+                    'composeFoundation'      : "androidx.compose.foundation:foundation:${versions.prevVerCompose}",
+                    'composeFoundationLayout': "androidx.compose.foundation:foundation-layout:${versions.prevVerCompose}",
                     'composeConstrainLayout' : "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha13",
-                    'composeAnimCore'        : "androidx.compose.animation:animation-core:1.5.4",
-                    'composeAnimation'       : "androidx.compose.animation:animation:1.5.4",
+                    'composeAnimCore'        : "androidx.compose.animation:animation-core:${versions.prevVerCompose}",
+                    'composeAnimation'       : "androidx.compose.animation:animation:${versions.prevVerCompose}",
                     'coil'                   : "io.coil-kt:coil-compose:2.5.0",
-                    'tooling'                : "androidx.compose.ui:ui-tooling:1.5.4"
+                    'tooling'                : "androidx.compose.ui:ui-tooling:${versions.prevVerCompose}"
             ],
 
             'coroutines' : [
@@ -47,8 +49,8 @@ ext {
             ],
 
             'di'         : [
-                    'hilt'        : "com.google.dagger:hilt-android:2.48.1",
-                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.48.1",
+                    'hilt'        : "com.google.dagger:hilt-android:2.49",
+                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.49",
                     'hiltNavi'    : 'androidx.hilt:hilt-navigation-compose:1.1.0'
             ],
 

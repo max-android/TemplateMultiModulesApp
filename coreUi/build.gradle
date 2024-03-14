@@ -19,13 +19,14 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        //jvmTarget = '17'
+        jvmTarget = config.jvmTarget
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.4'
+        kotlinCompilerExtensionVersion config.compileComposeVersion
     }
     namespace 'com.example.coreUi'
 //    packagingOptions {
@@ -37,6 +38,7 @@ android {
 dependencies {
     api project(path: ':common')
 
+    //api deps.compose.compiler
     api deps.baseAndroid.coreKtx
     api deps.baseAndroid.annotations
     api deps.baseAndroid.appCompat

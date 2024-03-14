@@ -21,13 +21,14 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        //jvmTarget = '17'
+        jvmTarget = config.jvmTarget
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.4'
+        kotlinCompilerExtensionVersion config.compileComposeVersion
     }
     namespace 'com.example.featureShows'
 //    packagingOptions {

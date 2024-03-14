@@ -4,26 +4,25 @@ ext {
             'retrofit' : '2.9.0',
             'okhttp'   : '5.0.0-alpha.11',
             'coroutine': '1.7.3',
-            'lifecycle': '2.6.2',
+            'lifecycle': '2.7.0',
             'room'     : '2.5.1',
             'moshi'    : '1.15.0',
-            'verCompose' : '1.5.6',
-            'prevVerCompose' : '1.5.4',
+            'prevVerCompose' : '1.6.3',
     ]
 
     deps = [
 
             'baseAndroid': [
                     'coreKtx'    : "androidx.core:core-ktx:1.12.0",
-                    'annotations': "androidx.annotation:annotation:1.7.0",
+                    'annotations': "androidx.annotation:annotation:1.7.1",
                     'appCompat'  : "androidx.appcompat:appcompat:1.6.1",
                     'fragment'   : "androidx.fragment:fragment-ktx:1.6.2",
                     'activity'   : "androidx.activity:activity-ktx:1.8.1",
-                    'material3'  : "androidx.compose.material3:material3:1.2.0-alpha11"
+                    'material3'  : "androidx.compose.material3:material3:1.2.1"
             ],
 
             'compose'    : [
-                    'activityCompose'        : "androidx.activity:activity-compose:1.8.1",
+                    'activityCompose'        : "androidx.activity:activity-compose:1.8.2",
                     'materialCompose'        : "androidx.compose.material:material:${versions.prevVerCompose}",
                     'materialIconCompose'    : "androidx.compose.material:material-icons-core:${versions.prevVerCompose}",
                     'materialIconExtCompose' : "androidx.compose.material:material-icons-extended:${versions.prevVerCompose}",
@@ -40,7 +39,8 @@ ext {
                     'composeAnimCore'        : "androidx.compose.animation:animation-core:${versions.prevVerCompose}",
                     'composeAnimation'       : "androidx.compose.animation:animation:${versions.prevVerCompose}",
                     'coil'                   : "io.coil-kt:coil-compose:2.5.0",
-                    'tooling'                : "androidx.compose.ui:ui-tooling:${versions.prevVerCompose}"
+                    'tooling'                : "androidx.compose.ui:ui-tooling:${versions.prevVerCompose}",
+//                    'compiler'               : "androidx.compose.compiler:compiler:1.5.10"
             ],
 
             'coroutines' : [
@@ -49,26 +49,26 @@ ext {
             ],
 
             'di'         : [
-                    'hilt'        : "com.google.dagger:hilt-android:2.49",
-                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.49",
-                    'hiltNavi'    : 'androidx.hilt:hilt-navigation-compose:1.1.0'
+                    'hilt'        : "com.google.dagger:hilt-android:2.51",
+                    'hiltCompiler': "com.google.dagger:hilt-android-compiler:2.51",
+                    'hiltNavi'    : 'androidx.hilt:hilt-navigation-compose:1.2.0'
             ],
 
 //            kapt("androidx.hilt:hilt-compiler:1.0.0")
 
 
             'navigation' : [
-                    'navCompose': "androidx.navigation:navigation-compose:2.7.5",
-                    'navCommon' : 'androidx.navigation:navigation-common:2.7.5'
+                    'navCompose': "androidx.navigation:navigation-compose:2.7.7",
+                    'navCommon' : 'androidx.navigation:navigation-common:2.7.7'
             ],
 
             'lifecycle'  : [
                     'lifecycle'               : "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}",
                     'liveData'                : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
                     'viewModel'               : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
-                    'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2',
+                    'viewModelCompose'        : 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0',
                     'lifecycleReactivestreams': "androidx.lifecycle:lifecycle-reactivestreams-ktx:${versions.lifecycle}",
-                    'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
+                    'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.7.0"
             ],
 
             'google'     : [

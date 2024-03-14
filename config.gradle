@@ -1,11 +1,14 @@
 ext {
     config = [
             'compileSdkVersion': 34,
-            'applicationId': "",
+            'applicationId': "com.example.template",
             'minSdkVersion': 28,
             'targetSdkVersion': 34,
             'versionCode': 2,
             'versionName': "2.0.0",
-            'packageName': "com.example.template"
+            'packageName': "com.example.template",
+            'composeVersion': "1.6.3",
+            'compileComposeVersion': "1.5.10",
+            'jvmTarget': '17'
     ]
 }

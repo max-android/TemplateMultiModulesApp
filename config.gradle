@@ -12,3 +12,18 @@ ext {
             'jvmTarget': '17'
     ]
 }
+
+//buildscript {
+//   ext {
+//       minSdk = 26
+//       targetSdk = 34
+//   }
+//}
+
+
+//buildscript {
+//    extra.apply {
+//        set("minSdk", 26)
+//        set("targetSdk", 34)
+//   }
+//}

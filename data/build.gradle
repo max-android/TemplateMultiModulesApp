@@ -40,7 +40,7 @@ dependencies {
     api deps.retrofit.moshiConverter
     api deps.moshi.moshi
     api deps.moshi.kotlin
-    api deps.okhttp.client
+
     api deps.okhttp.logging
 
     api deps.di.hilt

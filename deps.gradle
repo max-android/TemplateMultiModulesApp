@@ -2,7 +2,7 @@ ext {
 
     versions = [
             'retrofit' : '2.9.0',
-            'okhttp'   : '5.0.0-alpha.11',
+            'okhttp'   : '5.0.0-alpha.12',
             'coroutine': '1.7.3',
             'lifecycle': '2.7.0',
             'room'     : '2.5.1',
@@ -40,7 +40,6 @@ ext {
                     'composeAnimation'       : "androidx.compose.animation:animation:${versions.prevVerCompose}",
                     'coil'                   : "io.coil-kt:coil-compose:2.5.0",
                     'tooling'                : "androidx.compose.ui:ui-tooling:${versions.prevVerCompose}",
-//                    'compiler'               : "androidx.compose.compiler:compiler:1.5.10"
             ],
 
             'coroutines' : [
@@ -71,16 +70,6 @@ ext {
                     'lifecycleCompose'        : "androidx.lifecycle:lifecycle-runtime-compose:2.7.0"
             ],
 
-            'google'     : [
-                    'firebase': [
-                            'bom'        : "com.google.firebase:firebase-bom:31.2.1",
-                            'push'       : "com.google.firebase:firebase-messaging-ktx:23.1.2",
-                            'crashlytics': "com.google.firebase:firebase-crashlytics-ktx:18.3.7",
-                            'analytics'  : "com.google.firebase:firebase-analytics-ktx:21.3.0",
-                            'config'     : "com.google.firebase:firebase-config-ktx:21.4.0"
-                    ],
-            ],
-
             'retrofit'   : [
                     'client'        : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
                     'moshiConverter': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
@@ -92,7 +81,6 @@ ext {
             ],
 
             'okhttp'     : [
-                    'client' : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
                     'logging': "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
             ],
 

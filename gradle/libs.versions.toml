@@ -1,24 +1,115 @@
 [versions]
-agp = "8.2.2"
-kotlin = "1.9.22"
+retrofit = "2.9.0"
+okhttp = "5.0.0-alpha.12"
+coroutine = "1.7.3"
+lifecycle = "2.7.0"
+room = "2.5.1"
+verMoshi = "1.15.0"
+verCompose = "1.6.3"
+verGradle = "8.3.0"
+verKotlin = "1.9.22"
 core-ktx = "1.12.0"
-junit = "4.13.2"
-androidx-test-ext-junit = "1.1.5"
-espresso-core = "3.5.1"
 appcompat = "1.6.1"
-material = "1.11.0"
-constraintlayout = "2.1.4"
-
-[libraries]
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+constraintlayout = "1.1.0-alpha13"
+annotation = "1.7.1"
+fragment = "1.6.2"
+activity = "1.8.2"
+actCompose = "1.8.2"
+material3 = "1.2.1"
+coil = "2.5.0"
+verHilt = "2.51"
+verHiltNavi = "1.2.0"
+verHiltCompiler = "1.2.0"
+verNavigation = "2.7.7"
+verDateTime = "0.9.0"
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidApplication = { id = "com.android.application", version.ref = "verGradle" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "verKotlin" }
+
+
+[libraries]
+coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+annotationCompat = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+appCompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+fragmentCompat = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+activityCompat = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "actCompose" }
+
+coilCompose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+constraintCompose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
+materialCompose3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+
+materialCompose = { group = "androidx.compose.material", name = "material", version.ref = "verCompose" }
+
+
+materialIconCompose = { group = "androidx.compose.material", name = "material-icons-core", version.ref = "verCompose" }
+materialIconExtCompose = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "verCompose" }
+materialRippleCompose = { group = "androidx.compose.material", name = "material-ripple", version.ref = "verCompose" }
+runtimeCompose = { group = "androidx.compose.runtime", name = "runtime", version.ref = "verCompose" }
+
+composeUi = { group = "androidx.compose.ui", name = "ui", version.ref = "verCompose" }
+composeUiTooling = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "verCompose" }
+composeUtil = { group = "androidx.compose.ui", name = "ui-util", version.ref = "verCompose" }
+composeGeometry = { group = "androidx.compose.ui", name = "ui-geometry", version.ref = "verCompose" }
+composeGraphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "verCompose" }
+toolingCompose = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "verCompose" }
+composeFoundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "verCompose" }
+composeFoundationLayout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "verCompose" }
+composeAnimCore = { group = "androidx.compose.animation", name = "animation-core", version.ref = "verCompose" }
+composeAnimation = { group = "androidx.compose.animation", name = "animation", version.ref = "verCompose" }
+
+datetime = { group = "io.github.vanpra.compose-material-dialogs", name = "datetime", version.ref = "verDateTime" }
+
+
+coroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
+coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutine" }
+
+
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "verHilt" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "verHilt" }
+hiltNavi = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "verHiltNavi" }
+hiltCompiler2 = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "verHiltCompiler" }
+
+
+navCompose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "verNavigation" }
+navCommon = { group = "androidx.navigation", name = "navigation-common", version.ref = "verNavigation" }
+
+
+lifecycleKtx = { group = "androidx.lifecycle", name = "navigation-common", version.ref = "lifecycle" }
+liveDataKtx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+viewModelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lifecycleReactivestreams = { group = "androidx.lifecycle", name = "lifecycle-reactivestreams-ktx", version.ref = "lifecycle" }
+lifecycleCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+
+
+
+clientRetrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+moshiConverter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+okhttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "verMoshi" }
+kotlinMoshi = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "verMoshi" }
+
+
+
+roomRuntime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+roomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

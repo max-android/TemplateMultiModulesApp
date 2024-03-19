@@ -1,22 +1,21 @@
-apply from: "$rootDir/deps.gradle"
-apply from: "$rootDir/config.gradle"
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'com.google.dagger.hilt.android'
-apply plugin: 'kotlin-parcelize'
-apply plugin: 'com.google.devtools.ksp'
-//apply plugin: 'kotlin-kapt'
+plugins {
+    alias(libs.plugins.androidApplicationPlugin)
+    alias(libs.plugins.kotlinAndroidPlugin)
+    alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.kspPlugin)
+    alias(libs.plugins.kotlinParcelize)
+}
 
 android {
     namespace 'com.example.template'
-    compileSdkVersion config.compileSdkVersion
+    compileSdk = 34
 
     defaultConfig {
-        applicationId config.applicationId
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
-        versionCode config.versionCode
-        versionName config.versionName
+        applicationId "com.example.template"
+        minSdk 28
+        targetSdk 34
+        versionCode 2
+        versionName "2.0.0"
     }
 
     buildTypes {
@@ -34,28 +33,16 @@ android {
     }
 
     kotlinOptions {
-        //jvmTarget = '17'
-        jvmTarget = config.jvmTarget
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion config.compileComposeVersion
+        kotlinCompilerExtensionVersion "1.5.10"
     }
 
     android.packagingOptions.resources.excludes += "**/*.exclude"
-
-//    packagingOptions {
-//        exclude 'META-INF/DEPENDENCIES'
-//    }
-
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
-//        resources {
-//            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-//        }
-//    }
 
 }
 
@@ -77,11 +64,11 @@ dependencies {
     implementation project(path: ':featureNews')
     implementation project(path: ':featurePlayer')
 
-    api deps.di.hilt
-    ksp deps.di.hiltCompiler
-    api deps.di.hiltNavi
+    api libs.hiltAndroid
+    ksp libs.hiltCompiler
+    api libs.hiltNavi
 
-    api deps.navigation.navCompose
-    api deps.navigation.navCommon
+    api libs.navCompose
+    api libs.navCommon
 
 }

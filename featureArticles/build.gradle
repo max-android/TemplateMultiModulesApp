@@ -1,18 +1,17 @@
-apply from: "$rootDir/deps.gradle"
-apply from: "$rootDir/config.gradle"
-apply plugin: 'com.android.library'
-apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'com.google.devtools.ksp'
-//apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
-apply plugin: 'kotlin-parcelize'
+plugins {
+    alias(libs.plugins.androidLibraryPlugin)
+    alias(libs.plugins.kotlinAndroidPlugin)
+    alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.kspPlugin)
+    alias(libs.plugins.kotlinParcelize)
+}
 
 android {
-    compileSdkVersion config.compileSdkVersion
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdkVersion 28
+        targetSdkVersion 34
     }
 
     compileOptions {
@@ -21,33 +20,27 @@ android {
     }
 
     kotlinOptions {
-        //jvmTarget = '17'
-        jvmTarget = config.jvmTarget
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion config.compileComposeVersion
+        kotlinCompilerExtensionVersion "1.5.10"
     }
     namespace 'com.example.featureArticles'
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
-//    }
 
 }
 
 dependencies {
-
     implementation project(path: ':coreUi')
     implementation project(path: ':navigation')
     implementation project(path: ':domain')
 
-    api deps.di.hilt
-    ksp deps.di.hiltCompiler
-    api deps.di.hiltNavi
+    api libs.hiltAndroid
+    ksp libs.hiltCompiler
+    api libs.hiltNavi
 
-    api deps.navigation.navCompose
-    api deps.navigation.navCommon
-
+    api libs.navCompose
+    api libs.navCommon
 }

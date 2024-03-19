@@ -1,17 +1,16 @@
-apply from: "$rootDir/deps.gradle"
-apply from: "$rootDir/config.gradle"
-apply plugin: 'com.android.library'
-apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'com.google.devtools.ksp'
-//apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.dagger.hilt.android'
+plugins {
+    alias(libs.plugins.androidLibraryPlugin)
+    alias(libs.plugins.kotlinAndroidPlugin)
+    alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.kspPlugin)
+}
 
 android {
-    compileSdkVersion config.compileSdkVersion
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdkVersion 28
+        targetSdkVersion 34
     }
 
     compileOptions {
@@ -20,20 +19,18 @@ android {
     }
 
     kotlinOptions {
-        //jvmTarget = '17'
-        jvmTarget = config.jvmTarget
+        jvmTarget = '17'
     }
-    namespace 'com.example.domain'
-
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
+//    buildFeatures {
+//        compose true
 //    }
-
+//    composeOptions {
+//        kotlinCompilerExtensionVersion "1.5.10"
+//    }
+    namespace 'com.example.domain'
 }
 
 dependencies {
-
-    api deps.di.hilt
-    ksp deps.di.hiltCompiler
-
+    api libs.hiltAndroid
+    ksp libs.hiltCompiler
 }

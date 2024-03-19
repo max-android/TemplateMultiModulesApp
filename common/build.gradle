@@ -1,14 +1,14 @@
-apply from: "$rootDir/deps.gradle"
-apply from: "$rootDir/config.gradle"
-apply plugin: 'com.android.library'
-apply plugin: 'org.jetbrains.kotlin.android'
+plugins {
+    alias(libs.plugins.androidLibraryPlugin)
+    alias(libs.plugins.kotlinAndroidPlugin)
+}
 
 android {
-    compileSdkVersion config.compileSdkVersion
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdkVersion 28
+        targetSdkVersion 34
     }
 
     compileOptions {
@@ -17,31 +17,18 @@ android {
     }
 
     kotlinOptions {
-        //jvmTarget = '17'
-        jvmTarget = config.jvmTarget
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion config.compileComposeVersion
+        kotlinCompilerExtensionVersion "1.5.10"
     }
     namespace 'com.example.common'
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
-//    }
-
 }
 
 dependencies {
-
-    api deps.lifecycle.lifecycle
-    api deps.lifecycle.viewModel
-    api deps.lifecycle.viewModelCompose
-    api deps.lifecycle.lifecycleReactivestreams
-    api deps.lifecycle.lifecycleCompose
-
-    api deps.coroutines.coroutines
-    api deps.coroutines.coroutinesAndroid
-
+    api libs.bundles.lifecycleDependencies
+    api libs.bundles.coroutinesDependencies
 }

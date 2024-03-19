@@ -24,6 +24,15 @@ verNavigation = "2.7.7"
 verDateTime = "0.9.0"
 verKsp = "1.9.22-1.0.18"
 
+compileSdkVersion = "34"
+applicationId = "com.example.template"
+minSdkVersion = "28"
+targetSdkVersion = "34"
+versionCode = "2"
+versionName = "2.0.0"
+packageName = "com.example.template"
+compileComposeVersion = "1.5.10"
+jvmTarget = "17"
 
 [plugins]
 androidApplicationPlugin = { id = "com.android.application", version.ref = "verGradle" }
@@ -31,7 +40,8 @@ androidLibraryPlugin= { id = "com.android.library", version.ref = "verGradle" }
 kotlinAndroidPlugin = { id = "org.jetbrains.kotlin.android", version.ref = "verKotlin" }
 kotlinJvmPlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "verKotlin" }
 kspPlugin = { id = "com.google.devtools.ksp", version.ref = "verKsp" }
-hiltPlugin = { id = "com.google.devtools.ksp", version.ref = "verHilt" }
+hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "verHilt" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "verKotlin"  }
 
 
 [libraries]
@@ -82,7 +92,7 @@ navCompose = { group = "androidx.navigation", name = "navigation-compose", versi
 navCommon = { group = "androidx.navigation", name = "navigation-common", version.ref = "verNavigation" }
 
 
-lifecycleKtx = { group = "androidx.lifecycle", name = "navigation-common", version.ref = "lifecycle" }
+lifecycleKtx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 liveDataKtx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 viewModelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }

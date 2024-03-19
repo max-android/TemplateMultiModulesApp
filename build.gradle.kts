@@ -1,9 +1,9 @@
 plugins {
-    id ("com.android.application") version "8.3.0" apply false
-    id ("com.android.library") version "8.3.0" apply false
-    id ("org.jetbrains.kotlin.android") version "1.9.22" apply false
-    id ("org.jetbrains.kotlin.jvm") version "1.9.22" apply false
-    id ("com.google.devtools.ksp") version "1.9.22-1.0.18" apply false
-    id ("com.google.dagger.hilt.android") version "2.51" apply false
-
+    alias(libs.plugins.androidApplicationPlugin) apply false
+    alias(libs.plugins.androidLibraryPlugin) apply false
+    alias(libs.plugins.kotlinAndroidPlugin) apply false
+    alias(libs.plugins.kotlinJvmPlugin) apply false
+    alias(libs.plugins.kspPlugin) apply false
+    alias(libs.plugins.hiltPlugin) apply false
+    alias(libs.plugins.kotlinParcelize) apply false
 }

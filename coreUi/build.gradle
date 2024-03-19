@@ -1,16 +1,15 @@
-apply from: "$rootDir/deps.gradle"
-apply from: "$rootDir/config.gradle"
-apply plugin: 'com.android.library'
-apply plugin: 'org.jetbrains.kotlin.android'
-//TODO временно
-apply plugin: 'kotlin-parcelize'
+plugins {
+    alias(libs.plugins.androidLibraryPlugin)
+    alias(libs.plugins.kotlinAndroidPlugin)
+    alias(libs.plugins.kotlinParcelize)
+}
 
 android {
-    compileSdkVersion config.compileSdkVersion
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
+        minSdkVersion 28
+        targetSdkVersion 34
     }
 
     compileOptions {
@@ -19,51 +18,20 @@ android {
     }
 
     kotlinOptions {
-        //jvmTarget = '17'
-        jvmTarget = config.jvmTarget
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion config.compileComposeVersion
+        kotlinCompilerExtensionVersion "1.5.10"
     }
     namespace 'com.example.coreUi'
-//    packagingOptions {
-//        resources.excludes.add("META-INF/*")
-//    }
-
 }
 
 dependencies {
     api project(path: ':common')
-
-    //api deps.compose.compiler
-    api deps.baseAndroid.coreKtx
-    api deps.baseAndroid.annotations
-    api deps.baseAndroid.appCompat
-    api deps.baseAndroid.fragment
-    api deps.baseAndroid.activity
-    api deps.baseAndroid.material3
-    api deps.customUi.datetime
-    api deps.compose.runtimeCompose
-    api deps.compose.activityCompose
-    api deps.compose.materialCompose
-    api deps.compose.materialIconCompose
-    api deps.compose.materialIconExtCompose
-    api deps.compose.materialRippleCompose
-    api deps.compose.composeUi
-    api deps.compose.composeUiTooling
-    api deps.compose.composeUtil
-    api deps.compose.composeGeometry
-    api deps.compose.composeGraphics
-    api deps.compose.composeFoundation
-    api deps.compose.composeFoundationLayout
-    api deps.compose.composeAnimCore
-    api deps.compose.composeAnimation
-    api deps.compose.coil
-    api deps.compose.composeConstrainLayout
-    debugImplementation deps.compose.tooling
-
-
+    api libs.bundles.androidxDependencies
+    api libs.bundles.composeDependencies
+    debugImplementation libs.toolingCompose
 }

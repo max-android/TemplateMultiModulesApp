@@ -1,9 +1,9 @@
 [versions]
 retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.12"
-coroutine = "1.7.3"
+coroutine = "1.8.0"
 lifecycle = "2.7.0"
-room = "2.5.1"
+room = "2.6.1"
 verMoshi = "1.15.0"
 verCompose = "1.6.3"
 verGradle = "8.3.0"
@@ -22,10 +22,16 @@ verHiltNavi = "1.2.0"
 verHiltCompiler = "1.2.0"
 verNavigation = "2.7.7"
 verDateTime = "0.9.0"
+verKsp = "1.9.22-1.0.18"
+
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "verGradle" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "verKotlin" }
+androidApplicationPlugin = { id = "com.android.application", version.ref = "verGradle" }
+androidLibraryPlugin= { id = "com.android.library", version.ref = "verGradle" }
+kotlinAndroidPlugin = { id = "org.jetbrains.kotlin.android", version.ref = "verKotlin" }
+kotlinJvmPlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "verKotlin" }
+kspPlugin = { id = "com.google.devtools.ksp", version.ref = "verKsp" }
+hiltPlugin = { id = "com.google.devtools.ksp", version.ref = "verHilt" }
 
 
 [libraries]
@@ -36,12 +42,11 @@ fragmentCompat = { group = "androidx.fragment", name = "fragment-ktx", version.r
 activityCompat = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
 activityCompose = { group = "androidx.activity", name = "activity-compose", version.ref = "actCompose" }
 
+
 coilCompose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 constraintCompose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
 materialCompose3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
-
 materialCompose = { group = "androidx.compose.material", name = "material", version.ref = "verCompose" }
-
 
 materialIconCompose = { group = "androidx.compose.material", name = "material-icons-core", version.ref = "verCompose" }
 materialIconExtCompose = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "verCompose" }
@@ -53,13 +58,14 @@ composeUiTooling = { group = "androidx.compose.ui", name = "ui-tooling-preview",
 composeUtil = { group = "androidx.compose.ui", name = "ui-util", version.ref = "verCompose" }
 composeGeometry = { group = "androidx.compose.ui", name = "ui-geometry", version.ref = "verCompose" }
 composeGraphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "verCompose" }
-toolingCompose = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "verCompose" }
 composeFoundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "verCompose" }
 composeFoundationLayout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "verCompose" }
 composeAnimCore = { group = "androidx.compose.animation", name = "animation-core", version.ref = "verCompose" }
 composeAnimation = { group = "androidx.compose.animation", name = "animation", version.ref = "verCompose" }
 
-datetime = { group = "io.github.vanpra.compose-material-dialogs", name = "datetime", version.ref = "verDateTime" }
+toolingCompose = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "verCompose" }
+
+composeDatetimeUi = { group = "io.github.vanpra.compose-material-dialogs", name = "datetime", version.ref = "verDateTime" }
 
 
 coroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutine" }
@@ -84,7 +90,6 @@ lifecycleReactivestreams = { group = "androidx.lifecycle", name = "lifecycle-rea
 lifecycleCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 
 
-
 clientRetrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 moshiConverter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 okhttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
@@ -94,13 +99,71 @@ moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "verMoshi"
 kotlinMoshi = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "verMoshi" }
 
 
-
 roomRuntime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 roomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 
 
+[bundles]
+composeDependencies = [
+    "coilCompose",
+    "constraintCompose",
+    "materialCompose3",
+    "materialCompose",
+    "materialIconCompose",
+    "materialIconExtCompose",
+    "materialRippleCompose",
+    "runtimeCompose",
+    "composeUi",
+    "composeUiTooling",
+    "composeUtil",
+    "composeGeometry",
+    "composeGraphics",
+    "composeFoundation",
+    "composeFoundationLayout",
+    "composeAnimCore",
+    "composeAnimation",
+    "composeDatetimeUi",
+]
 
+androidxDependencies = [
+    "coreKtx",
+    "annotationCompat",
+    "appCompat",
+    "fragmentCompat",
+    "activityCompat",
+    "activityCompose"
+]
+
+coroutinesDependencies = [
+    "coroutinesCore",
+    "coroutinesAndroid"
+]
+
+navigationDependencies = [
+    "navCompose",
+    "navCommon"
+]
+
+lifecycleDependencies = [
+    "lifecycleKtx",
+    "liveDataKtx",
+    "viewModelKtx",
+    "viewModelCompose",
+    "lifecycleReactivestreams",
+    "lifecycleCompose"
+]
+
+restClientDependencies = [
+    "clientRetrofit",
+    "moshiConverter",
+    "okhttpLogging"
+]
+
+moshiDependencies = [
+    "moshi",
+    "kotlinMoshi"
+]
 
 
 

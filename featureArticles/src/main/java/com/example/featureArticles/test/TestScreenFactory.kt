@@ -10,7 +10,7 @@ class TestScreenFactory: ComposeNavFactory {
 
     override fun create(navGraphBuilder: NavGraphBuilder, navController: NavController) {
         navGraphBuilder.composable(Screen.TestScreen.route) { _ ->
-            TestComponent()
+           // TestComponent()
         }
     }
 }

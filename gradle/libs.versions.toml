@@ -1,20 +1,20 @@
 [versions]
 retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.12"
-coroutine = "1.8.0"
-lifecycle = "2.7.0"
+coroutine = "1.8.1"
+lifecycle = "2.8.4"
 room = "2.6.1"
 verMoshi = "1.15.0"
-verCompose = "1.6.3"
+verCompose = "1.6.8"
 verGradle = "8.5.2"
-verKotlin = "1.9.22"
-core-ktx = "1.12.0"
-appcompat = "1.6.1"
+verKotlin = "2.0.0"
+core-ktx = "1.13.1"
+appcompat = "1.7.0"
 constraintlayout = "1.1.0-alpha13"
-annotation = "1.7.1"
-fragment = "1.6.2"
-activity = "1.8.2"
-actCompose = "1.8.2"
+annotation = "1.8.2"
+fragment = "1.8.2"
+activity = "1.9.1"
+actCompose = "1.9.1"
 material3 = "1.2.1"
 coil = "2.5.0"
 verHilt = "2.51"
@@ -22,7 +22,8 @@ verHiltNavi = "1.2.0"
 verHiltCompiler = "1.2.0"
 verNavigation = "2.7.7"
 verDateTime = "0.9.0"
-verKsp = "1.9.22-1.0.18"
+verKsp = "2.0.0-1.0.24"
+
 
 compileSdkVersion = "34"
 applicationId = "com.example.template"
@@ -39,9 +40,11 @@ androidApplicationPlugin = { id = "com.android.application", version.ref = "verG
 androidLibraryPlugin= { id = "com.android.library", version.ref = "verGradle" }
 kotlinAndroidPlugin = { id = "org.jetbrains.kotlin.android", version.ref = "verKotlin" }
 kotlinJvmPlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "verKotlin" }
+kotlinCompose = { id = "org.jetbrains.kotlin.plugin.compose",  version.ref = "verKotlin"  }
 kspPlugin = { id = "com.google.devtools.ksp", version.ref = "verKsp" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "verHilt" }
 kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "verKotlin"  }
+
 
 
 [libraries]

@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hiltPlugin)
     alias(libs.plugins.kspPlugin)
     alias(libs.plugins.kotlinParcelize)
+    alias(libs.plugins.kotlinCompose)
 }
 
 android {

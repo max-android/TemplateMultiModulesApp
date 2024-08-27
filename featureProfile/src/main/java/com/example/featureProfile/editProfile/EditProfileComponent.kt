@@ -12,8 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.foundation.text2.BasicTextField2
-import androidx.compose.foundation.text2.input.TextFieldLineLimits
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -105,37 +104,37 @@ private fun ConfigureEditProfileUi(
             textAlign = TextAlign.Center
         )
         Spacer(modifier = Modifier.height(16.dp))
-        BasicTextField2(
-            state = viewModel.profileName,
-            textStyle = Typography.labelLarge,
-            modifier = Modifier
-                .padding(16.dp)
-                .border(2.dp, Color.Blue, shape = RoundedCornerShape(16.dp))
-                .height(56.dp)
-                .fillMaxWidth()
-                .padding(16.dp),
-            lineLimits = TextFieldLineLimits.SingleLine,
-            cursorBrush = SolidColor(Color.Red),
-            //inputTransformation = InputTransformation.maxLengthInChars(11),
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Text),
-            scrollState = scrollState,
-        )
+//        BasicTextField(
+//            state = viewModel.profileName,
+//            textStyle = Typography.labelLarge,
+//            modifier = Modifier
+//                .padding(16.dp)
+//                .border(2.dp, Color.Blue, shape = RoundedCornerShape(16.dp))
+//                .height(56.dp)
+//                .fillMaxWidth()
+//                .padding(16.dp),
+//           // lineLimits = TextFieldLineLimits.SingleLine,
+//            cursorBrush = SolidColor(Color.Red),
+//            //inputTransformation = InputTransformation.maxLengthInChars(11),
+//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Text),
+//            scrollState = scrollState,
+//        )
         Spacer(modifier = Modifier.height(16.dp))
-        BasicTextField2(
-            state = viewModel.profilePhone,
-            textStyle = Typography.labelLarge,
-            modifier = Modifier
-                .padding(16.dp)
-                .border(2.dp, Color.Blue, shape = RoundedCornerShape(16.dp))
-                .height(56.dp)
-                .fillMaxWidth()
-                .padding(16.dp),
-            lineLimits = TextFieldLineLimits.SingleLine,
-            cursorBrush = SolidColor(Color.Red),
-            //inputTransformation = InputTransformation.maxLengthInChars(11),
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Text),
-            scrollState = scrollState,
-        )
+//        BasicTextField(
+//            state = viewModel.profilePhone,
+//            textStyle = Typography.labelLarge,
+//            modifier = Modifier
+//                .padding(16.dp)
+//                .border(2.dp, Color.Blue, shape = RoundedCornerShape(16.dp))
+//                .height(56.dp)
+//                .fillMaxWidth()
+//                .padding(16.dp),
+//          //  lineLimits = TextFieldLineLimits.SingleLine,
+//            cursorBrush = SolidColor(Color.Red),
+//            //inputTransformation = InputTransformation.maxLengthInChars(11),
+//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Text),
+//            scrollState = scrollState,
+//        )
         Spacer(modifier = Modifier.height(16.dp))
         TextButton(
             modifier = Modifier.then(

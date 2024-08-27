@@ -1,9 +1,8 @@
 package com.example.featureProfile.editProfile
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.text2.input.TextFieldState
-import androidx.compose.foundation.text2.input.forEachTextValue
-import androidx.compose.foundation.text2.input.setTextAndSelectAll
+//import androidx.compose.foundation.text.input.TextFieldState
+//import androidx.compose.foundation.text.input.setTextAndSelectAll
 import androidx.lifecycle.viewModelScope
 import com.example.common.BaseViewModel
 import com.example.domain.interactor.ProfileInteractor
@@ -20,11 +19,11 @@ class EditProfileViewModel @Inject constructor(
     private val profileInteractor: ProfileInteractor
 ) : BaseViewModel() {
 
-    @OptIn(ExperimentalFoundationApi::class)
-    val profileName = TextFieldState()
-
-    @OptIn(ExperimentalFoundationApi::class)
-    val profilePhone = TextFieldState()
+//    @OptIn(ExperimentalFoundationApi::class)
+//    val profileName = TextFieldState()
+//
+//    @OptIn(ExperimentalFoundationApi::class)
+//    val profilePhone = TextFieldState()
 
     private val stateProfileConfirmInternal = MutableStateFlow<Boolean>(false)
     val stateProfileConfirm: StateFlow<Boolean> = stateProfileConfirmInternal.asStateFlow()
@@ -36,45 +35,45 @@ class EditProfileViewModel @Inject constructor(
     @OptIn(ExperimentalFoundationApi::class)
     suspend fun validateProfile() {
         viewModelScope.launch {
-            profileName.forEachTextValue { char ->
-                stateProfileConfirmInternal.emit(char.toString().length > 2)
-            }
+//            profileName.forEachTextValue { char ->
+//                stateProfileConfirmInternal.emit(char.toString().length > 2)
+//            }
         }
     }
 
     override fun obtainEvent(event: BaseEvent?) {
         when (event) {
             is InitProfileEvent -> {
-                loadProfile()
+               // loadProfile()
             }
 
             is UpdateProfileEvent -> {
-                updateProfile()
+              // updateProfile()
             }
         }
     }
 
-    @OptIn(ExperimentalFoundationApi::class)
-    private fun loadProfile() {
-        viewModelScope.launch {
-            val profile = profileInteractor.profile()
-            profileName.setTextAndSelectAll(profile.name)
-            profilePhone.setTextAndSelectAll(profile.phone)
-            sendState(SuccessInitProfileState(profile))
-        }
-    }
-
-    @OptIn(ExperimentalFoundationApi::class)
-    private fun updateProfile() {
-        viewModelScope.launch {
-            profileInteractor.updateProfile(
-                ProfileModel(
-                    profileName.text.toString(),
-                    profilePhone.text.toString()
-                )
-            )
-        }
-    }
+//    @OptIn(ExperimentalFoundationApi::class)
+//    private fun loadProfile() {
+//        viewModelScope.launch {
+//            val profile = profileInteractor.profile()
+//            profileName.setTextAndSelectAll(profile.name)
+//            profilePhone.setTextAndSelectAll(profile.phone)
+//            sendState(SuccessInitProfileState(profile))
+//        }
+//    }
+//
+//    @OptIn(ExperimentalFoundationApi::class)
+//    private fun updateProfile() {
+//        viewModelScope.launch {
+//            profileInteractor.updateProfile(
+//                ProfileModel(
+//                    profileName.text.toString(),
+//                    profilePhone.text.toString()
+//                )
+//            )
+//        }
+//    }
 
 
 }

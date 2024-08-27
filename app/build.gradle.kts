@@ -66,10 +66,10 @@ dependencies {
     implementation(project(":featureNews"))
     implementation(project(":featurePlayer"))
 
-    api(libs.hiltAndroid)
+    implementation(libs.hiltAndroid)
     ksp(libs.hiltCompiler)
-    api(libs.hiltNavi)
+    implementation(libs.hiltNavi)
 
-    api(libs.navCompose)
-    api(libs.navCommon)
+    implementation(libs.navCompose)
+    implementation(libs.navCommon)
 }
